@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { collections, Collection } from "@/lib/collections";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
-import SectionLabel from "@/components/ui/SectionLabel";
 
 type Filter = "all" | "signature" | "limited";
 
@@ -14,6 +13,28 @@ const filters: { key: Filter; label: string }[] = [
   { key: "signature", label: "Signature" },
   { key: "limited", label: "Limited Edition" },
 ];
+
+function BadgeLabel({ stock }: { stock: number }) {
+  if (stock === 0) {
+    return (
+      <span className="absolute left-4 top-4 z-10 bg-[rgba(80,80,80,0.85)] px-3 py-1 text-[9px] font-medium tracking-[1.5px] uppercase text-white">
+        Sold Out
+      </span>
+    );
+  }
+  if (stock <= 3) {
+    return (
+      <span className="absolute left-4 top-4 z-10 bg-[rgba(180,60,40,0.85)] px-3 py-1 text-[9px] font-medium tracking-[1.5px] uppercase text-white">
+        Almost Gone
+      </span>
+    );
+  }
+  return (
+    <span className="absolute left-4 top-4 z-10 bg-[rgba(201,168,76,0.85)] px-3 py-1 text-[9px] font-medium tracking-[1.5px] uppercase text-background">
+      {stock} Remaining
+    </span>
+  );
+}
 
 export default function CollectionsContent() {
   const [active, setActive] = useState<Filter>("all");
@@ -24,20 +45,21 @@ export default function CollectionsContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-background pb-20 pt-40">
-        <div className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 font-serif text-[30vw] font-bold leading-none text-border/30 select-none">
-          C
-        </div>
-        <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-12">
+      <section className="relative bg-background pb-16 pt-32 md:pt-36">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(0,56,56,0.4)_0%,transparent_60%)]" />
+        <div className="relative z-10 mx-auto max-w-[1400px] px-6 text-center md:px-12">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
-            <motion.div variants={fadeInUp}>
-              <SectionLabel>Collections</SectionLabel>
-            </motion.div>
+            <motion.p
+              variants={fadeInUp}
+              className="mb-3.5 text-[11px] font-normal tracking-[4px] uppercase text-accent"
+            >
+              The Collection
+            </motion.p>
             <motion.h1
               variants={fadeInUp}
-              className="mt-6 font-serif text-5xl font-light leading-tight tracking-tight md:text-7xl"
+              className="font-serif text-[clamp(40px,5vw,60px)] font-light text-foreground"
             >
-              Our <span className="italic text-accent">Timepieces</span>
+              Choose Your Expression
             </motion.h1>
           </motion.div>
         </div>
@@ -47,15 +69,15 @@ export default function CollectionsContent() {
       <section className="bg-background-alt py-20 md:py-28">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           {/* Filters */}
-          <div className="mb-16 flex flex-wrap gap-4">
+          <div className="mb-16 flex flex-wrap justify-center gap-4">
             {filters.map((f) => (
               <button
                 key={f.key}
                 onClick={() => setActive(f.key)}
-                className={`border px-6 py-2.5 text-xs font-semibold tracking-[0.15em] uppercase transition-all ${
+                className={`border px-6 py-2.5 text-[11px] font-medium tracking-[2px] uppercase transition-all cursor-pointer ${
                   active === f.key
                     ? "border-accent bg-accent text-background"
-                    : "border-border bg-transparent text-foreground-muted hover:border-accent hover:text-accent"
+                    : "border-accent/20 bg-transparent text-foreground-muted hover:border-accent hover:text-accent"
                 }`}
               >
                 {f.label}
@@ -71,7 +93,7 @@ export default function CollectionsContent() {
               animate="visible"
               exit="hidden"
               variants={staggerContainer}
-              className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+              className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3"
             >
               {filtered.map((collection) => (
                 <CollectionCard key={collection.slug} collection={collection} />
@@ -86,30 +108,55 @@ export default function CollectionsContent() {
 
 function CollectionCard({ collection }: { collection: Collection }) {
   return (
-    <motion.div variants={fadeInUp} className="group">
-      <Link href={`/collections/${collection.slug}`}>
-        <div className="relative aspect-[3/4] overflow-hidden bg-background">
-          <div className="absolute inset-0 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
-            <span className="font-serif text-7xl font-light text-border">
-              {collection.name[0]}
-            </span>
-          </div>
-          <div className="absolute inset-0 bg-foreground/0 transition-colors duration-300 group-hover:bg-foreground/5" />
-          {collection.tier === "limited" && (
-            <div className="absolute right-4 top-4 bg-accent-secondary px-3 py-1 text-[10px] font-semibold tracking-[0.15em] uppercase text-foreground">
-              Limited
-            </div>
-          )}
+    <motion.div variants={fadeInUp}>
+      <Link
+        href={`/collections/${collection.slug}`}
+        className="group relative block cursor-pointer overflow-hidden border border-accent/[0.06] bg-background transition-all duration-400 hover:-translate-y-[3px] hover:border-accent/20"
+      >
+        <BadgeLabel stock={collection.stock} />
+
+        <div className="flex aspect-[4/5] items-center justify-center bg-[linear-gradient(160deg,var(--background-alt),var(--surface))]">
+          <span className="font-serif text-[32px] font-light text-accent/[0.12]">
+            {collection.name}
+          </span>
         </div>
-        <div className="mt-5">
-          <div className="flex items-center justify-between">
-            <h3 className="font-serif text-2xl font-medium tracking-wide">{collection.name}</h3>
-            <span className="text-xs text-foreground-muted">{collection.year}</span>
-          </div>
-          <p className="mt-1 text-sm italic text-foreground-muted">{collection.tagline}</p>
-          <p className="mt-3 text-sm leading-relaxed text-foreground-muted line-clamp-2">
-            {collection.description}
+
+        <div className="p-6">
+          <h3 className="font-serif text-2xl font-normal text-foreground">
+            {collection.name}
+          </h3>
+          <p className="mt-1.5 mb-4 text-[13px] font-light italic leading-snug text-foreground-muted">
+            &ldquo;{collection.hook}&rdquo;
           </p>
+          <div className="flex items-end justify-between">
+            <div>
+              <span className="block text-[10px] font-light tracking-[1px] uppercase text-foreground-muted">
+                From
+              </span>
+              <span className="text-[17px] font-normal text-foreground">
+                €{collection.price.toLocaleString()}
+              </span>
+            </div>
+            {collection.stock > 0 ? (
+              <div>
+                <div className="mb-1 ml-auto h-[3px] w-[72px] overflow-hidden rounded-sm bg-accent/[0.12]">
+                  <div
+                    className="h-full rounded-sm bg-accent"
+                    style={{
+                      width: `${((collection.maxStock - collection.stock) / collection.maxStock) * 100}%`,
+                    }}
+                  />
+                </div>
+                <p className="text-right text-[10px] font-normal tracking-[1px] text-accent">
+                  {collection.stock} of {collection.maxStock}
+                </p>
+              </div>
+            ) : (
+              <span className="text-[10px] font-normal tracking-[1px] text-foreground-muted">
+                Sold out
+              </span>
+            )}
+          </div>
         </div>
       </Link>
     </motion.div>

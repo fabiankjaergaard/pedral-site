@@ -3,7 +3,7 @@ import Link from "next/link";
 interface ButtonProps {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "outline" | "ghost";
+  variant?: "primary" | "outline" | "ghost" | "text";
   external?: boolean;
   className?: string;
 }
@@ -16,15 +16,17 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300";
+    "inline-flex items-center justify-center gap-2.5 text-[11px] font-medium tracking-[3px] uppercase transition-all duration-300 cursor-pointer";
 
   const variants = {
     primary:
-      "bg-accent text-background px-8 py-4 hover:bg-accent-hover",
+      "bg-accent text-background px-9 py-4 hover:bg-accent-hover hover:-translate-y-px",
     outline:
-      "border border-foreground/30 text-foreground px-8 py-4 hover:border-accent hover:text-accent",
+      "border border-accent/30 text-foreground px-8 py-[15px] hover:border-accent hover:text-accent",
     ghost:
-      "text-foreground-muted px-0 py-2 hover:text-accent border-b border-transparent hover:border-accent",
+      "text-foreground-muted px-0 py-2 hover:text-foreground border-none bg-none",
+    text:
+      "text-foreground-muted px-0 py-0 hover:text-foreground border-none bg-none",
   };
 
   const classes = `${base} ${variants[variant]} ${className}`;

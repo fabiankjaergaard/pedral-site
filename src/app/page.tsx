@@ -1,20 +1,20 @@
 import Hero from "@/components/sections/Hero";
-import Marquee from "@/components/sections/Marquee";
-import Philosophy from "@/components/sections/Philosophy";
+import TrustBar from "@/components/sections/TrustBar";
+import StoryPreview from "@/components/sections/StoryPreview";
 import CollectionShowcase from "@/components/sections/CollectionShowcase";
-import Featured from "@/components/sections/Featured";
-import Numbers from "@/components/sections/Numbers";
+import WhyPedral from "@/components/sections/WhyPedral";
+import Testimonials from "@/components/sections/Testimonials";
 import Newsletter from "@/components/sections/Newsletter";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Marquee />
-      <Philosophy />
+      <TrustBar />
+      <StoryPreview />
       <CollectionShowcase />
-      <Featured />
-      <Numbers />
+      <WhyPedral />
+      <Testimonials />
       <Newsletter />
     </>
   );

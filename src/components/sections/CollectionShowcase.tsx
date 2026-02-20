@@ -1,78 +1,162 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 import Link from "next/link";
-import { collections } from "@/lib/collections";
-import SectionLabel from "@/components/ui/SectionLabel";
+import { collections, getAvailableCollections, getSoldOutCollections } from "@/lib/collections";
+
+function StockBar({ stock, maxStock }: { stock: number; maxStock: number }) {
+  const pct = ((maxStock - stock) / maxStock) * 100;
+  return (
+    <div>
+      <div className="mb-1 ml-auto h-[3px] w-[72px] overflow-hidden rounded-sm bg-accent/[0.12]">
+        <div
+          className="h-full rounded-sm bg-accent"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+      <p className="text-right text-[10px] font-normal tracking-[1px] text-accent">
+        {stock} of {maxStock}
+      </p>
+    </div>
+  );
+}
+
+function BadgeLabel({ stock }: { stock: number }) {
+  if (stock === 0) {
+    return (
+      <span className="absolute left-4 top-4 z-10 bg-[rgba(80,80,80,0.85)] px-3 py-1 text-[9px] font-medium tracking-[1.5px] uppercase text-white">
+        Sold Out
+      </span>
+    );
+  }
+  if (stock <= 3) {
+    return (
+      <span className="absolute left-4 top-4 z-10 bg-[rgba(180,60,40,0.85)] px-3 py-1 text-[9px] font-medium tracking-[1.5px] uppercase text-white">
+        Almost Gone
+      </span>
+    );
+  }
+  return (
+    <span className="absolute left-4 top-4 z-10 bg-[rgba(201,168,76,0.85)] px-3 py-1 text-[9px] font-medium tracking-[1.5px] uppercase text-background">
+      {stock} Remaining
+    </span>
+  );
+}
 
 export default function CollectionShowcase() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const available = getAvailableCollections();
+  const soldOut = getSoldOutCollections();
 
   return (
-    <section ref={ref} className="bg-background py-28 md:py-40">
+    <section className="bg-background-alt py-24 md:py-[120px]">
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-          <div>
-            <SectionLabel>Collections</SectionLabel>
-            <h2 className="mt-6 font-serif text-4xl font-light tracking-tight md:text-5xl lg:text-6xl">
-              Six Collections,
-              <br />
-              <span className="italic text-accent">One Vision</span>
-            </h2>
-          </div>
-          <Link
-            href="/collections"
-            className="text-sm font-medium tracking-[0.1em] uppercase text-foreground-muted transition-colors hover:text-accent"
-          >
-            View All &rarr;
-          </Link>
+        <div className="mb-16 text-center">
+          <p className="mb-3.5 text-[11px] font-normal tracking-[4px] uppercase text-accent">
+            The Collection
+          </p>
+          <h2 className="font-serif text-[clamp(32px,3.5vw,48px)] font-light text-foreground">
+            Choose Your Expression
+          </h2>
         </div>
-      </div>
 
-      {/* Horizontal scroll gallery */}
-      <div className="horizontal-scroll mt-16 pl-6 md:pl-12">
-        <div className="flex gap-6 pb-4 pr-6 md:pr-12">
-          {collections.map((collection, i) => (
-            <motion.div
-              key={collection.slug}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="group w-[300px] flex-shrink-0 md:w-[360px]"
-            >
-              <Link href={`/collections/${collection.slug}`}>
-                {/* Image */}
-                <div className="relative aspect-[3/4] overflow-hidden bg-background-alt">
-                  <div className="absolute inset-0 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
-                    <span className="font-serif text-6xl font-light text-border">
-                      {collection.name[0]}
-                    </span>
-                  </div>
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-foreground/0 transition-colors duration-300 group-hover:bg-foreground/5" />
-                  {/* Badge */}
-                  {collection.tier === "limited" && (
-                    <div className="absolute right-4 top-4 bg-accent-secondary px-3 py-1 text-[10px] font-semibold tracking-[0.15em] uppercase text-foreground">
-                      Limited
-                    </div>
-                  )}
+        {/* Available watches — 3 column grid */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {available.map((c) => (
+            <motion.div key={c.slug} variants={fadeInUp}>
+              <Link
+                href={`/collections/${c.slug}`}
+                className="group relative block cursor-pointer overflow-hidden border border-accent/[0.06] bg-background transition-all duration-400 hover:-translate-y-[3px] hover:border-accent/20"
+              >
+                <BadgeLabel stock={c.stock} />
+
+                {/* Image placeholder */}
+                <div className="flex aspect-[4/5] items-center justify-center bg-[linear-gradient(160deg,var(--background-alt),var(--surface))]">
+                  <span className="font-serif text-[32px] font-light text-accent/[0.12]">
+                    {c.name}
+                  </span>
                 </div>
-                {/* Info */}
-                <div className="mt-5">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-serif text-xl font-medium tracking-wide text-foreground">
-                      {collection.name}
-                    </h3>
-                    <span className="text-xs text-foreground-muted">{collection.year}</span>
+
+                {/* Card body */}
+                <div className="p-6">
+                  <h3 className="font-serif text-2xl font-normal text-foreground">
+                    {c.name}
+                  </h3>
+                  <p className="mt-1.5 mb-4 text-[13px] font-light italic leading-snug text-foreground-muted">
+                    &ldquo;{c.hook}&rdquo;
+                  </p>
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <span className="block text-[10px] font-light tracking-[1px] uppercase text-foreground-muted">
+                        From
+                      </span>
+                      <span className="text-[17px] font-normal text-foreground">
+                        €{c.price.toLocaleString()}
+                      </span>
+                    </div>
+                    <StockBar stock={c.stock} maxStock={c.maxStock} />
                   </div>
-                  <p className="mt-1 text-sm italic text-foreground-muted">{collection.tagline}</p>
                 </div>
               </Link>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Sold out watches — 2 column, centered */}
+        {soldOut.length > 0 && (
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+            className="mx-auto mt-7 grid max-w-[940px] gap-7 sm:grid-cols-2"
+          >
+            {soldOut.map((c) => (
+              <motion.div key={c.slug} variants={fadeInUp}>
+                <Link
+                  href={`/collections/${c.slug}`}
+                  className="group relative block cursor-pointer overflow-hidden border border-accent/[0.06] bg-background transition-all duration-400 hover:-translate-y-[3px] hover:border-accent/20"
+                >
+                  <BadgeLabel stock={c.stock} />
+
+                  <div className="flex aspect-[4/5] items-center justify-center bg-[linear-gradient(160deg,var(--background-alt),var(--surface))]">
+                    <span className="font-serif text-[32px] font-light text-accent/[0.12]">
+                      {c.name}
+                    </span>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="font-serif text-2xl font-normal text-foreground">
+                      {c.name}
+                    </h3>
+                    <p className="mt-1.5 mb-4 text-[13px] font-light italic leading-snug text-foreground-muted">
+                      &ldquo;{c.hook}&rdquo;
+                    </p>
+                    <div className="flex items-end justify-between">
+                      <div>
+                        <span className="block text-[10px] font-light tracking-[1px] uppercase text-foreground-muted">
+                          From
+                        </span>
+                        <span className="text-[17px] font-normal text-foreground">
+                          €{c.price.toLocaleString()}
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-normal tracking-[1px] text-foreground-muted">
+                        Sold out
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </section>
   );
