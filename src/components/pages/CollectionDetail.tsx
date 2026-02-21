@@ -13,7 +13,7 @@ function ScarcityBar({ stock, maxStock, edition }: { stock: number; maxStock: nu
       <div className="leading-snug">
         <p className="text-xs font-light text-foreground-muted">
           <strong className="font-medium text-foreground">
-            {stock === 0 ? `of ${maxStock} — Sold out` : `of ${maxStock} remaining`}
+            {stock === 0 ? `of ${maxStock} — Sold out` : `left of ${maxStock}`}
           </strong>
         </p>
         <p className="text-xs font-light text-foreground-muted">{edition} edition</p>
@@ -37,7 +37,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
     <>
       {/* Product Hero */}
       <section className="relative min-h-[70vh] overflow-hidden bg-background">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,rgba(0,56,56,0.5)_0%,transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_60%_40%,rgba(17,29,32,0.7)_0%,transparent_60%)]" />
 
         <div className="relative z-10 mx-auto max-w-[1400px] px-6 pb-20 pt-32 md:px-12 md:pt-28 md:pb-20">
           <div className="grid items-center gap-16 md:grid-cols-2 md:gap-20">
@@ -109,11 +109,11 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                 </div>
 
                 {isSoldOut ? (
-                  <button className="mt-5 block w-full border border-white/10 bg-white/5 py-[18px] text-center font-sans text-xs font-medium tracking-[4px] uppercase text-foreground-muted cursor-default">
+                  <button className="mt-5 block w-full rounded-[2px] border border-white/10 bg-white/5 py-[18px] text-center font-sans text-xs font-medium tracking-[4px] uppercase text-foreground-muted cursor-default">
                     Edition Sold Out — Join Waitlist
                   </button>
                 ) : (
-                  <button className="mt-5 block w-full bg-accent py-[18px] text-center font-sans text-xs font-medium tracking-[4px] uppercase text-background transition-colors hover:bg-accent-hover cursor-pointer">
+                  <button className="mt-5 block w-full rounded-[2px] bg-accent py-[18px] text-center font-sans text-xs font-medium tracking-[4px] uppercase text-background transition-colors hover:bg-accent-hover cursor-pointer">
                     Reserve Your {c.name}
                   </button>
                 )}

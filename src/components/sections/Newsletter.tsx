@@ -19,22 +19,13 @@ export default function Newsletter() {
           <p className="mt-3.5 text-sm font-light text-foreground-muted">
             Be first when the next edition drops. No spam. Just watches.
           </p>
-          <form
-            onSubmit={(e) => e.preventDefault()}
-            className="mx-auto mt-7 flex max-w-[420px]"
+
+          <a
+            href="mailto:info@pedral.eu?subject=Newsletter%20signup"
+            className="mt-7 inline-block rounded-[2px] bg-accent px-9 py-4 text-[11px] font-medium tracking-[3px] uppercase text-background transition-all hover:bg-accent-hover"
           >
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="flex-1 border border-accent/[0.15] border-r-0 bg-background-alt px-4 py-3.5 font-sans text-[13px] text-foreground outline-none placeholder:text-foreground-muted focus:border-accent"
-            />
-            <button
-              type="submit"
-              className="whitespace-nowrap border border-accent bg-accent px-6 py-3.5 font-sans text-[11px] font-medium tracking-[2px] uppercase text-background transition-colors hover:bg-accent-hover"
-            >
-              Join
-            </button>
-          </form>
+            Sign Up
+          </a>
         </motion.div>
       </div>
     </section>

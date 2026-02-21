@@ -32,7 +32,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[rgba(0,26,26,0.95)] backdrop-blur-md shadow-[0_1px_0_rgba(201,168,76,0.08)]"
+            ? "bg-[rgba(10,18,20,0.95)] backdrop-blur-md shadow-[0_1px_0_rgba(201,168,76,0.08)]"
             : "bg-transparent"
         }`}
       >
@@ -59,7 +59,7 @@ export default function Navbar() {
               href="https://shop.pedral.eu"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-accent/30 px-6 py-2.5 text-[11px] font-medium tracking-[3px] uppercase text-accent transition-all hover:border-accent hover:bg-accent hover:text-background"
+              className="rounded-[2px] border border-accent/30 px-6 py-2.5 text-[11px] font-medium tracking-[3px] uppercase text-accent transition-all hover:border-accent hover:bg-accent hover:text-background"
             >
               Shop
             </a>

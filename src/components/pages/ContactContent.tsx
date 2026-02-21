@@ -1,17 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
 
 export default function ContactContent() {
-  const [submitted, setSubmitted] = useState(false);
-
   return (
     <>
       {/* Hero */}
       <section className="relative bg-background pb-16 pt-32 md:pt-36">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(0,56,56,0.4)_0%,transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(17,29,32,0.6)_0%,transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-[1400px] px-6 text-center md:px-12">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.p
@@ -30,11 +27,11 @@ export default function ContactContent() {
         </div>
       </section>
 
-      {/* Form + Info */}
+      {/* Content */}
       <section className="overflow-hidden bg-background-alt py-20 md:py-28">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid gap-16 md:grid-cols-5 md:gap-24">
-            {/* Form */}
+            {/* CTA */}
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -42,79 +39,28 @@ export default function ContactContent() {
               variants={slideInLeft}
               className="md:col-span-3"
             >
-              {submitted ? (
-                <div className="flex min-h-[400px] items-center justify-center">
-                  <div className="text-center">
-                    <p className="font-serif text-3xl font-light text-foreground">
-                      Thank you
-                    </p>
-                    <p className="mt-3 text-sm font-light text-foreground-muted">
-                      We&apos;ll be in touch soon.
-                    </p>
-                  </div>
-                </div>
-              ) : (
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    setSubmitted(true);
-                  }}
-                  className="space-y-8"
-                >
-                  <div className="grid gap-8 sm:grid-cols-2">
-                    <div>
-                      <label className="mb-2 block text-[10px] font-medium tracking-[2.5px] uppercase text-foreground-muted">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        className="w-full border-b border-accent/[0.15] bg-transparent py-3 text-[15px] font-light text-foreground outline-none transition-colors focus:border-accent placeholder:text-foreground-muted/50"
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div>
-                      <label className="mb-2 block text-[10px] font-medium tracking-[2.5px] uppercase text-foreground-muted">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        className="w-full border-b border-accent/[0.15] bg-transparent py-3 text-[15px] font-light text-foreground outline-none transition-colors focus:border-accent placeholder:text-foreground-muted/50"
-                        placeholder="your@email.com"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="mb-2 block text-[10px] font-medium tracking-[2.5px] uppercase text-foreground-muted">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      className="w-full border-b border-accent/[0.15] bg-transparent py-3 text-[15px] font-light text-foreground outline-none transition-colors focus:border-accent placeholder:text-foreground-muted/50"
-                      placeholder="What's this about?"
-                    />
-                  </div>
-                  <div>
-                    <label className="mb-2 block text-[10px] font-medium tracking-[2.5px] uppercase text-foreground-muted">
-                      Message
-                    </label>
-                    <textarea
-                      required
-                      rows={5}
-                      className="w-full resize-none border-b border-accent/[0.15] bg-transparent py-3 text-[15px] font-light text-foreground outline-none transition-colors focus:border-accent placeholder:text-foreground-muted/50"
-                      placeholder="Tell us more..."
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="bg-accent px-9 py-4 text-[11px] font-medium tracking-[3px] uppercase text-background transition-all hover:bg-accent-hover cursor-pointer"
+              <div className="flex min-h-[300px] flex-col justify-center">
+                <p className="max-w-lg text-[15px] font-light leading-relaxed text-foreground-muted">
+                  Whether you have questions about our timepieces, want to discuss a collaboration,
+                  or simply want to learn more about Pedral — we&apos;d love to hear from you.
+                </p>
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <a
+                    href="https://www.pedral.eu/contact-us/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-[2px] bg-accent px-9 py-4 text-[11px] font-medium tracking-[3px] uppercase text-background transition-all hover:bg-accent-hover"
                   >
-                    Send Message
-                  </button>
-                </form>
-              )}
+                    Send a Message
+                  </a>
+                  <a
+                    href="mailto:info@pedral.eu"
+                    className="rounded-[2px] border border-accent/[0.15] bg-transparent px-9 py-4 text-[11px] font-medium tracking-[3px] uppercase text-accent transition-all hover:border-accent hover:bg-accent hover:text-background"
+                  >
+                    Email Directly
+                  </a>
+                </div>
+              </div>
             </motion.div>
 
             {/* Info sidebar */}

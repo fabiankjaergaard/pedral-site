@@ -46,7 +46,7 @@ export default function CollectionsContent() {
     <>
       {/* Hero */}
       <section className="relative bg-background pb-16 pt-32 md:pt-36">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(0,56,56,0.4)_0%,transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(17,29,32,0.6)_0%,transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-[1400px] px-6 text-center md:px-12">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.p
@@ -74,7 +74,7 @@ export default function CollectionsContent() {
               <button
                 key={f.key}
                 onClick={() => setActive(f.key)}
-                className={`border px-6 py-2.5 text-[11px] font-medium tracking-[2px] uppercase transition-all cursor-pointer ${
+                className={`rounded-[2px] border px-6 py-2.5 text-[11px] font-medium tracking-[2px] uppercase transition-all cursor-pointer ${
                   active === f.key
                     ? "border-accent bg-accent text-background"
                     : "border-accent/20 bg-transparent text-foreground-muted hover:border-accent hover:text-accent"
@@ -111,7 +111,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
     <motion.div variants={fadeInUp}>
       <Link
         href={`/collections/${collection.slug}`}
-        className="group relative block cursor-pointer overflow-hidden border border-accent/[0.06] bg-background transition-all duration-400 hover:-translate-y-[3px] hover:border-accent/20"
+        className="group relative block cursor-pointer overflow-hidden rounded-[2px] border border-accent/[0.06] bg-background transition-all duration-400 hover:-translate-y-[3px] hover:border-accent/20"
       >
         <BadgeLabel stock={collection.stock} />
 
@@ -148,7 +148,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
                   />
                 </div>
                 <p className="text-right text-[10px] font-normal tracking-[1px] text-accent">
-                  {collection.stock} of {collection.maxStock}
+                  {collection.stock} left of {collection.maxStock}
                 </p>
               </div>
             ) : (

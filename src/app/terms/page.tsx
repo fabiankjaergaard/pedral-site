@@ -12,8 +12,8 @@ export default function TermsPage() {
     <LegalPage eyebrow="Legal" title="Terms & Conditions of Sale" updated="Last updated: February 2026">
       <h2>1. About Us</h2>
       <p>
-        <strong>[Full Legal Name]</strong><br />
-        Organisation number: [XXXXXX-XXXX]<br />
+        <strong>Pedral AB</strong><br />
+        Organisation number: XXXXXX-XXXX<br />
         Stockholm, Sweden<br />
         Email: <a href="mailto:info@pedral.eu">info@pedral.eu</a>
       </p>

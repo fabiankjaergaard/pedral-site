@@ -5,10 +5,10 @@ import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-background">
+    <section className="relative flex h-dvh min-h-[600px] items-center overflow-hidden bg-background">
       {/* Background gradients */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(0,56,56,0.6)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(17,29,32,0.8)_0%,transparent_70%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_80%,rgba(201,168,76,0.04)_0%,transparent_50%)]" />
       </div>
 
@@ -70,7 +70,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.6 }}
             className="hidden items-center justify-center md:flex"
           >
-            <div className="flex aspect-[5/6] w-full max-w-[400px] flex-col items-center justify-center rounded-[4px] border border-accent/10 bg-[linear-gradient(145deg,rgba(201,168,76,0.05),rgba(0,56,56,0.25))]">
+            <div className="flex aspect-[5/6] w-full max-w-[400px] flex-col items-center justify-center rounded-[4px] border border-accent/10 bg-[linear-gradient(145deg,rgba(201,168,76,0.05),rgba(17,29,32,0.4))]">
               <span className="mb-2 font-serif text-[40px] text-accent/20">
                 ✦
               </span>
@@ -84,6 +84,23 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.8 }}
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] font-light tracking-[3px] uppercase text-foreground-muted">
+          Scroll
+        </span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="h-8 w-[1px] bg-gradient-to-b from-accent/60 to-transparent"
+        />
+      </motion.div>
     </section>
   );
 }

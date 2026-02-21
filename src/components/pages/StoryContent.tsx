@@ -43,7 +43,7 @@ export default function StoryContent() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-background pb-20 pt-40">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(0,56,56,0.4)_0%,transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(17,29,32,0.6)_0%,transparent_60%)]" />
         <div className="pointer-events-none absolute -right-20 top-1/2 -translate-y-1/2 font-serif text-[30vw] font-bold leading-none text-accent/[0.03] select-none">
           S
         </div>

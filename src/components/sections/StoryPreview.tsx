@@ -51,7 +51,7 @@ export default function StoryPreview() {
             viewport={{ once: true, margin: "-100px" }}
             variants={slideInRight}
           >
-            <div className="flex aspect-[3/4] w-full flex-col items-center justify-center gap-3 rounded-[4px] border border-accent/10 bg-[linear-gradient(145deg,rgba(201,168,76,0.05),rgba(0,56,56,0.25))]">
+            <div className="flex aspect-[3/4] w-full flex-col items-center justify-center gap-3 rounded-[4px] border border-accent/10 bg-[linear-gradient(145deg,rgba(201,168,76,0.05),rgba(17,29,32,0.4))]">
               <span className="font-serif text-[40px] text-accent/20">✦</span>
               <span className="text-[11px] tracking-[2px] uppercase text-foreground-muted">
                 Kevin Pedral

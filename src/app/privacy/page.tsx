@@ -12,7 +12,7 @@ export default function PrivacyPage() {
     <LegalPage eyebrow="Legal" title="Privacy Policy" updated="Last updated: February 2026">
       <h2>1. Who We Are</h2>
       <p>
-        Pedral Watches is the trading name of <strong>[Legal Entity Name]</strong>, a company
+        Pedral Watches is the trading name of <strong>Pedral AB</strong>, a company
         registered in Sweden. We are the data controller for personal data processed through
         our websites <strong>pedral.eu</strong> and <strong>shop.pedral.eu</strong>.
       </p>
