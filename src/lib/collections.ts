@@ -245,14 +245,3 @@ export function getCollection(slug: string): Collection | undefined {
   return collections.find((c) => c.slug === slug);
 }
 
-export function getCollectionsByTier(tier: Collection["tier"]): Collection[] {
-  return collections.filter((c) => c.tier === tier);
-}
-
-export function getAvailableCollections(): Collection[] {
-  return collections.filter((c) => c.stock > 0);
-}
-
-export function getSoldOutCollections(): Collection[] {
-  return collections.filter((c) => c.stock === 0);
-}
