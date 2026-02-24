@@ -45,9 +45,9 @@ const timeline = [
     text: "Later that year, Maestro — the refined tonneau dress watch with hexagonal bracelet links and diagonal time display — goes live on Kickstarter and sells out. A watch for those who already know.",
   },
   {
-    year: "2026",
+    year: "Dec 2025",
     title: "Triomphe Arrives",
-    text: "The ultra-thin Triomphe — 8.8mm, Swiss hand-wound, rotating guilloché dial editions. A single canvas expressed through an evolving series of dials. Each limited to 20 pieces. When a dial edition sells out, it doesn't return.",
+    text: "In December 2025, Kevin collaborates with the Micro Indy collective to launch Triomphe — the ultra-thin dress watch at 8.8mm, Swiss hand-wound, with rotating guilloché dial editions. A single canvas expressed through an evolving series of dials. Each limited to 20 pieces. When a dial edition sells out, it doesn't return.",
   },
   {
     year: "Now",
