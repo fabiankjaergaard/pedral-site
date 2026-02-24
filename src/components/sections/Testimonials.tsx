@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     quote:
-      "The finishing punches well above its price. I've handled pieces at three times the cost that don't match the Okapi's dial work. The way this studio approaches craft — refusing to scale, refusing to compromise — is something the industry needs more of.",
+      "The Triomphe finishing punches well above its price. I've handled pieces at three times the cost that don't match the guilloché work. The way this studio approaches craft — refusing to scale, refusing to compromise — is something the industry needs more of.",
     author: "Dr. Kenji N.",
     detail: "Surgeon & watch collector · Tokyo — 40+ piece collection",
   },
