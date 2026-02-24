@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import ClientLayout from "@/components/layout/ClientLayout";
 import CookieBanner from "@/components/layout/CookieBanner";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 
@@ -91,9 +90,7 @@ export default function RootLayout({
     <html lang="sv">
       <body className={`${cormorant.variable} ${outfit.variable} antialiased`}>
         <OrganizationJsonLd />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <ClientLayout>{children}</ClientLayout>
         <CookieBanner />
       </body>
     </html>
