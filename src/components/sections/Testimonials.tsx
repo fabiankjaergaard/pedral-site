@@ -14,7 +14,7 @@ const testimonials = [
     quote:
       "The Maestro is the watch I reach for when it matters. The diagonal display, the tonneau case — it's full of decisions that only make sense once you understand them. That's rare at any price.",
     author: "Adrien L.",
-    detail: "Investment analyst · Lyon — Owns Okapi Classique & Maestro",
+    detail: "Investment analyst · Lyon — Maestro owner",
   },
   {
     quote:
