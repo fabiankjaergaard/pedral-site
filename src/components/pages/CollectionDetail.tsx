@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
 import type { Collection } from "@/lib/collections";
@@ -20,6 +21,35 @@ function ImagePlaceholder({ label, className = "" }: { label: string; className?
 export default function CollectionDetail({ collection }: { collection: Collection }) {
   const c = collection;
   const isSoldOut = c.stock === 0;
+  const hasVariants = c.variants && c.variants.length > 0;
+  const [selectedVariant, setSelectedVariant] = useState(
+    hasVariants ? c.variants![0] : null
+  );
+  const [loading, setLoading] = useState(false);
+
+  async function handleReserve() {
+    if (c.isPreOrder) {
+      window.location.href = "/contact";
+      return;
+    }
+    if (!selectedVariant) return;
+    setLoading(true);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          priceId: selectedVariant.stripePriceId,
+          productName: c.name,
+          variantName: selectedVariant.name,
+        }),
+      });
+      const data = await res.json();
+      if (data.url) window.location.href = data.url;
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <>
@@ -75,14 +105,49 @@ export default function CollectionDetail({ collection }: { collection: Collectio
               Edition of {c.maxStock} &middot; {c.edition}
             </span>
           </motion.div>
+          {/* Variant selector */}
+          {hasVariants && !isSoldOut && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.95 }}
+              className="mt-5 flex flex-wrap gap-2"
+            >
+              {c.variants!.map((v) => (
+                <button
+                  key={v.name}
+                  onClick={() => setSelectedVariant(v)}
+                  className={`rounded-[2px] border px-4 py-2 text-[11px] tracking-[1.5px] uppercase transition-colors ${
+                    selectedVariant?.name === v.name
+                      ? "border-accent bg-accent text-background"
+                      : "border-accent/30 text-accent hover:border-accent"
+                  } ${v.stock === 0 ? "opacity-40 cursor-not-allowed" : ""}`}
+                  disabled={v.stock === 0}
+                >
+                  {v.name}{v.stock === 0 ? " — Sold Out" : ""}
+                </button>
+              ))}
+            </motion.div>
+          )}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
             className="mt-6"
           >
-            <button className="w-full rounded-[2px] bg-accent px-8 py-4 text-[12px] font-medium tracking-[2px] uppercase text-background transition-colors hover:bg-accent-hover sm:w-auto sm:px-12 sm:text-[11px] sm:tracking-[3px]">
-              {isSoldOut ? "Join Waitlist" : `Reserve Your ${c.name.split(" ")[0]} →`}
+            <button
+              onClick={handleReserve}
+              disabled={loading || (!c.isPreOrder && !selectedVariant)}
+              className="w-full rounded-[2px] bg-accent px-8 py-4 text-[12px] font-medium tracking-[2px] uppercase text-background transition-colors hover:bg-accent-hover disabled:opacity-60 sm:w-auto sm:px-12 sm:text-[11px] sm:tracking-[3px]"
+            >
+              {loading
+                ? "Redirecting…"
+                : c.isPreOrder
+                ? "Register Interest →"
+                : isSoldOut
+                ? "Join Waitlist"
+                : `Reserve — €${c.price.toLocaleString()} →`}
             </button>
           </motion.div>
         </div>
@@ -311,8 +376,18 @@ export default function CollectionDetail({ collection }: { collection: Collectio
           <p className="font-serif text-[48px] font-light text-foreground">
             &euro;{c.price.toLocaleString()}
           </p>
-          <button className="mt-6 w-full max-w-[300px] rounded-[2px] bg-accent px-8 py-4 text-[12px] font-medium tracking-[2px] uppercase text-background transition-colors hover:bg-accent-hover sm:w-auto sm:px-12 sm:text-[11px] sm:tracking-[3px]">
-            {isSoldOut ? "Join Waitlist" : `Reserve Your ${c.name.split(" ")[0]}`}
+          <button
+            onClick={handleReserve}
+            disabled={loading || (!c.isPreOrder && !selectedVariant)}
+            className="mt-6 w-full max-w-[300px] rounded-[2px] bg-accent px-8 py-4 text-[12px] font-medium tracking-[2px] uppercase text-background transition-colors hover:bg-accent-hover disabled:opacity-60 sm:w-auto sm:px-12 sm:text-[11px] sm:tracking-[3px]"
+          >
+            {loading
+              ? "Redirecting…"
+              : c.isPreOrder
+              ? "Register Interest →"
+              : isSoldOut
+              ? "Join Waitlist"
+              : `Reserve — €${c.price.toLocaleString()}`}
           </button>
           <p className="mt-3 text-[12px] font-light tracking-[0.5px] text-foreground-muted">
             Pre-order &middot; Full payment secures your allocation &middot; Ships in 4–6 weeks

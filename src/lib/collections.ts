@@ -1,3 +1,9 @@
+export interface CollectionVariant {
+  name: string;
+  stripePriceId: string;
+  stock: number;
+}
+
 export interface Collection {
   slug: string;
   name: string;
@@ -32,6 +38,8 @@ export interface Collection {
   newsletterTitle: string;
   newsletterSub: string;
   image: string;
+  variants?: CollectionVariant[];
+  isPreOrder?: boolean;
   comingSoonEditions?: { name: string; description: string }[];
 }
 
@@ -97,6 +105,10 @@ export const collections: Collection[] = [
         bio: "Photographer · Amsterdam — Second Pedral purchase",
       },
     ],
+    variants: [
+      { name: "Lapis No.1", stripePriceId: "price_MAESTRO_LAPIS", stock: 3 },
+      { name: "Frosted Flex", stripePriceId: "price_MAESTRO_FROSTED", stock: 4 },
+    ],
     newsletterTitle: "Don't miss the next Maestro drop.",
     newsletterSub: "Priority access for collectors. No spam.",
     image: "/images/maestro.jpg",
@@ -161,6 +173,10 @@ export const collections: Collection[] = [
         bio: "Tech founder · Stockholm — Triomphe Noir Profond (Sold Out Edition)",
       },
     ],
+    variants: [
+      { name: "Tempest Stone", stripePriceId: "price_TRIOMPHE_TEMPEST", stock: 1 },
+      { name: "Émeraude Vert", stripePriceId: "price_TRIOMPHE_EMERAUDE", stock: 1 },
+    ],
     newsletterTitle: "Get notified when the next Triomphe dial drops.",
     newsletterSub: "Allocations fill fast. Priority goes to the list.",
     image: "/images/triomphe.jpg",
@@ -191,9 +207,10 @@ export const collections: Collection[] = [
     price: 2000,
     stock: 0,
     maxStock: 20,
-    edition: "Kivu",
+    edition: "Coming Soon",
     badge: "The Original",
-    urgencyTag: "Kivu edition — limited stock",
+    urgencyTag: "Pre-order — register your interest",
+    isPreOrder: true,
     specsTitle: "Built to outlast everything.",
     specs: {
       Movement: "Swiss-made ETA 7001 — hand-wound, precise, enduring",
