@@ -144,6 +144,11 @@ export const collections: Collection[] = [
     newsletterSub: "Priority access for collectors. No spam.",
     image: "/images/maestro.jpg",
     heroImage: "/images/maestro-hero.jpg",
+    galleryImages: [
+      "/images/maestro-angle-1.jpg",
+      "/images/maestro-angle-2.jpg",
+      "/images/maestro-angle-3.jpg",
+    ],
   },
   {
     slug: "triomphe",
