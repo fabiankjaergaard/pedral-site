@@ -116,7 +116,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
       >
         <BadgeLabel stock={collection.stock} />
 
-        <div className="relative aspect-[4/5] overflow-hidden bg-[linear-gradient(160deg,var(--background-alt),var(--surface))]">
+        <div className="relative aspect-[4/5] overflow-hidden bg-[var(--surface)]">
           {collection.image ? (
             <Image
               src={collection.image}

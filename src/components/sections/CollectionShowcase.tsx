@@ -59,7 +59,7 @@ export default function CollectionShowcase() {
                 className="group relative block cursor-pointer overflow-hidden rounded-[2px] border border-accent/[0.06] bg-background transition-all duration-400 hover:-translate-y-[3px] hover:border-accent/20"
               >
                 {/* Product image */}
-                <div className="relative aspect-[4/5] overflow-hidden bg-[linear-gradient(160deg,var(--background-alt),var(--surface))]">
+                <div className="relative aspect-[4/5] overflow-hidden bg-[var(--surface)]">
                   {c.image ? (
                     <Image
                       src={c.image}

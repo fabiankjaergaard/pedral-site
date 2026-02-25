@@ -179,7 +179,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                     } ${soldOut ? "cursor-not-allowed opacity-50" : ""}`}
                   >
                     {/* Image area */}
-                    <div className="relative h-[220px] w-full overflow-hidden sm:h-[260px]">
+                    <div className="relative h-[220px] w-full overflow-hidden bg-[var(--surface)] sm:h-[260px]">
                       {v.image ? (
                         <Image
                           src={v.image}
