@@ -6,27 +6,33 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const testimonials = [
   {
     quote:
-      "Nobody recognises it. And that's precisely the point. It starts a conversation no luxury logo ever could. People ask because they're genuinely curious — not because they've seen an advert.",
+      "It isn't widely recognised. I prefer that. The conversations it starts are based on curiosity, not branding.",
     author: "Marcus E.",
     detail: "Architect · Berlin — Collector since 2022",
   },
   {
     quote:
-      "The Maestro is the watch I reach for when it matters. The diagonal display, the tonneau case — it's full of decisions that only make sense once you understand them. That's rare at any price.",
+      "The Maestro reflects a clear design position. The diagonal display and tonneau architecture are resolved decisions. With time, the logic becomes evident.",
     author: "Adrien L.",
-    detail: "Investment analyst · Lyon — Maestro owner",
+    detail: "Investment Analyst · Lyon — Maestro Owner",
   },
   {
     quote:
-      "The Triomphe finishing punches well above its price. I've handled pieces at three times the cost that don't match the guilloché work. The way this studio approaches craft — refusing to scale, refusing to compromise — is something the industry needs more of.",
+      "The Triomphe demonstrates disciplined execution. The guilloché has depth and consistency. The restraint in production is apparent.",
     author: "Dr. Kenji N.",
-    detail: "Surgeon & watch collector · Tokyo — 40+ piece collection",
+    detail: "Surgeon & Watch Collector · Tokyo — 40+ Piece Collection",
   },
   {
     quote:
-      "I've worn Omegas, Tudors, vintage Longines. The Triomphe at 8.8mm sits differently on the wrist — it disappears until someone catches the guilloché in the light. Then the questions start.",
+      "I already own blue-dial pieces from established houses. The green felt more deliberate. The texture gives it structure rather than novelty.",
+    author: "Anthony A.",
+    detail: "Artist · France",
+  },
+  {
+    quote:
+      "At 8.8mm, the Triomphe sits close to the wrist and maintains its balance on a slimmer hand. The proportions are disciplined. It feels neither overtly masculine nor feminine.",
     author: "Elena V.",
-    detail: "Creative director · Milan — Collector since 2023",
+    detail: "Creative Director · Milan — Collector since 2023",
   },
 ];
 
@@ -48,25 +54,43 @@ export default function Testimonials() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid gap-8 md:grid-cols-2"
+          className="flex flex-col gap-8"
         >
-          {testimonials.map((t) => (
+          <div className="grid gap-8 md:grid-cols-2">
+            {testimonials.slice(0, 4).map((t) => (
+              <motion.div
+                key={t.author}
+                variants={fadeInUp}
+                className="relative border-l-2 border-accent/20 py-2 pl-5 sm:pl-8"
+              >
+                <p className="mb-4 font-serif text-[17px] font-light italic leading-[1.6] text-foreground">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p className="text-[12px] font-normal tracking-[1.5px] text-accent">
+                  {t.author}
+                </p>
+                <p className="mt-0.5 text-[11px] font-light text-foreground-muted">
+                  {t.detail}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+          <div className="flex justify-center">
             <motion.div
-              key={t.author}
               variants={fadeInUp}
-              className="relative border-l-2 border-accent/20 py-2 pl-5 sm:pl-8"
+              className="relative w-full border-l-2 border-accent/20 py-2 pl-5 sm:pl-8 md:max-w-[calc(50%-16px)]"
             >
               <p className="mb-4 font-serif text-[17px] font-light italic leading-[1.6] text-foreground">
-                &ldquo;{t.quote}&rdquo;
+                &ldquo;{testimonials[4].quote}&rdquo;
               </p>
               <p className="text-[12px] font-normal tracking-[1.5px] text-accent">
-                {t.author}
+                {testimonials[4].author}
               </p>
               <p className="mt-0.5 text-[11px] font-light text-foreground-muted">
-                {t.detail}
+                {testimonials[4].detail}
               </p>
             </motion.div>
-          ))}
+          </div>
         </motion.div>
       </div>
     </section>

@@ -97,9 +97,9 @@ export const collections: Collection[] = [
     testimonials: [
       {
         quote:
-          "The diagonal display — most people don't even notice it. But the moment you explain why it's there, you see the respect change in their eyes.",
-        name: "Thomas L.",
-        bio: "Automotive engineer · Copenhagen — Bought as a 40th birthday piece",
+          "The Maestro reflects a clear design position. The diagonal display and tonneau architecture are resolved decisions. With time, the logic becomes evident.",
+        name: "Adrien L.",
+        bio: "Investment Analyst · Lyon — Maestro Owner",
       },
       {
         quote:
@@ -178,9 +178,9 @@ export const collections: Collection[] = [
     testimonials: [
       {
         quote:
-          "At 8.8mm it simply disappears under a cuff. Then someone catches the guilloché in the light and the questions start. That's the magic of this piece.",
+          "At 8.8mm, the Triomphe sits close to the wrist and maintains its balance on a slimmer hand. The proportions are disciplined. It feels neither overtly masculine nor feminine.",
         name: "Elena V.",
-        bio: "Creative director · Milan — Collector since 2023",
+        bio: "Creative Director · Milan — Collector since 2023",
       },
       {
         quote:
