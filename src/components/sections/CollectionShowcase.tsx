@@ -21,9 +21,9 @@ function ScarcityBar({ stock, maxStock }: { stock: number; maxStock: number }) {
 
 function UrgencyTag({ text }: { text: string }) {
   return (
-    <div className="mt-2.5 flex items-center gap-2 text-[11px] tracking-[1px] uppercase text-[#d4956a]">
-      <span className="h-[5px] w-[5px] animate-pulse rounded-full bg-[#d4956a]" />
-      {text}
+    <div className="mt-3 flex items-center gap-2 text-[10px] font-light tracking-[1.5px] uppercase text-accent/60">
+      <span className="h-[4px] w-[4px] shrink-0 animate-pulse rounded-full bg-accent/60" />
+      <span className="leading-tight">{text}</span>
     </div>
   );
 }
@@ -79,21 +79,25 @@ export default function CollectionShowcase() {
                 </div>
 
                 {/* Card body */}
-                <div className="p-6">
-                  <div className="text-[11px] tracking-[1.5px] uppercase text-accent">
-                    {c.badge}
+                <div className="p-5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] tracking-[2px] uppercase text-accent/70">
+                      {c.badge}
+                    </span>
+                    <span className="font-serif text-[18px] text-accent">
+                      &euro;{c.price.toLocaleString()}
+                    </span>
                   </div>
-                  <h3 className="mt-1.5 font-serif text-[22px] font-light text-foreground">
+                  <h3 className="mt-2 font-serif text-[22px] font-normal text-foreground">
                     {c.name}
                   </h3>
-                  <p className="mt-1 text-[14px] font-serif font-light italic text-foreground-muted">
+                  <p className="mt-1.5 line-clamp-2 text-[13px] font-serif font-light italic leading-[1.6] text-foreground-muted">
                     &ldquo;{c.hook}&rdquo;
                   </p>
-                  <p className="mt-3 font-serif text-[19px] text-accent">
-                    &euro;{c.price.toLocaleString()}
-                  </p>
-                  <ScarcityBar stock={c.stock} maxStock={c.maxStock} />
-                  <UrgencyTag text={c.urgencyTag} />
+                  <div className="mt-4 border-t border-accent/[0.08] pt-3">
+                    <ScarcityBar stock={c.stock} maxStock={c.maxStock} />
+                    <UrgencyTag text={c.urgencyTag} />
+                  </div>
                 </div>
               </Link>
             </motion.div>

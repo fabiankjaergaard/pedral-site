@@ -270,7 +270,7 @@ export const collections: Collection[] = [
     maxStock: 20,
     edition: "Coming Soon",
     badge: "The Original",
-    urgencyTag: "Pre-order — register your interest",
+    urgencyTag: "Pre-order · Register Interest",
     isPreOrder: true,
     specsTitle: "Built to outlast everything.",
     specs: {
