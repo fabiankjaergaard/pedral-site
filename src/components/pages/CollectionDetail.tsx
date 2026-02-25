@@ -529,7 +529,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                 variants={fadeInUp}
                 className="mb-6 text-[11px] font-normal tracking-[2px] sm:tracking-[4px] uppercase text-accent"
               >
-                From {c.name} Owners
+                {c.testimonialsLabel ?? `From ${c.name} Owners`}
               </motion.p>
               {c.testimonials.map((t, i) => (
                 <motion.div key={t.name} variants={fadeInUp}>

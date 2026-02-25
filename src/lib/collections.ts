@@ -37,6 +37,7 @@ export interface Collection {
     name: string;
     bio: string;
   }[];
+  testimonialsLabel?: string;
   newsletterTitle: string;
   newsletterSub: string;
   image: string;
@@ -315,6 +316,7 @@ export const collections: Collection[] = [
         bio: "Surgeon & watch collector · Tokyo — Original Okapi owner",
       },
     ],
+    testimonialsLabel: "Those Who Wore the Original",
     newsletterTitle: "Join 1,200+ collectors who see new editions first.",
     newsletterSub: "Priority access. No spam. Just watches.",
     image: "/images/okapi.jpg",
