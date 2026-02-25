@@ -304,15 +304,15 @@ export const collections: Collection[] = [
     testimonials: [
       {
         quote:
-          "Nobody recognises it. And that's precisely the point. Every time someone asks 'what watch is that?' — that's the conversation I wanted.",
+          "I bought the original Okapi in 2018. It still gets more attention than anything else I own. Whatever this new version brings, I'm already on the list.",
         name: "Marcus E.",
-        bio: "Architect · Berlin — Collector since 2022",
+        bio: "Architect · Berlin — Original Okapi owner since 2018",
       },
       {
         quote:
-          "I've handled watches at triple the price that don't match the Okapi's dial work. The frosted blue finish and guilloché small seconds — it's quietly extraordinary.",
+          "The first Okapi was quietly extraordinary — the frosted blue dial, the guilloché small seconds. I've been waiting for this since it sold out. If the new one builds on that, it won't last long.",
         name: "Dr. Kenji N.",
-        bio: "Surgeon & watch collector · Tokyo — 40+ piece collection",
+        bio: "Surgeon & watch collector · Tokyo — Original Okapi owner",
       },
     ],
     newsletterTitle: "Join 1,200+ collectors who see new editions first.",
