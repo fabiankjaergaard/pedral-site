@@ -86,7 +86,7 @@ export const collections: Collection[] = [
       "Personal note from Kevin",
     ],
     valueAnchor:
-      "Dress watches with Swiss Sellita movements, sapphire crystal, and integrated bracelet from established houses typically start at €2,800+. Without corporate overhead, I deliver the same quality — directly to you.",
+      "Dress watches with Swiss Sellita movements, sapphire crystal, and integrated bracelet from established houses typically start at €2,800+. Without the corporate overhead, that value goes to the watch — not the margin.",
     valueComparePrice: "€2,800+",
     detailStrip: {
       eyebrow: "The Diagonal Display",
@@ -166,7 +166,7 @@ export const collections: Collection[] = [
       "Personal note from Kevin",
     ],
     valueAnchor:
-      "Hand-wound dress watches under 9mm with multi-layer guilloché dials from established houses start at €3,500+. Without the retail markup, I deliver the same craft — directly to you.",
+      "Hand-wound dress watches under 9mm with multi-layer guilloché dials from established houses start at €3,500+. Without the retail markup, that difference stays in the watch.",
     valueComparePrice: "€3,500+",
     detailStrip: {
       eyebrow: "The Dial",

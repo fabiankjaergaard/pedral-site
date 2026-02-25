@@ -42,7 +42,7 @@ export const articles: Article[] = [
       "First: no middlemen. I design each watch, select components directly from suppliers, and work with a single trusted assembly partner. There's no sales team, no regional distributors, no retail partners taking their cut.",
       "Second: no retail markup. A watch that reaches you through a boutique has typically been marked up 2–3x from wholesale. I sell direct. The price you pay is the price of making the watch, plus a margin that keeps a one-person studio running.",
       "Third: no marketing department. The watches speak for themselves. Word of mouth, a small Instagram following, and the occasional feature in a watch publication. No Super Bowl ads. No Formula 1 sponsorships.",
-      "The result: a Swiss-movement watch, designed in Stockholm, limited to twenty pieces, for a price that respects both the craft and the collector. It's not magic. It's math.",
+      "The result: a Swiss-movement watch, designed in Stockholm, limited to twenty pieces, at a price that respects both the craft and the collector. Not magic. Just a different model.",
     ],
   },
   {

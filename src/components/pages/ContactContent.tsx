@@ -41,8 +41,8 @@ export default function ContactContent() {
             >
               <div className="flex min-h-[300px] flex-col justify-center">
                 <p className="max-w-lg text-[15px] font-light leading-relaxed text-foreground-muted">
-                  Whether you have questions about our timepieces, want to discuss a collaboration,
-                  or simply want to learn more about Pedral — we&apos;d love to hear from you.
+                  Questions about a watch, a collaboration, or just want to know more about how
+                  Pedral works — feel free to reach out.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                   <a
