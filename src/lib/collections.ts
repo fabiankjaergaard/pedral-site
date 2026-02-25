@@ -40,6 +40,7 @@ export interface Collection {
   newsletterTitle: string;
   newsletterSub: string;
   image: string;
+  heroImage?: string;
   variants?: CollectionVariant[];
   isPreOrder?: boolean;
   comingSoonEditions?: { name: string; description: string; image?: string }[];
@@ -126,6 +127,7 @@ export const collections: Collection[] = [
     newsletterTitle: "Don't miss the next Maestro drop.",
     newsletterSub: "Priority access for collectors. No spam.",
     image: "/images/maestro.jpg",
+    heroImage: "/images/maestro-hero.jpg",
   },
   {
     slug: "triomphe",
@@ -207,6 +209,7 @@ export const collections: Collection[] = [
     newsletterTitle: "Get notified when the next Triomphe dial drops.",
     newsletterSub: "Allocations fill fast. Priority goes to the list.",
     image: "/images/triomphe-emeraude.jpg",
+    heroImage: "/images/triomphe-hero.jpg",
     comingSoonEditions: [
       {
         name: "Saphir Azur",
@@ -287,6 +290,7 @@ export const collections: Collection[] = [
     newsletterTitle: "Join 1,200+ collectors who see new editions first.",
     newsletterSub: "Priority access. No spam. Just watches.",
     image: "/images/okapi.jpg",
+    heroImage: "/images/okapi-hero.jpg",
   },
 ];
 

@@ -43,9 +43,9 @@ export default function CollectionDetail({ collection }: { collection: Collectio
       {/* Product Hero — Full-bleed with overlay */}
       <section className="relative flex min-h-screen items-center overflow-hidden">
         <div className="absolute inset-0">
-          {c.image ? (
+          {(c.heroImage || c.image) ? (
             <Image
-              src={c.image}
+              src={c.heroImage ?? c.image}
               alt={c.name}
               fill
               className="object-cover"
