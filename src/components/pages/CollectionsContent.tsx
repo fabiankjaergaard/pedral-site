@@ -15,7 +15,14 @@ const filters: { key: Filter; label: string }[] = [
   { key: "limited", label: "Limited Edition" },
 ];
 
-function BadgeLabel({ stock }: { stock: number }) {
+function BadgeLabel({ stock, isPreOrder }: { stock: number; isPreOrder?: boolean }) {
+  if (stock === 0 && isPreOrder) {
+    return (
+      <span className="absolute left-4 top-4 z-10 bg-[rgba(201,168,76,0.85)] px-3 py-1 text-[11px] font-medium tracking-[1px] uppercase text-background">
+        Pre-order Opens Soon
+      </span>
+    );
+  }
   if (stock === 0) {
     return (
       <span className="absolute left-4 top-4 z-10 bg-[rgba(80,80,80,0.85)] px-3 py-1 text-[11px] font-medium tracking-[1px] uppercase text-white">
@@ -114,7 +121,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
         href={`/collections/${collection.slug}`}
         className="group relative block cursor-pointer overflow-hidden rounded-[2px] border border-accent/[0.06] bg-background transition-all duration-400 hover:-translate-y-[3px] hover:border-accent/20"
       >
-        <BadgeLabel stock={collection.stock} />
+        <BadgeLabel stock={collection.stock} isPreOrder={collection.isPreOrder} />
 
         <div className="relative aspect-[4/5] overflow-hidden bg-[var(--surface)]">
           {collection.image ? (
