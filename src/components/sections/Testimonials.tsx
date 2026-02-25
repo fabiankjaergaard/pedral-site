@@ -6,7 +6,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const testimonials = [
   {
     quote:
-      "It isn't widely recognised. I prefer that. The conversations it starts are based on curiosity, not branding.",
+      "It starts conversations because people are curious — not because of branding. It's not widely known. I prefer it that way.",
     author: "Marcus E.",
     detail: "Architect · Berlin — Collector since 2022",
   },
