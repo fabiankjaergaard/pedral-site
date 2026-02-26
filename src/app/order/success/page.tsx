@@ -7,18 +7,26 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function OrderSuccessPage() {
+export default function OrderSuccessPage({
+  searchParams,
+}: {
+  searchParams: { type?: string };
+}) {
+  const isPreOrder = searchParams.type === "preorder";
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-background px-6 text-center">
       <p className="mb-4 text-[11px] font-normal tracking-[4px] uppercase text-accent">
-        Order Confirmed
+        {isPreOrder ? "Reservation Confirmed" : "Order Confirmed"}
       </p>
       <h1 className="font-serif text-[clamp(32px,5vw,52px)] font-light text-foreground">
-        Your piece is reserved.
+        {isPreOrder ? "Your place is secured." : "Your piece is reserved."}
       </h1>
       <div className="mx-auto mt-6 h-px w-[60px] bg-accent" />
       <p className="mt-6 max-w-[520px] text-[15px] font-light leading-[1.85] text-foreground-muted">
-        A confirmation has been sent to your email. Kevin will personally confirm your allocation within 24 hours. Every Pedral is built to order — thank you for your patience.
+        {isPreOrder
+          ? "Your deposit has been received. You're in the production queue for the Okapi Classique. Kevin will be in touch personally before the remaining balance is due — ahead of your piece being built."
+          : "A confirmation has been sent to your email. Kevin will personally confirm your allocation within 24 hours. Every Pedral is built to order — thank you for your patience."}
       </p>
       <Link
         href="/collections"

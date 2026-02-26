@@ -46,6 +46,7 @@ export interface Collection {
   galleryImages?: string[];
   variants?: CollectionVariant[];
   isPreOrder?: boolean;
+  depositAmount?: number;
   comingSoonEditions?: { name: string; description: string; image?: string }[];
 }
 
@@ -272,6 +273,7 @@ export const collections: Collection[] = [
     badge: "The Original",
     urgencyTag: "Pre-order · Register Interest",
     isPreOrder: true,
+    depositAmount: 500,
     specsTitle: "Built to outlast everything.",
     specs: {
       Movement: "Swiss-made ETA 7001 — hand-wound, precise, enduring",

@@ -28,9 +28,21 @@ export default function CollectionDetail({ collection }: { collection: Collectio
   );
   const [loading, setLoading] = useState(false);
 
-  function handleReserve() {
+  async function handleReserve() {
     if (c.isPreOrder) {
-      window.location.href = "/contact";
+      setLoading(true);
+      const res = await fetch("/api/preorder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          collectionSlug: c.slug,
+          collectionName: c.name,
+          depositAmount: c.depositAmount ?? 500,
+        }),
+      });
+      const data = await res.json();
+      if (data.url) window.location.href = data.url;
+      else setLoading(false);
       return;
     }
     if (!selectedVariant) return;
@@ -128,11 +140,16 @@ export default function CollectionDetail({ collection }: { collection: Collectio
               {loading
                 ? "Redirecting…"
                 : c.isPreOrder
-                ? "Register Interest →"
+                ? `Reserve — €${c.depositAmount ?? 500} deposit →`
                 : isSoldOut
                 ? "Join Waitlist"
                 : `Reserve — €${c.price.toLocaleString()} →`}
             </button>
+            {c.isPreOrder && (
+              <p className="mt-3 text-[11px] font-light leading-[1.7] text-foreground-muted/60">
+                €{c.depositAmount ?? 500} non-refundable deposit &middot; Secures your place in the production queue &middot; Balance invoiced before shipping
+              </p>
+            )}
           </motion.div>
         </div>
       </section>
@@ -488,14 +505,19 @@ export default function CollectionDetail({ collection }: { collection: Collectio
             {loading
               ? "Redirecting…"
               : c.isPreOrder
-              ? "Register Interest →"
+              ? `Reserve — €${c.depositAmount ?? 500} deposit →`
               : isSoldOut
               ? "Join Waitlist"
               : `Reserve — €${c.price.toLocaleString()}`}
           </button>
+          {c.isPreOrder ? (
+            <p className="mt-3 text-[11px] font-light leading-[1.7] text-foreground-muted/60">
+              €{c.depositAmount ?? 500} non-refundable deposit &middot; Balance invoiced before shipping</p>
+          ) : (
           <p className="mt-3 text-[12px] font-light tracking-[0.5px] text-foreground-muted">
             Pre-order &middot; Full payment secures your allocation &middot; Ships in 4–6 weeks
           </p>
+          )}
           <div className="mx-auto mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:justify-center sm:gap-8">
             {[
               "Cancel anytime before dispatch",
