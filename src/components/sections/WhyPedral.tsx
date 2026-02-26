@@ -6,18 +6,18 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const reasons = [
   {
     num: "01",
-    title: "One Designer, One Vision",
-    desc: "Every watch is designed in Stockholm. Not by a committee. Not a marketing department. One designer, one vision — and when you contact Pedral, you're talking directly to the person who made your watch.",
+    title: "One Designer",
+    desc: "Designed in Stockholm. One person, one vision. When you contact Pedral, you reach the designer directly — not a customer service team.",
   },
   {
     num: "02",
     title: "Swiss Specs, Independent Price",
-    desc: "Swiss movements. HV1200 scratch-resistant coating. Sapphire crystal with Super-AR. The spec sheet reads like a €3,000+ watch — because it would be, at any established brand. Without the corporate overhead, the value stays with you.",
+    desc: "Swiss movement. Sapphire crystal. HV1200 coating. At any established house, this specification starts at €3,000+. Without the overhead, the difference stays in the watch.",
   },
   {
     num: "03",
-    title: "Radically Limited",
-    desc: "Maximum 20 pieces per colourway. No restocks. No waitlist extensions. This isn't artificial scarcity — it's the natural output of one designer who refuses to scale what shouldn't be scaled.",
+    title: "20 Pieces. No Restocks.",
+    desc: "20 pieces per colourway. One designer working at the pace the work demands. When an edition closes, it closes.",
   },
 ];
 

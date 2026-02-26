@@ -57,11 +57,11 @@ export const collections: Collection[] = [
     tagline: "Limited Allocation",
     hook: "The person who notices this watch already understands it.",
     description:
-      "Maestro rewards the eye that lingers. At 37mm, the monobloc tonneau case and fluted bezel frame a textured sunburst dial where lumed Roman numerals intersect a diagonal time display — a detail most will miss. You won't.",
+      "At 37mm, the monobloc tonneau case and fluted bezel frame a textured sunburst dial where lumed Roman numerals meet a diagonal time display. A detail most will pass over.",
     descriptionExtra:
-      "Hexagonal bracelet links trace a slender curve along your wrist. This is not a watch that announces itself. It's a watch that waits to be discovered.",
+      "Hexagonal bracelet links follow the wrist's natural curve. The watch does not announce itself.",
     designerNote:
-      "Maestro is the watch I designed for the moments between moments. The meeting that's actually a conversation. The dinner that becomes a memory. It's a dress watch, but not a formal one — it's for people who dress deliberately.",
+      "Maestro is a dress watch for people who don't need to be told it's a dress watch. The tonneau case, the diagonal display, the hexagonal bracelet — each decision has a reason. None of them are decorative.",
     year: 2025,
     tier: "signature",
     price: 1300,
@@ -91,12 +91,12 @@ export const collections: Collection[] = [
       "Personal note from Kevin",
     ],
     valueAnchor:
-      "Dress watches with Swiss Sellita movements, sapphire crystal, and integrated bracelet from established houses typically start at €2,800+. Without the corporate overhead, that value goes to the watch — not the margin.",
+      "Dress watches with Swiss Sellita movements, sapphire crystal, and integrated bracelet from established houses start at €2,800+. Without the retail margin, the difference stays in the watch.",
     valueComparePrice: "€2,800+",
     detailStrip: {
       eyebrow: "The Diagonal Display",
-      title: "Not decoration — intention.",
-      text: "The diagonal time display isn't decoration — it's a driving watch principle. Read the time without turning your wrist from the wheel. It separates someone who looked at this watch from someone who understood it.",
+      title: "A principle, not a detail.",
+      text: "The diagonal time display is a driving watch principle. Read the time without turning your wrist. It is one of those decisions that, once understood, makes everything else seem obvious.",
     },
     testimonials: [
       {
@@ -142,8 +142,8 @@ export const collections: Collection[] = [
         image: "/images/maestro-laguna-view.jpg",
       },
     ],
-    newsletterTitle: "Don't miss the next Maestro drop.",
-    newsletterSub: "Priority access for collectors. No spam.",
+    newsletterTitle: "Priority access for the next Maestro edition.",
+    newsletterSub: "Collectors on the list hear first.",
     image: "/images/maestro.jpg",
     heroImage: "/images/maestro-hero2.jpg",
     detailImage: "/images/maestro-detail.jpg",
@@ -157,13 +157,13 @@ export const collections: Collection[] = [
     slug: "triomphe",
     name: "Triomphe",
     tagline: "Current Drop",
-    hook: "8.8mm thin. Vanishes beneath your cuff. Commands the room when it appears.",
+    hook: "8.8mm. Disappears under the cuff. Present when the light finds it.",
     description:
-      "The Triomphe is a single canvas expressed through an evolving series of dial editions. Impossibly slim at 38mm wide and just 8.8mm thin, it vanishes beneath your cuff yet commands attention the moment light finds its dial. Each release is limited, allocation-based, and built for the collector who understands that the most meaningful pieces are the ones you had to be there for.",
+      "The Triomphe is a single architecture, expressed through an evolving series of dial editions. 38mm wide, 8.8mm thin. Each release is limited, allocation-based, and built for the collector who already owns the obvious choices.",
     descriptionExtra:
-      "Two expressions. The guilloché dial: a woven Carreau Tissé centre, precision-stamped from a CNC-machined mold, surrounded by satinée circulaire and sauté piqué textures that shift under every light. Les Anneaux Triomphaux — three recessed rings channelling the Arc de Triomphe — frame a flowing Vagues de Lumière moiré border. The stone dial: each one unrepeatable, nature's own fingerprint on your wrist. When a dial edition sells out, it doesn't return.",
+      "Two dial expressions. The guilloché: Carreau Tissé centre, satinée circulaire and sauté piqué borders, Vagues de Lumière moiré frame. Three recessed rings reference the Arc de Triomphe. The stone dial: each one unrepeatable. When an edition closes, it closes.",
     designerNote:
-      "The Triomphe was born from a constraint: how thin can you go before you lose presence? The answer is 8.8mm. At that thickness, the watch disappears on the wrist but the dial becomes everything. The rotating editions keep it alive — each one is a new conversation with the same architecture.",
+      "The Triomphe started with a constraint: how thin before you lose presence? 8.8mm is the answer. At that thickness, the watch disappears on the wrist and the dial becomes everything. Each new edition does not change the watch. It deepens it.",
     year: 2025,
     tier: "limited",
     price: 1500,
@@ -171,8 +171,8 @@ export const collections: Collection[] = [
     maxStock: 20,
     edition: "Tempest Stone / Émeraude Vert",
     badge: "Current Drop",
-    urgencyTag: "Dial rotation closes soon",
-    specsTitle: "8.8mm of considered restraint.",
+    urgencyTag: "Current edition · Closing",
+    specsTitle: "8.8mm. Considered restraint.",
     specs: {
       Movement: "Sellita SW210-1B · Swiss hand-wound · Regulated ±5 s/day in 5 positions",
       Case: "38mm · 8.8mm thin · 38mm lug-to-lug · 316L marine-grade steel · 50m / 164ft",
@@ -192,12 +192,12 @@ export const collections: Collection[] = [
       "Personal note from Kevin",
     ],
     valueAnchor:
-      "Hand-wound dress watches under 9mm with multi-layer guilloché dials from established houses start at €3,500+. Without the retail markup, that difference stays in the watch.",
+      "Hand-wound dress watches under 9mm with multi-layer guilloché dials from established houses start at €3,500+. Without the retail margin, that difference stays in the watch.",
     valueComparePrice: "€3,500+",
     detailStrip: {
       eyebrow: "The Dial",
-      title: "Layers that reward the eye.",
-      text: "The guilloché layers — Carreau Tissé, sauté piqué, Vagues de Lumière — they reward close inspection. At 8.8mm, the watch disappears on the wrist but the dial becomes everything. This is a watch you discover over time.",
+      title: "Layers that take time to see.",
+      text: "Carreau Tissé centre. Sauté piqué border. Vagues de Lumière frame. Each layer visible only under the right light. At 8.8mm, the watch sits close to the wrist. The dial is what remains.",
     },
     testimonials: [
       {
@@ -230,8 +230,8 @@ export const collections: Collection[] = [
         image: "/images/triomphe-emeraude.jpg",
       },
     ],
-    newsletterTitle: "Get notified when the next Triomphe dial drops.",
-    newsletterSub: "Allocations fill fast. Priority goes to the list.",
+    newsletterTitle: "Notified first when the next dial edition opens.",
+    newsletterSub: "Allocation-based. Priority to the list.",
     image: "/images/triomphe-emeraude.jpg",
     heroImage: "/images/triomphe-hero.jpg",
     detailImage: "/images/triomphe-detail.jpg",
@@ -259,9 +259,9 @@ export const collections: Collection[] = [
     tagline: "The Original",
     hook: "The one that started everything.",
     description:
-      "The Okapi is defined by balance and restraint. Its 37 mm cushion-shaped case combines softly rounded contours with crisp architectural lines, creating a silhouette that feels both vintage-inspired and quietly modern.",
+      "The Okapi is defined by balance and restraint. Its 37mm cushion case combines rounded contours with precise architectural lines — a silhouette that reads as neither vintage nor modern.",
     descriptionExtra:
-      "The deep blue frosted dial is framed by a coin-edge inspired fluted flange beneath the crystal, adding subtle depth. A slim steel chapter ring with fine lacquer-filled markings encircles the dial, echoed by the guilloché small seconds register at six o'clock. Slender spear-shaped hands ensure clarity without excess. Powered by the Swiss-made ETA 7001, Okapi reflects a considered approach to watchmaking — precise, composed, and enduring.",
+      "The frosted blue dial sits behind a coin-edge fluted flange. A slim chapter ring with lacquer-filled markings, guilloché small seconds at six, spear-shaped hands. Powered by the Swiss ETA 7001. Nothing added without reason.",
     designerNote:
       "Okapi was not my first prototype. It was the first that felt inevitable. A balance of curve and edge, softness held in precision. The language wasn't planned — it surfaced. The new dial does not transform it. It clarifies what was always there.",
     year: 2015,
@@ -297,12 +297,12 @@ export const collections: Collection[] = [
       "€20 credit toward a bespoke strap",
     ],
     valueAnchor:
-      "Watches with sapphire crystal, Swiss hand-wound movements, scratch-resistant coatings, and guilloché dial work from established brands typically start at €3,000+. The Okapi delivers the same craft without the corporate markup.",
+      "Sapphire crystal, Swiss hand-wound movement, scratch-resistant coating, guilloché dial work. At any established house, this starts at €3,000+. Without the markup, that difference is in the watch.",
     valueComparePrice: "€3,000+",
     detailStrip: {
       eyebrow: "The Dial",
-      title: "Every detail earns its place.",
-      text: "The guilloché small seconds register at six o'clock catches light from every angle — a quiet signature of craft that rewards those who look closely. The coin-edge inspired fluted flange frames the frosted blue dial, adding a layer of depth visible only in person. This is a dial designed for the second glance. The details that matter most are the ones you discover over time.",
+      title: "Nothing placed without reason.",
+      text: "The guilloché small seconds at six catches light differently with every angle. The coin-edge flange frames the dial without competing with it. These are the details that take time to notice — and don't leave once you have.",
     },
     testimonials: [
       {
@@ -319,8 +319,8 @@ export const collections: Collection[] = [
       },
     ],
     testimonialsLabel: "Those Who Wore the Original",
-    newsletterTitle: "Join 1,200+ collectors who see new editions first.",
-    newsletterSub: "Priority access. No spam. Just watches.",
+    newsletterTitle: "First access when Okapi opens.",
+    newsletterSub: "On the list. No noise.",
     image: "/images/okapi.jpg",
     heroImage: "/images/okapi-hero.jpg",
     detailImage: "/images/okapi-detail.jpg",

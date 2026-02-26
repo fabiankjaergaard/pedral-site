@@ -40,9 +40,9 @@ function GearIcon() {
 
 const trustItems = [
   { icon: <GlobeIcon />, title: "30+", desc: "Countries · Collectors worldwide" },
-  { icon: <ClockIcon />, title: "Since 2015", desc: "A decade of obsession" },
+  { icon: <ClockIcon />, title: "Since 2015", desc: "Independent · Stockholm" },
   { icon: <DiamondIcon />, title: "Max 20", desc: "Per edition · No restocks" },
-  { icon: <GearIcon />, title: "Swiss", desc: "Movements · No compromises" },
+  { icon: <GearIcon />, title: "Swiss", desc: "Movements · Sapphire crystal" },
 ];
 
 export default function TrustBar() {
