@@ -6,6 +6,7 @@ import Image from "next/image";
 import { fadeInUp, slideInLeft, slideInRight, staggerContainer } from "@/lib/animations";
 import type { Collection } from "@/lib/collections";
 import Newsletter from "@/components/sections/Newsletter";
+import PreOrderModal from "@/components/ui/PreOrderModal";
 
 function ImagePlaceholder({ label, className = "" }: { label: string; className?: string }) {
   return (
@@ -27,6 +28,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
     hasVariants ? c.variants![0] : null
   );
   const [loading, setLoading] = useState(false);
+  const [clientSecret, setClientSecret] = useState<string | null>(null);
 
   async function handleReserve() {
     if (c.isPreOrder) {
@@ -41,8 +43,10 @@ export default function CollectionDetail({ collection }: { collection: Collectio
         }),
       });
       const data = await res.json();
-      if (data.url) window.location.href = data.url;
-      else setLoading(false);
+      if (data.clientSecret) {
+        setClientSecret(data.clientSecret);
+      }
+      setLoading(false);
       return;
     }
     if (!selectedVariant) return;
@@ -640,6 +644,15 @@ export default function CollectionDetail({ collection }: { collection: Collectio
         title={c.newsletterTitle}
         subtitle={c.newsletterSub}
       />
+
+      {clientSecret && (
+        <PreOrderModal
+          clientSecret={clientSecret}
+          collectionName={c.name}
+          depositAmount={c.depositAmount ?? 500}
+          onClose={() => setClientSecret(null)}
+        />
+      )}
     </>
   );
 }

@@ -3,7 +3,11 @@ import Stripe from "stripe";
 
 export async function POST(req: NextRequest) {
   try {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+    if (!process.env.STRIPE_SECRET_KEY) {
+      return NextResponse.json({ error: "Stripe not configured" }, { status: 500 });
+    }
+
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
       apiVersion: "2026-01-28.clover",
     });
 
@@ -13,13 +17,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    if (!process.env.STRIPE_SECRET_KEY) {
-      return NextResponse.json({ error: "Stripe not configured" }, { status: 500 });
-    }
-
     const origin = req.headers.get("origin") ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://pedral.eu";
 
     const session = await stripe.checkout.sessions.create({
+      ui_mode: "embedded",
       mode: "payment",
       line_items: [
         {
@@ -35,8 +36,7 @@ export async function POST(req: NextRequest) {
           },
         },
       ],
-      success_url: `${origin}/order/success?type=preorder&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/collections/${collectionSlug}`,
+      return_url: `${origin}/order/success?type=preorder&session_id={CHECKOUT_SESSION_ID}`,
       metadata: {
         type: "preorder",
         collection: collectionSlug,
@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    return NextResponse.json({ url: session.url });
+    return NextResponse.json({ clientSecret: session.client_secret });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
     console.error("Preorder error:", message);
