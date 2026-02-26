@@ -46,15 +46,16 @@ export default function CollectionDetail({ collection }: { collection: Collectio
           }),
         });
         const data = await res.json();
-        if (data.clientSecret) {
-          setClientSecret(data.clientSecret);
+        if (data.url) {
+          window.location.href = data.url;
         } else {
           setPreOrderError(data.error ?? "Could not load checkout. Please try again.");
+          setLoading(false);
         }
       } catch {
         setPreOrderError("Network error. Please try again.");
+        setLoading(false);
       }
-      setLoading(false);
       return;
     }
     if (!selectedVariant) return;

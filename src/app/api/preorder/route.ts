@@ -20,7 +20,6 @@ export async function POST(req: NextRequest) {
     const origin = req.headers.get("origin") ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://pedral.eu";
 
     const session = await stripe.checkout.sessions.create({
-      ui_mode: "embedded",
       mode: "payment",
       line_items: [
         {
@@ -36,7 +35,8 @@ export async function POST(req: NextRequest) {
           },
         },
       ],
-      return_url: `${origin}/order/success?type=preorder&session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${origin}/order/success?type=preorder&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/collections/${collectionSlug}`,
       metadata: {
         type: "preorder",
         collection: collectionSlug,
@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    return NextResponse.json({ clientSecret: session.client_secret });
+    return NextResponse.json({ url: session.url });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
     console.error("Preorder error:", message);
