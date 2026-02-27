@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { rateLimit, getIp } from "@/lib/rateLimit";
 
 export async function POST(req: NextRequest) {
+  const ip = getIp(req);
+  const { allowed } = rateLimit(`checkout:${ip}`, 10, 60_000);
+  if (!allowed) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: "2026-01-28.clover",
   });

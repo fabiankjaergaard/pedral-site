@@ -23,10 +23,12 @@ export default function Newsletter({
     setStatus("loading");
 
     try {
+      const form = e.target as HTMLFormElement;
+      const honeypot = (form.elements.namedItem("website") as HTMLInputElement)?.value;
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, website: honeypot }),
       });
       const data = await res.json();
 
@@ -69,6 +71,8 @@ export default function Newsletter({
             </p>
           ) : (
             <form onSubmit={handleSubmit} className="mx-auto mt-7 flex max-w-[420px] flex-col gap-3 sm:flex-row sm:gap-0">
+              {/* Honeypot — hidden from humans, filled by bots */}
+              <input type="text" name="website" autoComplete="off" tabIndex={-1} aria-hidden="true" className="hidden" />
               <input
                 type="email"
                 value={email}

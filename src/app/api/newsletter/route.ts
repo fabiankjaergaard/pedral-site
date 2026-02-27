@@ -1,15 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getIp } from "@/lib/rateLimit";
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export async function POST(req: NextRequest) {
-  const { email } = await req.json();
+  const ip = getIp(req);
+  const { allowed } = rateLimit(`newsletter:${ip}`, 5, 60_000);
+  if (!allowed) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
 
-  if (!email || !email.includes("@")) {
+  const { email, website } = await req.json();
+
+  // Honeypot — bots fill this, humans don't
+  if (website) {
+    return NextResponse.json({ success: true });
+  }
+
+  if (!email || !EMAIL_REGEX.test(email)) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
   }
 
   const API_KEY = process.env.MAILCHIMP_API_KEY;
   const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
-  const DC = API_KEY?.split("-")[1]; // e.g. "us16"
+  const DC = API_KEY?.split("-")[1];
 
   if (!API_KEY || !AUDIENCE_ID || !DC) {
     return NextResponse.json({ error: "Server misconfigured" }, { status: 500 });
@@ -36,7 +50,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true });
   }
 
-  // Already subscribed
   if (data.title === "Member Exists") {
     return NextResponse.json({ alreadySubscribed: true });
   }
