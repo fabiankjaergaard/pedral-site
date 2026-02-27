@@ -17,7 +17,7 @@ const reasons = [
   {
     num: "03",
     title: "20 Pieces. No Restocks.",
-    desc: "Twenty pieces per colourway. When an edition closes, it closes. There is no second run and no special re-edition.",
+    desc: "Twenty pieces per variant. When an edition closes, it closes. There is no second run and no special re-edition.",
   },
 ];
 

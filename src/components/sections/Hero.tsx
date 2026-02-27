@@ -47,7 +47,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="mt-5 max-w-[480px] text-[17px] font-light leading-[1.9] text-foreground-muted"
           >
-            One designer. Twenty pieces per edition. Then the moulds close.
+            One designer. Twenty pieces per dial variant. Some are already gone.
           </motion.p>
 
           <motion.p
