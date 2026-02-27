@@ -91,7 +91,7 @@ export const collections: Collection[] = [
       "Personal note from Kevin",
     ],
     valueAnchor:
-      "Dress watches with Swiss Sellita movements, sapphire crystal, and integrated bracelet from established houses start at €2,800+. Without the retail margin, the difference stays in the watch.",
+      "Dress watches with Swiss Sellita movements, sapphire crystal, and an integrated bracelet. At the established houses: €2,800+. Without the overhead cost — the showroom, the retail chain, the advertising — €1,300. Edition of 20. The difference didn't disappear. It remains in the watch.",
     valueComparePrice: "€2,800+",
     detailStrip: {
       eyebrow: "The Diagonal Display",
@@ -101,15 +101,15 @@ export const collections: Collection[] = [
     testimonials: [
       {
         quote:
-          "The Maestro reflects a clear design position. The diagonal display and tonneau architecture are resolved decisions. With time, the logic becomes evident.",
-        name: "Adrien L.",
-        bio: "Investment Analyst · Lyon · Maestro Owner",
+          "Honestly, the diagonal display seemed like a gimmick to me at first. Then I wore it for a week and couldn't go back to a normal layout. It just makes sense once your wrist gets used to it.",
+        name: "Pieter V.",
+        bio: "Photographer · Amsterdam · Second Pedral purchase",
       },
       {
         quote:
-          "At 37mm with that tonneau case, it wears like something that cost five times more. The diagonal display is one of those details you don't notice until you do. Then you can't unsee it.",
-        name: "Pieter V.",
-        bio: "Photographer · Amsterdam · Second Pedral purchase",
+          "I wasn't sure about 37mm — I usually wear 40. But the tonneau shape carries the size differently. It wears bigger than you'd expect. The whole thing is more considered than the price suggests.",
+        name: "Adrien L.",
+        bio: "Investment Analyst · Lyon",
       },
     ],
     variants: [
@@ -163,7 +163,7 @@ export const collections: Collection[] = [
     descriptionExtra:
       "Two dial expressions. The guilloché: Carreau Tissé centre, satinée circulaire and sauté piqué borders, Vagues de Lumière moiré frame. Three recessed rings reference the Arc de Triomphe. The stone dial: each one unrepeatable. When an edition closes, it closes.",
     designerNote:
-      "The Triomphe started with a constraint: how thin before you lose presence? 8.8mm is the answer. At that thickness, the watch disappears on the wrist and the dial becomes everything. Each new edition does not change the watch. It deepens it.",
+      "The Triomphe started with a constraint: how thin before you lose presence? 8.8mm is the answer. At that thickness, the watch disappears on the wrist and the dial becomes everything. Each new edition doesn't change the watch — it deepens it. Every Triomphe owner wears the same architecture, but no two of them wear the same dial.",
     year: 2025,
     tier: "limited",
     price: 1500,
@@ -192,7 +192,7 @@ export const collections: Collection[] = [
       "Personal note from Kevin",
     ],
     valueAnchor:
-      "Hand-wound dress watches under 9mm with multi-layer guilloché dials from established houses start at €3,500+. Without the retail margin, that difference stays in the watch.",
+      "Hand-wound dress watches under 9mm with multi-layer guilloché dials. At the established houses: €3,500+. Without the overhead cost: €1,500. Edition of 20. The difference isn't absorbed. It remains in the materials, the movement, and the finishing.",
     valueComparePrice: "€3,500+",
     detailStrip: {
       eyebrow: "The Dial",
@@ -202,13 +202,13 @@ export const collections: Collection[] = [
     testimonials: [
       {
         quote:
-          "At 8.8mm, the Triomphe sits close to the wrist and maintains its balance on a slimmer hand. The proportions are disciplined. It feels neither overtly masculine nor feminine.",
+          "I have smaller wrists, so a lot of dress watches feel like they're wearing me. The Triomphe at 8.8mm just sits right. It's balanced in a way I haven't found at this size before.",
         name: "Elena V.",
         bio: "Creative Director · Milan · Collector since 2023",
       },
       {
         quote:
-          "The Hermès-grade Epsom strap at this price point is remarkable. The materials tell you everything about the priorities here. Quality over margin, every time. As a collector, that earns trust.",
+          "The strap is Hermès-grade Epsom leather. At this price. That tells you where the money goes. I've bought from houses that charge three times more and cut corners on exactly that kind of detail.",
         name: "Henrik S.",
         bio: "Tech founder · Stockholm · Triomphe Noir Profond (Pièce Unique)",
       },
@@ -297,7 +297,7 @@ export const collections: Collection[] = [
       "€20 credit toward a bespoke strap",
     ],
     valueAnchor:
-      "Sapphire crystal, Swiss hand-wound movement, scratch-resistant coating, guilloché dial work. At any established house, this starts at €3,000+. Without the markup, that difference is in the watch.",
+      "Sapphire crystal. Swiss hand-wound movement. HV1200 scratch-resistant coating. Guilloché dial work. At any established house: €3,000+. Without the overhead cost: €2,000. Twenty pieces.",
     valueComparePrice: "€3,000+",
     detailStrip: {
       eyebrow: "The Dial",
@@ -307,15 +307,15 @@ export const collections: Collection[] = [
     testimonials: [
       {
         quote:
-          "I bought the original Okapi in 2018. It still gets more attention than anything else I own. Whatever this new version brings, I'm already on the list.",
+          "I bought the original in 2018. Seven years later, it's still the one I reach for when I want something on my wrist that feels like mine — not like everyone else's. I'm on the list for the new one, obviously.",
         name: "Marcus E.",
         bio: "Architect · Berlin · Original Okapi owner since 2018",
       },
       {
         quote:
-          "The original fumé sunburst dial had a precision and restraint that few pieces at any price achieve. The move to a frosted finish is an interesting evolution. I'm watching this closely.",
+          "The original fumé sunburst had this restraint that I've struggled to find elsewhere, even at three or four times the price. Curious to see what the frosted dial does to it.",
         name: "Dr. Kenji N.",
-        bio: "Surgeon & watch collector · Tokyo · Original Okapi owner",
+        bio: "Surgeon & watch collector · Tokyo",
       },
     ],
     testimonialsLabel: "Those Who Wore the Original",

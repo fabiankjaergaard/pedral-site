@@ -6,13 +6,19 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const testimonials = [
   {
     quote:
-      "It starts conversations because people are curious. Not because of the branding. It's not widely known. I prefer it that way.",
+      "I've got watches people recognise immediately. This one they don't — and that's what starts the conversation. Someone will go 'what is that?' and then you're talking for twenty minutes.",
     author: "Swen A.",
     detail: "Architect · Hamburg · Collector since 2022",
   },
   {
     quote:
-      "I own blue from the usual houses. Émeraude Vert carries more presence than the photographs reveal.",
+      "Before I ordered, I had a few questions about the strap width. I emailed Kevin and he called me back the same afternoon. We ended up talking for half an hour — about the watch, about design, about everything. Try getting that from Tissot or Longines.",
+    author: "David M.",
+    detail: "Creative Director · Brussels · Triomphe owner",
+  },
+  {
+    quote:
+      "I own blue dials from the usual names. The Émeraude Vert is different — the photos really don't do it justice. On the wrist, in actual light, it has this depth that surprised me.",
     author: "Anthony A.",
     detail: "Artist · France",
   },
@@ -36,7 +42,7 @@ export default function Testimonials() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid gap-8 md:grid-cols-2"
+          className="grid gap-8 md:grid-cols-3"
         >
           {testimonials.map((t) => (
             <motion.div

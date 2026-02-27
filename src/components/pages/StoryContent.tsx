@@ -23,32 +23,32 @@ const timeline = [
   {
     year: "2015",
     title: "The Beginning",
-    text: "I applied to Sweden's only watchmaking school. Born in the Democratic Republic of Congo, raised in Stockholm. I didn't have the background they expected. The rejection letter was polite. My response was a decade of work.",
+    text: "I applied to Sweden's only watchmaking school. They said no. What followed was three years of self-education — reading everything available, failing at prototypes no one will ever see, and slowly discovering that the people who tell you the door is closed aren't always the ones who built it.",
   },
   {
     year: "2018",
     title: "Okapi Launches via Kickstarter",
-    text: "My first watch goes live on Kickstarter and sells out. The Okapi Classique, with its cushion-shaped case and frosted blue dial, finds collectors across 12 countries. Every piece spoken for. The edition remains limited to this day.",
+    text: "My first watch went live and sold out. Collectors in 12 countries. Every piece spoken for. It was confirmation that the obsession wasn't just mine — that there were people looking for something the established houses weren't offering.",
   },
   {
     year: "2024",
     title: "Artefact Launches via Kickstarter",
-    text: "My second collection goes live on Kickstarter and sells out. Artefact pushes the design language further, a new expression built on the same uncompromising philosophy. Like every Pedral edition: once it's gone, it's gone.",
+    text: "A new collection. A different design language. The same conviction: when it's gone, it's gone. Sold out.",
   },
   {
     year: "Apr 2025",
     title: "Watches and Art: Best of Both Worlds",
-    text: "I collaborate with horological dream maker Boris Pjanić on \"Watches and Art: Best of Both Worlds\", a capsule collection bridging fine horology and contemporary art. Released in April 2025, it sells out.",
+    text: "A collaboration with horological dream maker Boris Pjanić — a capsule collection bridging fine horology and contemporary art. Released in April 2025. Sold out.",
   },
   {
     year: "2025",
     title: "Maestro Launches via Kickstarter",
-    text: "Later that year, Maestro, the refined tonneau dress watch with hexagonal bracelet links and diagonal time display, goes live on Kickstarter and sells out.",
+    text: "The refined tonneau dress watch with hexagonal bracelet links and diagonal time display. It had been forming in my mind for years. Sold out.",
   },
   {
     year: "Dec 2025",
     title: "Triomphe Arrives",
-    text: "In December 2025, I collaborate with the Micro Indy collective to launch Triomphe. Ultra-thin at 8.8mm, Swiss hand-wound, with an evolving series of guilloché dial editions. Each limited to 20 pieces. When a dial edition sells out, it doesn't return.",
+    text: "A collaboration with the Micro Indy collective. Ultra-thin at 8.8mm, Swiss hand-wound, with an evolving series of guilloché dial editions. Each limited to 20 pieces. When a dial edition sells out, it does not return. This was the watch where the design language stopped needing explanation.",
   },
   {
     year: "Now",

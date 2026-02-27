@@ -47,17 +47,18 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="mt-5 max-w-[480px] text-[17px] font-light leading-[1.9] text-foreground-muted"
           >
-            One designer. Twenty pieces per edition. Three watches.
+            One designer. Twenty pieces per edition. Then the moulds close.
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.85 }}
-            className="mt-4 text-[12px] tracking-[1.5px] text-foreground-muted"
+            className="mt-4 max-w-[480px] text-[15px] font-light leading-[1.8] text-foreground-muted/70"
           >
-            Collectors in <strong className="text-accent">30+ countries</strong>{" "}
-            &middot; From <strong className="text-accent">&euro;1,300</strong>
+            Swiss movement. Sapphire crystal. HV1200 coating.<br />
+            At the established houses, this specification starts at &euro;3,000.<br />
+            Without the overhead, it starts at <strong className="text-accent">&euro;1,300</strong>.
           </motion.p>
 
           <motion.div
@@ -67,10 +68,10 @@ export default function Hero() {
             className="mt-10 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
           >
             <Button href="/collections" variant="primary">
-              Explore the Collection
+              See which editions are still open
             </Button>
             <Button href="/story" variant="outline">
-              Meet the Maker &rarr;
+              Meet the maker &rarr;
             </Button>
           </motion.div>
         </div>

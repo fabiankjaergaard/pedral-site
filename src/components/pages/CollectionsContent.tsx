@@ -67,8 +67,14 @@ export default function CollectionsContent() {
               variants={fadeInUp}
               className="font-serif text-[clamp(40px,5vw,60px)] font-light text-foreground"
             >
-              Choose Your Expression
+              Three watches. One maker.
             </motion.h1>
+            <motion.p
+              variants={fadeInUp}
+              className="mx-auto mt-4 max-w-md text-[16px] font-light text-foreground-muted"
+            >
+              When an edition closes, it stays closed.
+            </motion.p>
           </motion.div>
         </div>
       </section>

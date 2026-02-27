@@ -21,7 +21,7 @@ export default function ContactContent() {
               variants={fadeInUp}
               className="font-serif text-[clamp(40px,5vw,60px)] font-light text-foreground"
             >
-              Get In <em className="italic text-accent-hover">Touch</em>
+              Reach Kevin directly.
             </motion.h1>
           </motion.div>
         </div>
@@ -41,8 +41,7 @@ export default function ContactContent() {
             >
               <div className="flex min-h-[300px] flex-col justify-center">
                 <p className="max-w-lg text-[16px] font-light leading-relaxed text-foreground-muted">
-                  Questions about a watch, a collaboration, or just want to know more about how
-                  Pedral works — feel free to reach out.
+                  Questions about a watch, a collaboration, or how Pedral works — reach out and I&apos;ll respond personally.
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                   <a

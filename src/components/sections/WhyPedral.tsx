@@ -7,17 +7,17 @@ const reasons = [
   {
     num: "01",
     title: "One Designer",
-    desc: "Designed in Stockholm. One person, one vision. When you contact Pedral, you reach Kevin. Not a customer service team.",
+    desc: "Every watch is designed in Stockholm by one person. When you contact Pedral, you speak with Kevin directly. Not a team.",
   },
   {
     num: "02",
     title: "Swiss Specs, Independent Price",
-    desc: "Swiss movement. Sapphire crystal. HV1200 coating. At any established house, this specification starts at €3,000+. Without the overhead, the difference stays in the watch.",
+    desc: "Swiss movement. Sapphire crystal. HV1200 coating. At any established house, this specification starts at €3,000+. Without the retail chain, the showroom, or the advertising budget, the difference remains in the watch.",
   },
   {
     num: "03",
     title: "20 Pieces. No Restocks.",
-    desc: "20 pieces per colourway. When an edition closes, it closes.",
+    desc: "Twenty pieces per colourway. When an edition closes, it closes. There is no second run and no special re-edition.",
   },
 ];
 
