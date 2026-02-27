@@ -40,7 +40,7 @@ export default function CollectionShowcase() {
             Three watches. One maker.
           </h2>
           <p className="mt-4 max-w-[600px] text-[15px] font-light leading-[1.85] text-foreground-muted">
-            Each edition is limited to 20 pieces. When it sells out, it stays gone — not as a strategy, but because there is one person behind every decision.
+            Each edition is limited to 20 pieces. When it sells out, it stays gone. Not a strategy. One person behind every decision.
           </p>
         </div>
 

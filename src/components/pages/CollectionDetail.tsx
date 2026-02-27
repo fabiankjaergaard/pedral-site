@@ -89,8 +89,8 @@ export default function CollectionDetail({ collection }: { collection: Collectio
             className="mb-5 text-[12px] font-normal tracking-[1.5px] sm:text-[11px] sm:tracking-[4px] uppercase text-accent"
           >
             {isSoldOut
-              ? `The Original — Since ${c.year}`
-              : `Limited Edition — 20 Pieces`}
+              ? `The Original · Since ${c.year}`
+              : `Limited Edition · 20 Pieces`}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -153,10 +153,10 @@ export default function CollectionDetail({ collection }: { collection: Collectio
               {loading
                 ? "Redirecting…"
                 : c.isPreOrder
-                ? `Reserve — €${c.depositAmount ?? 500} deposit →`
+                ? `Reserve your allocation · €${c.depositAmount ?? 500} deposit`
                 : isSoldOut
                 ? "Join Waitlist"
-                : `Reserve — €${c.price.toLocaleString()} →`}
+                : `Reserve · €${c.price.toLocaleString()}`}
             </button>
             {c.isPreOrder && (
               <p className="mt-3 text-[11px] font-light leading-[1.7] text-foreground-muted/60">
@@ -356,7 +356,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
               &ldquo;{c.designerNote}&rdquo;
             </p>
             <p className="mt-4 pl-6 text-[12px] tracking-[2px] text-foreground-muted">
-              — Kevin Pedral, Stockholm
+              Kevin Pedral, Stockholm
             </p>
           </motion.div>
         </div>
@@ -521,10 +521,10 @@ export default function CollectionDetail({ collection }: { collection: Collectio
             {loading
               ? "Redirecting…"
               : c.isPreOrder
-              ? `Reserve — €${c.depositAmount ?? 500} deposit →`
+              ? `Reserve your allocation · €${c.depositAmount ?? 500} deposit`
               : isSoldOut
               ? "Join Waitlist"
-              : `Reserve — €${c.price.toLocaleString()}`}
+              : `Reserve · €${c.price.toLocaleString()}`}
           </button>
           {c.isPreOrder ? (
             <p className="mt-3 text-[11px] font-light leading-[1.7] text-foreground-muted/60">

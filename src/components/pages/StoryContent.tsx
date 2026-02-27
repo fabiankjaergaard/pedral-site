@@ -23,12 +23,12 @@ const timeline = [
   {
     year: "2015",
     title: "The Beginning",
-    text: "I applied to Sweden's only watchmaking school. They said no. What followed was three years of self-education — reading everything available, failing at prototypes no one will ever see, and slowly discovering that the people who tell you the door is closed aren't always the ones who built it.",
+    text: "I applied to Sweden's only watchmaking school. They said no. What followed was three years of self-education: reading everything available, failing at prototypes no one will ever see, and slowly discovering that the people who tell you the door is closed aren't always the ones who built it.",
   },
   {
     year: "2018",
     title: "Okapi Launches via Kickstarter",
-    text: "My first watch went live and sold out. Collectors in 12 countries. Every piece spoken for. It was confirmation that the obsession wasn't just mine — that there were people looking for something the established houses weren't offering.",
+    text: "My first watch went live and sold out. Collectors in 12 countries. Every piece spoken for. It was confirmation that the obsession wasn't just mine. There were people looking for something the established houses weren't offering.",
   },
   {
     year: "2024",
@@ -38,7 +38,7 @@ const timeline = [
   {
     year: "Apr 2025",
     title: "Watches and Art: Best of Both Worlds",
-    text: "A collaboration with horological dream maker Boris Pjanić — a capsule collection bridging fine horology and contemporary art. Released in April 2025. Sold out.",
+    text: "A collaboration with horological dream maker Boris Pjanić, a capsule collection bridging fine horology and contemporary art. Released in April 2025. Sold out.",
   },
   {
     year: "2025",

@@ -27,14 +27,14 @@ export default function StoryPreview() {
             <p className="mt-6 text-[16px] font-light leading-[1.9] text-foreground-muted">
               Born in the Democratic Republic of Congo, raised in Stockholm.
               I didn&apos;t fit the profile they expected. So I taught myself
-              — through obsessive research, hundreds of failed prototypes, and
+              through obsessive research, hundreds of failed prototypes, and
               one conviction: if the path to creating beautiful things has a
               gate, you walk around it.
             </p>
             <p className="mt-5 text-[16px] font-light leading-[1.9] text-foreground-muted">
               Every watch is designed here in Stockholm. Each edition is
               capped at 20 pieces. Each dial tells a different story. And when
-              you contact Pedral, you reach Kevin — not a customer service team.
+              you contact Pedral, you reach Kevin. Not a customer service team.
             </p>
             <Link
               href="/story"

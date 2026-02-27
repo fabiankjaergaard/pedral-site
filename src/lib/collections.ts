@@ -72,7 +72,7 @@ export const collections: Collection[] = [
     urgencyTag: "Limited pieces remaining",
     specsTitle: "Swiss precision. Stockholm soul.",
     specs: {
-      Movement: "Sellita SW200-1b — Swiss automatic, 38-hour power reserve",
+      Movement: "Sellita SW200-1b, Swiss automatic, 38-hour power reserve",
       Case: "37mm monobloc tonneau, stainless steel, HV1200 coating",
       Dial: "Two-tier guilloché: rhombus centre, angular rooftops, sunburst outer ring",
       Crystal: "Flat sapphire with internal Super-AR coating",
@@ -91,7 +91,7 @@ export const collections: Collection[] = [
       "Personal note from Kevin",
     ],
     valueAnchor:
-      "Dress watches with Swiss Sellita movements, sapphire crystal, and an integrated bracelet. At the established houses: €2,800+. Without the overhead cost — the showroom, the retail chain, the advertising — €1,300. Edition of 20. The difference didn't disappear. It remains in the watch.",
+      "Dress watches with Swiss Sellita movements, sapphire crystal, and an integrated bracelet. At the established houses: €2,800+. Without the overhead cost, the showroom, the retail chain, the advertising: €1,300. Edition of 20. The difference didn't disappear. It remains in the watch.",
     valueComparePrice: "€2,800+",
     detailStrip: {
       eyebrow: "The Diagonal Display",
@@ -107,7 +107,7 @@ export const collections: Collection[] = [
       },
       {
         quote:
-          "I wasn't sure about 37mm — I usually wear 40. But the tonneau shape carries the size differently. It wears bigger than you'd expect. The whole thing is more considered than the price suggests.",
+          "I wasn't sure about 37mm. I usually wear 40. But the tonneau shape carries the size differently. It wears bigger than you'd expect. The whole thing is more considered than the price suggests.",
         name: "Adrien L.",
         bio: "Investment Analyst · Lyon",
       },
@@ -163,7 +163,7 @@ export const collections: Collection[] = [
     descriptionExtra:
       "Two dial expressions. The guilloché: Carreau Tissé centre, satinée circulaire and sauté piqué borders, Vagues de Lumière moiré frame. Three recessed rings reference the Arc de Triomphe. The stone dial: each one unrepeatable. When an edition closes, it closes.",
     designerNote:
-      "The Triomphe started with a constraint: how thin before you lose presence? 8.8mm is the answer. At that thickness, the watch disappears on the wrist and the dial becomes everything. Each new edition doesn't change the watch — it deepens it. Every Triomphe owner wears the same architecture, but no two of them wear the same dial.",
+      "The Triomphe started with a constraint: how thin before you lose presence? 8.8mm is the answer. At that thickness, the watch disappears on the wrist and the dial becomes everything. Each new edition doesn't change the watch. It deepens it. Every Triomphe owner wears the same architecture, but no two of them wear the same dial.",
     year: 2025,
     tier: "limited",
     price: 1500,
@@ -176,7 +176,7 @@ export const collections: Collection[] = [
     specs: {
       Movement: "Sellita SW210-1B · Swiss hand-wound · Regulated ±5 s/day in 5 positions",
       Case: "38mm · 8.8mm thin · 38mm lug-to-lug · 316L marine-grade steel · 50m / 164ft",
-      Dial: "Multi-layer guilloché (Carreau Tissé · sauté piqué · Vagues de Lumière) or natural stone — edition-dependent",
+      Dial: "Multi-layer guilloché (Carreau Tissé · sauté piqué · Vagues de Lumière) or natural stone, edition-dependent",
       Crystal: "Sapphire with Super-AR coating",
       Strap: "Hand-stitched Epsom leather · 20mm quick-swap",
       Hands: "Diamond-cut · Applied Roman numerals · Hebrew & Eastern Arabic numerals available made to order",
@@ -276,15 +276,15 @@ export const collections: Collection[] = [
     depositAmount: 500,
     specsTitle: "Built to outlast everything.",
     specs: {
-      Movement: "Swiss-made ETA 7001 — hand-wound, precise, enduring",
+      Movement: "Swiss-made ETA 7001, hand-wound, precise, enduring",
       Case: "37mm cushion-shaped, stainless steel, HV1200 scratch-resistant coating",
       Dial: "Deep blue frosted finish, coin-edge fluted flange, guilloché small seconds at 6 o'clock",
       "Chapter Ring": "Slim steel with fine lacquer-filled markings",
-      Hands: "Slender spear-shaped — clarity without excess",
+      Hands: "Slender, spear-shaped. Clarity without excess.",
       Crystal: "Sapphire with anti-reflective coating",
       "Water Resist.": "5 ATM / 50 meters",
-      Strap: "18mm quick-release — leather with butterfly clasp or integrated steel bracelet",
-      Caseback: 'Engraved "Designed in Sweden" — sapphire exhibition window',
+      Strap: "18mm quick-release, leather with butterfly clasp or integrated steel bracelet",
+      Caseback: 'Engraved "Designed in Sweden", sapphire exhibition window',
     },
     boxContents: [
       "Okapi Classique – Kivu timepiece",
@@ -307,7 +307,7 @@ export const collections: Collection[] = [
     testimonials: [
       {
         quote:
-          "I bought the original in 2018. Seven years later, it's still the one I reach for when I want something on my wrist that feels like mine — not like everyone else's. I'm on the list for the new one, obviously.",
+          "I bought the original in 2018. Seven years later, it's still the one I reach for when I want something on my wrist that feels like mine. Not like everyone else's. I'm on the list for the new one, obviously.",
         name: "Marcus E.",
         bio: "Architect · Berlin · Original Okapi owner since 2018",
       },
