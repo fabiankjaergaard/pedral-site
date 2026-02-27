@@ -46,8 +46,9 @@ export default function CollectionDetail({ collection }: { collection: Collectio
           }),
         });
         const data = await res.json();
-        if (data.url) {
-          window.location.href = data.url;
+        if (data.clientSecret) {
+          setClientSecret(data.clientSecret);
+          setLoading(false);
         } else {
           setPreOrderError(data.error ?? "Could not load checkout. Please try again.");
           setLoading(false);
@@ -151,7 +152,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
               className="w-full rounded-[2px] bg-accent px-8 py-4 text-[12px] font-medium tracking-[2px] uppercase text-background transition-colors hover:bg-accent-hover disabled:opacity-60 sm:w-auto sm:px-12 sm:text-[11px] sm:tracking-[3px]"
             >
               {loading
-                ? "Redirecting…"
+                ? "Loading…"
                 : c.isPreOrder
                 ? `Reserve your allocation · €${c.depositAmount ?? 500} deposit`
                 : isSoldOut
@@ -519,7 +520,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
             className="mt-6 w-full max-w-[300px] rounded-[2px] bg-accent px-8 py-4 text-[12px] font-medium tracking-[2px] uppercase text-background transition-colors hover:bg-accent-hover disabled:opacity-60 sm:w-auto sm:px-12 sm:text-[11px] sm:tracking-[3px]"
           >
             {loading
-              ? "Redirecting…"
+              ? "Loading…"
               : c.isPreOrder
               ? `Reserve your allocation · €${c.depositAmount ?? 500} deposit`
               : isSoldOut

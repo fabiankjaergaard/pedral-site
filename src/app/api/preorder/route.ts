@@ -21,6 +21,7 @@ export async function POST(req: NextRequest) {
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
+      ui_mode: "embedded",
       line_items: [
         {
           quantity: 1,
@@ -35,8 +36,7 @@ export async function POST(req: NextRequest) {
           },
         },
       ],
-      success_url: `${origin}/order/success?type=preorder&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/collections/${collectionSlug}`,
+      return_url: `${origin}/order/success?type=preorder&session_id={CHECKOUT_SESSION_ID}`,
       metadata: {
         type: "preorder",
         collection: collectionSlug,
@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    return NextResponse.json({ url: session.url });
+    return NextResponse.json({ clientSecret: session.client_secret });
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";
     console.error("Preorder error:", message);
