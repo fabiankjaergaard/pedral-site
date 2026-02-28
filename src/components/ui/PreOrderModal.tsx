@@ -20,7 +20,7 @@ export default function PreOrderModal({
   collectionName,
   depositAmount,
   price,
-  isPreOrder = true,
+  isPreOrder = false,
   onClose,
 }: PreOrderModalProps) {
   useEffect(() => {
