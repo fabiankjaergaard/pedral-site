@@ -22,7 +22,26 @@ export const archivedWatches: ArchivedWatch[] = [
     hook: "An object before it is a watch.",
     description:
       "The Artefact was an exercise in reduction. Every surface, every line questioned until only the essential remained. A watch that asks you to look longer before you understand it.",
-    images: [],
+    images: [
+      "/images/archive/Artefact - Boris Blue.png",
+      "/images/archive/Artefact - Driving Home.png",
+      "/images/archive/Artefact - Geometry In Play.png",
+      "/images/archive/Artefact - Kingfisher Blue.png",
+      "/images/archive/Artefact - Perpetual Autumn.png",
+      "/images/archive/Artefact - Raw Malachite.png",
+      "/images/archive/Artefact - Shimmy Stardust.png",
+      "/images/archive/Artefact - Shine Bright Like A Diamond.png",
+    ],
+    dialNames: [
+      "Boris Blue",
+      "Driving Home",
+      "Geometry In Play",
+      "Kingfisher Blue",
+      "Perpetual Autumn",
+      "Raw Malachite",
+      "Shimmy Stardust",
+      "Shine Bright Like A Diamond",
+    ],
   },
   {
     slug: "okapi-gmt",
@@ -34,7 +53,18 @@ export const archivedWatches: ArchivedWatch[] = [
     hook: "Two cities. One wrist. No compromise.",
     description:
       "The Okapi GMT extended the cushion-case language into dual-timezone territory. A 24-hour hand and bidirectional bezel. The same restraint as the original, now with a practical purpose.",
-    images: [],
+    images: [
+      "/images/archive/Okapi GMT - Ituri Forrest, Green Strap.png",
+      "/images/archive/Okapi GMT-Cabinda Coast.png",
+      "/images/archive/Okapi GMT-Moscow Midnight.png",
+      "/images/archive/Okapi GMT-Parisian Pearl.png",
+    ],
+    dialNames: [
+      "Ituri Forrest",
+      "Cabinda Coast",
+      "Moscow Midnight",
+      "Parisian Pearl",
+    ],
   },
   {
     slug: "okapi",
