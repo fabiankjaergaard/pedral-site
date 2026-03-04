@@ -17,7 +17,7 @@ export const archivedWatches: ArchivedWatch[] = [
     name: "Artefact",
     year: 2020,
     soldYear: 2022,
-    price: 1200,
+    price: 1499,
     editionSize: 20,
     hook: "An object before it is a watch.",
     description:
