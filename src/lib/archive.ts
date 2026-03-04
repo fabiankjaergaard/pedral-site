@@ -52,9 +52,9 @@ export const archivedWatches: ArchivedWatch[] = [
     soldYear: 2023,
     price: 1800,
     editionSize: 20,
-    hook: "Two cities. One wrist. No compromise.",
+    hook: "Two time zones. One watch that earns both.",
     description:
-      "The Okapi GMT extended the cushion-case language into dual-timezone territory. A 24-hour hand and bidirectional bezel. The same restraint as the original, now with a practical purpose.",
+      "The Okapi case — refined, restrained — now tracking two cities at once. A 24-hour hand reads the second zone without interrupting the first. Bidirectional bezel. No extra bulk. The same quiet confidence, now with somewhere to be.",
     images: [
       "/images/archive/Okapi GMT - Ituri Forrest, Green Strap.png",
       "/images/archive/Okapi GMT-Cabinda Coast.png",
