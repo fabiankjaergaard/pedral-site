@@ -92,7 +92,7 @@ function ArchiveCard({ watch }: { watch: ArchivedWatch }) {
       {/* Info */}
       <div className="p-6">
         <p className="mb-1 text-[11px] font-normal tracking-[2px] uppercase text-accent/60">
-          {watch.year} · Edition of {watch.editionSize}
+          {watch.year} · {watch.editionLabel ?? `Edition of ${watch.editionSize}`}
         </p>
         <h3 className="font-serif text-2xl font-normal text-foreground">
           {watch.name}

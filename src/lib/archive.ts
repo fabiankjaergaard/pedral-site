@@ -5,6 +5,7 @@ export interface ArchivedWatch {
   soldYear: number;
   price: number;
   editionSize: number;
+  editionLabel?: string;
   hook: string;
   description: string;
   images: string[];
@@ -15,10 +16,11 @@ export const archivedWatches: ArchivedWatch[] = [
   {
     slug: "artefact",
     name: "Artefact",
-    year: 2020,
+    year: 2025,
     soldYear: 2022,
     price: 1499,
     editionSize: 20,
+    editionLabel: "Limited Edition",
     hook: "An object before it is a watch.",
     description:
       "The Artefact was an exercise in reduction. Every surface, every line questioned until only the essential remained. A watch that asks you to look longer before you understand it.",
