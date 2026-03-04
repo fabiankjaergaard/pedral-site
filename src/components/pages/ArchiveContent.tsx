@@ -9,6 +9,7 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 function ArchiveCard({ watch }: { watch: ArchivedWatch }) {
   const [index, setIndex] = useState(0);
+  const hasImages = watch.images.length > 0;
   const hasMultiple = watch.images.length > 1;
 
   function prev(e: React.MouseEvent) {
@@ -33,13 +34,19 @@ function ArchiveCard({ watch }: { watch: ArchivedWatch }) {
         {/* Greyscale overlay */}
         <div className="absolute inset-0 z-[1] bg-background/30 mix-blend-color" />
 
-        <Image
-          key={watch.images[index]}
-          src={watch.images[index]}
-          alt={watch.dialNames?.[index] ?? watch.name}
-          fill
-          className="object-contain opacity-80 transition-all duration-500"
-        />
+        {hasImages ? (
+          <Image
+            key={watch.images[index]}
+            src={watch.images[index]}
+            alt={watch.dialNames?.[index] ?? watch.name}
+            fill
+            className="object-contain opacity-80 transition-all duration-500"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center">
+            <span className="font-serif text-[32px] font-light text-accent/[0.12]">{watch.name}</span>
+          </div>
+        )}
 
         {/* Prev / Next arrows */}
         {hasMultiple && (
