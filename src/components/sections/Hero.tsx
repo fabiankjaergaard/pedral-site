@@ -27,7 +27,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-6 text-[13px] font-light tracking-[3px] uppercase text-foreground-muted/50"
+            className="mb-6 text-[11px] font-normal tracking-[4px] uppercase text-accent"
           >
             Designed in Stockholm
           </motion.p>
@@ -49,7 +49,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.75 }}
-            className="mt-5 text-[18px] font-light leading-snug text-foreground-muted/70 italic"
+            className="mt-5 text-[18px] font-light leading-snug text-foreground-muted italic"
           >
             Selection, not exclusion.
           </motion.p>
@@ -59,7 +59,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.95 }}
-            className="mt-8 max-w-[420px] text-[15px] font-light leading-[1.9] text-foreground-muted/60"
+            className="mt-8 max-w-[420px] text-[15px] font-light leading-[1.9] text-foreground-muted/70"
           >
             Swiss automatic calibre.<br />
             Sapphire crystal.<br />
