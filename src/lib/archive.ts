@@ -17,7 +17,7 @@ export const archivedWatches: ArchivedWatch[] = [
     slug: "artefact",
     name: "Artefact",
     year: 2025,
-    soldYear: 2022,
+    soldYear: 2025,
     price: 1499,
     editionSize: 20,
     editionLabel: "Limited Edition",
