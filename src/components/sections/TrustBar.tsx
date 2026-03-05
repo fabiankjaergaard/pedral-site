@@ -19,14 +19,14 @@ export default function TrustBar() {
         variants={fadeInUp}
         className="mx-auto max-w-[1400px]"
       >
-        <p className="mb-7 text-[10px] font-normal tracking-[3px] uppercase text-foreground-muted/40">
+        <p className="mb-7 text-[10px] font-normal tracking-[3px] uppercase text-foreground-muted/60">
           Worn by collectors in 30+ countries
         </p>
         <div className="grid grid-cols-3 gap-6 sm:gap-12 md:max-w-[600px]">
           {stats.map((s) => (
             <div key={s.label}>
               <p className="font-serif text-[20px] font-normal text-foreground">{s.label}</p>
-              <p className="mt-1 text-[12px] font-light leading-[1.7] text-foreground-muted/50">
+              <p className="mt-1 text-[12px] font-light leading-[1.7] text-foreground-muted/70">
                 {s.sub1}<br />{s.sub2}
               </p>
             </div>
