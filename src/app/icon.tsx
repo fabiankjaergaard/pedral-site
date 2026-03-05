@@ -12,18 +12,13 @@ export default function Icon() {
         viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/*
-          The A mark:
-          - Outer: triangle with two pointed feet and a V notch
-          - Inner: a tall diamond whose bottom tip IS the V notch point
-          Both share the same bottom-centre point (50, 63)
-        */}
+        {/* Exact coordinates extracted from Pedral-Logo-Variants.svg */}
         <path
           fillRule="evenodd"
           clipRule="evenodd"
           d="
-            M 50,0  L 97,100 L 67,100 L 50,63 L 33,100 L 3,100  Z
-            M 50,22 L 64,50  L 50,63  L 36,50 Z
+            M 50,0  L 95,99 L 78,99 L 69,80 L 50,100 L 31,80 L 22,99 L 5,99 Z
+            M 63,65 L 50,36 L 37,65 L 50,79 Z
           "
           fill="#c9a84c"
         />
