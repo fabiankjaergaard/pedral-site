@@ -18,21 +18,26 @@ export default function Icon() {
         }}
       >
         <svg
-          width="30"
-          height="30"
-          viewBox="0 0 100 105"
-          fill="none"
+          width="28"
+          height="28"
+          viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Outer A shape with pointed feet and V notch */}
+          {/*
+            Three subpaths with evenodd:
+            1. Outer A shape with V-notch feet
+            2. Diamond cutout (upper centre)
+            3. Inner leg hollow (below diamond to V-notch)
+          */}
           <path
-            d="M50 2 L88 95 L63 95 L50 76 L37 95 L12 95 Z"
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="
+              M 50,2 L 88,93 L 64,93 L 50,74 L 36,93 L 12,93 Z
+              M 50,27 L 64,50 L 50,63 L 36,50 Z
+              M 50,63 L 64,93 L 50,74 L 36,93 Z
+            "
             fill="#c9a84c"
-          />
-          {/* Diamond cutout */}
-          <path
-            d="M50 28 L65 52 L50 66 L35 52 Z"
-            fill="#0a1214"
           />
         </svg>
       </div>
