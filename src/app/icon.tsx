@@ -27,7 +27,7 @@ export default function Icon() {
             lineHeight: 1,
           }}
         >
-          P
+          A
         </span>
       </div>
     ),
