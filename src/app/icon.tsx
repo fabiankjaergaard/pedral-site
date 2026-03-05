@@ -1,14 +1,9 @@
 import { ImageResponse } from "next/og";
-import { readFileSync } from "fs";
-import { join } from "path";
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
 export default function Icon() {
-  const imageData = readFileSync(join(process.cwd(), "public/pedral-symbol.png"));
-  const base64 = `data:image/png;base64,${imageData.toString("base64")}`;
-
   return new ImageResponse(
     (
       <div
@@ -22,15 +17,24 @@ export default function Icon() {
           justifyContent: "center",
         }}
       >
-        <img
-          src={base64}
-          width={22}
-          height={22}
-          style={{
-            filter:
-              "invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.85)",
-          }}
-        />
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 100 105"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Outer A shape with pointed feet and V notch */}
+          <path
+            d="M50 2 L88 95 L63 95 L50 76 L37 95 L12 95 Z"
+            fill="#c9a84c"
+          />
+          {/* Diamond cutout */}
+          <path
+            d="M50 28 L65 52 L50 66 L35 52 Z"
+            fill="#0a1214"
+          />
+        </svg>
       </div>
     ),
     { ...size }
