@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -20,60 +20,67 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 py-20 md:py-24 md:px-12">
-        <div className="max-w-[650px]">
+        <div className="max-w-[600px]">
+
+          {/* 1. Origin */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mb-6 text-[11px] font-normal tracking-[2px] sm:tracking-[4px] uppercase text-accent"
+            className="mb-6 text-[13px] font-light tracking-[3px] uppercase text-foreground-muted/50"
           >
-            Stockholm &middot; Limited Editions
+            Designed in Stockholm
           </motion.p>
 
+          {/* 2. Headline */}
           <div className="overflow-hidden">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-serif text-[clamp(36px,8vw,72px)] font-light leading-[1.05] text-foreground"
+              className="font-serif text-[clamp(52px,8vw,88px)] font-light leading-[1.0] tracking-[-0.5px] text-foreground"
             >
               Not for everyone.
             </motion.h1>
           </div>
 
+          {/* 3. Philosophy clarification */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-5 max-w-[480px] text-[17px] font-light leading-[1.9] text-foreground-muted"
+            transition={{ duration: 0.8, delay: 0.75 }}
+            className="mt-5 text-[18px] font-light leading-snug text-foreground-muted/70 italic"
           >
-            One designer. Twenty pieces per dial variant. Some are already gone.
+            Selection, not exclusion.
           </motion.p>
 
+          {/* 4. Craft proof */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.85 }}
-            className="mt-4 max-w-[480px] text-[15px] font-light leading-[1.8] text-foreground-muted/70"
+            transition={{ duration: 0.8, delay: 0.95 }}
+            className="mt-8 max-w-[420px] text-[15px] font-light leading-[1.9] text-foreground-muted/60"
           >
-            Swiss movement. Sapphire crystal. HV1200 coating.<br />
-            Built to the same standard as watches twice the price.<br />
-            Pedral starts at <strong className="text-accent">&euro;1,300</strong>.
+            Swiss automatic calibre.<br />
+            Sapphire crystal.<br />
+            Crafted from exceptional materials.
           </motion.p>
 
+          {/* 5. CTA */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-10 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
+            transition={{ duration: 0.8, delay: 1.1 }}
+            className="mt-10"
           >
-            <Button href="/collections" variant="primary">
-              See which editions are still open
-            </Button>
-            <Button href="/story" variant="outline">
-              Meet the maker &rarr;
-            </Button>
+            <Link
+              href="/collections"
+              className="inline-block border border-accent/30 px-8 py-3.5 text-[11px] font-medium tracking-[3px] uppercase text-foreground-muted transition-colors duration-300 hover:border-accent hover:text-accent"
+            >
+              Discover the remaining pieces
+            </Link>
           </motion.div>
+
         </div>
       </div>
 
@@ -81,10 +88,10 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
+        transition={{ duration: 1, delay: 1.4 }}
         className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
       >
-        <span className="text-[10px] font-light tracking-[1.5px] uppercase text-foreground-muted">
+        <span className="text-[10px] font-light tracking-[1.5px] uppercase text-foreground-muted/40">
           Scroll
         </span>
         <motion.div
