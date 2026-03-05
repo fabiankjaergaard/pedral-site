@@ -4,11 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const stats = [
-  { label: "Since 2015", sub1: "Independent", sub2: "Stockholm" },
-  { label: "Max 20", sub1: "Pieces per dial", sub2: "No restocks" },
-  { label: "Swiss", sub1: "Automatic movements", sub2: "Sapphire crystal" },
-];
 
 export default function Hero() {
   return (
@@ -87,27 +82,6 @@ export default function Hero() {
             </Link>
           </motion.div>
 
-          {/* 6. Social proof */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.25 }}
-            className="mt-10 border-t border-accent/[0.08] pt-8"
-          >
-            <p className="mb-5 text-[11px] font-light tracking-[2px] uppercase text-foreground-muted/40">
-              Worn by collectors in 30+ countries
-            </p>
-            <div className="grid grid-cols-3 gap-4">
-              {stats.map((s) => (
-                <div key={s.label}>
-                  <p className="font-serif text-[17px] font-normal text-foreground">{s.label}</p>
-                  <p className="mt-0.5 text-[11px] font-light leading-[1.6] text-foreground-muted/50">
-                    {s.sub1}<br />{s.sub2}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
 
         </div>
       </div>
