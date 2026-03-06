@@ -48,10 +48,11 @@ export const archivedWatches: ArchivedWatch[] = [
   {
     slug: "okapi-gmt",
     name: "Okapi GMT",
-    year: 2021,
+    year: 2023,
     soldYear: 2023,
     price: 1800,
     editionSize: 20,
+    editionLabel: "Pièces uniques",
     hook: "Two time zones. One watch that earns both.",
     description:
       "The Okapi case — refined, restrained — now tracking two cities at once. A 24-hour hand reads the second zone without interrupting the first. Bidirectional bezel. No extra bulk. The same quiet confidence, now with somewhere to be.",
