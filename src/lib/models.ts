@@ -13,15 +13,27 @@ export const studioPieces: StudioPiece[] = [
     image: "/images/Piece Unique/study-Betsy Ross.jpeg",
   },
   {
+    id: "pink-guilloche",
+    title: "Dial Study — Pink Guilloché",
+    caption: "Exploration in contrast — a salmon-rose guilloché dial paired with heat-blued hands and a dark DLC case.",
+    image: "/images/Piece Unique/study-pink-guilloche.jpg",
+  },
+  {
     id: "tantalum",
     title: "Material Study — Tantalum",
     caption: "Tantalum case. Multi-layer guilloché dial — copper damier centre, blued wave engine-turning, silver chapter ring with Roman numerals. Small seconds at six, powered by the LJP7380. One of the rarest case materials in watchmaking, chosen for how it ages.",
     image: "/images/Piece Unique/study-Tantalum.jpeg",
   },
   {
-    id: "pink-guilloche",
-    title: "Dial Study — Pink Guilloché",
-    caption: "Exploration in contrast — a salmon-rose guilloché dial paired with heat-blued hands and a dark DLC case.",
-    image: "/images/Piece Unique/study-pink-guilloche.jpg",
+    id: "lumos",
+    title: "Material Study — Lumos",
+    caption: "An exploration of lumicast as dial material — not as an accent, but as the dial itself. In darkness, the entire surface becomes light. Developed to understand what a watch looks like when lume is the design decision, not the detail.",
+    image: "/images/Piece Unique/Study- Okapi Lumos.jpg",
+  },
+  {
+    id: "okapi-genesis",
+    title: "Prototype Study — Okapi Genesis",
+    caption: "The design that bridged the first Okapi and what followed. A deep forest green sunburst dial with small seconds at six — the original cushion case carrying the language of a new generation. The transition, not the arrival.",
+    image: "/images/Piece Unique/Study- Okapi Genesis verde.jpeg",
   },
 ];
