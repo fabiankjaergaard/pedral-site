@@ -8,6 +8,13 @@ export interface StudioPiece {
 
 export const studioPieces: StudioPiece[] = [
   {
+    id: "charity-time-to-give",
+    title: "Auction Piece — Time to Give",
+    caption: "Part of 'Time to Give' — a charity auction devoted entirely to Nordic watchmaking, organised by Stockholm Time. A gold sunburst outer dial, deep black centre, small seconds at six, on a hand-stitched yellow leather strap. Every bid goes directly to the Jonte Foundation's work supporting families in need. No buyer's commission. One watch. One chance.",
+    image: "/images/Piece Unique/Study- Charity.jpeg",
+    darken: true,
+  },
+  {
     id: "betsy-ross",
     title: "Dial Study — Betsy Ross",
     caption: "Thirteen stars on a deep-blue guilloché centre. One for each original colony. Developed in 2026 — the year the United States marks 250 years of independence — as a quiet acknowledgement of a founding moment, not a souvenir of it.",
@@ -30,13 +37,6 @@ export const studioPieces: StudioPiece[] = [
     title: "Material Study — Lumos",
     caption: "An exploration of lumicast as dial material — not as an accent, but as the dial itself. In darkness, the entire surface becomes light. Developed to understand what a watch looks like when lume is the design decision, not the detail.",
     image: "/images/Piece Unique/Study- Okapi Lumos.jpg",
-  },
-  {
-    id: "charity-time-to-give",
-    title: "Auction Piece — Time to Give",
-    caption: "Part of 'Time to Give' — a charity auction devoted entirely to Nordic watchmaking, organised by Stockholm Time. A gold sunburst outer dial, deep black centre, small seconds at six, on a hand-stitched yellow leather strap. Every bid goes directly to the Jonte Foundation's work supporting families in need. No buyer's commission. One watch. One chance.",
-    image: "/images/Piece Unique/Study- Charity.jpeg",
-    darken: true,
   },
   {
     id: "triomphe-ceramic",
