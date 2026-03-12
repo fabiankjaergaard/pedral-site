@@ -108,13 +108,13 @@ export default function UniquePiecesContent() {
           >
             <motion.p
               variants={fadeInUp}
-              className="mb-3 text-[11px] font-normal tracking-[4px] uppercase text-accent"
+              className="mb-3 text-center text-[11px] font-normal tracking-[4px] uppercase text-accent"
             >
               The Process
             </motion.p>
             <motion.h2
               variants={fadeInUp}
-              className="mb-12 font-serif text-[clamp(26px,3vw,38px)] font-light text-foreground md:mb-16"
+              className="mb-12 text-center font-serif text-[clamp(26px,3vw,38px)] font-light text-foreground md:mb-16"
             >
               The Bespoke Journey
             </motion.h2>
