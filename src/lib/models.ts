@@ -82,5 +82,6 @@ export const studioPieces: StudioPiece[] = [
     title: "Prototype Study — Okapi Genesis",
     caption: "The design that bridged the first Okapi and what followed. A deep emerald green sunburst dial with small seconds at six — the original cushion case carrying the language of a new generation. The transition, not the arrival.",
     image: "/images/Piece Unique/Study- Okapi Genesis verde.jpeg",
+    darken: true,
   },
 ];
