@@ -44,7 +44,7 @@ export default function UniquePiecesContent() {
             <motion.div variants={fadeInUp} className="mt-10 flex flex-col items-center gap-4">
               <Link
                 href="/contact"
-                className="inline-block border border-accent/30 px-8 py-3 text-[11px] font-normal tracking-[2.5px] uppercase text-accent transition-colors hover:border-accent hover:bg-accent hover:text-background"
+                className="inline-block w-full border border-accent/30 px-8 py-3 text-center text-[11px] font-normal tracking-[2.5px] uppercase text-accent transition-colors hover:border-accent hover:bg-accent hover:text-background sm:w-auto"
               >
                 Private Enquiry
               </Link>

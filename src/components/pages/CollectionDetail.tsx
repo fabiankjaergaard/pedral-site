@@ -131,7 +131,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-3 font-serif text-[24px] font-light italic text-accent-hover"
+            className="mt-3 font-serif text-[clamp(18px,5vw,24px)] font-light italic text-accent-hover"
           >
             {c.hook}
           </motion.p>
@@ -297,7 +297,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                     <button
                       key={opt}
                       onClick={() => setSelectedNumeral(opt)}
-                      className={`border px-5 py-2 text-[11px] tracking-[2px] uppercase transition-colors ${
+                      className={`border px-5 py-3 text-[11px] tracking-[2px] uppercase transition-colors ${
                         selectedNumeral === opt
                           ? "border-accent bg-accent text-background"
                           : "border-accent/30 text-accent hover:border-accent"
@@ -538,7 +538,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                   variants={fadeInUp}
                   className="border-b border-accent/10"
                 >
-                  <td className="w-[120px] py-3.5 pr-4 align-top text-[11px] font-medium tracking-[1.5px] uppercase text-accent sm:w-[180px] sm:pr-6 sm:tracking-[2.5px]">
+                  <td className="w-[80px] py-3.5 pr-4 align-top text-[11px] font-medium tracking-[1.5px] uppercase text-accent sm:w-[120px] md:w-[180px] sm:pr-6 sm:tracking-[2.5px]">
                     {label}
                   </td>
                   <td className="py-3.5 text-[14px] font-light text-foreground-muted">

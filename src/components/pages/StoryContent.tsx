@@ -143,13 +143,13 @@ export default function StoryContent() {
 
       {/* Workshop Gallery */}
       <section className="grid grid-cols-1 gap-4 px-6 py-6 md:grid-cols-3 md:px-12">
-        <div className="relative h-[280px] w-full overflow-hidden rounded-lg md:h-[400px]">
+        <div className="relative h-[220px] w-full overflow-hidden rounded-lg md:h-[400px]">
           <Image src="/images/kevin-early-work.jpg" alt="Kevin early work" fill className="object-cover" />
         </div>
-        <div className="relative h-[280px] w-full overflow-hidden rounded-lg md:h-[400px]">
+        <div className="relative h-[220px] w-full overflow-hidden rounded-lg md:h-[400px]">
           <Image src="/images/kevin-design-studio.jpg" alt="Pedral Stockholm studio" fill className="object-cover" />
         </div>
-        <div className="relative h-[280px] w-full overflow-hidden rounded-lg md:h-[400px]">
+        <div className="relative h-[220px] w-full overflow-hidden rounded-lg md:h-[400px]">
           <Image src="/images/kevin-workshop.jpg" alt="Kevin in the workshop" fill className="object-cover" />
         </div>
       </section>
