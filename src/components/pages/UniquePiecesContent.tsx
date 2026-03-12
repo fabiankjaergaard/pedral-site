@@ -99,6 +99,43 @@ export default function UniquePiecesContent() {
         </div>
       </section>
 
+      {/* ── CTA ── */}
+      <section className="bg-background py-16 md:py-20">
+        <div className="mx-auto max-w-[560px] px-6 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            <motion.p
+              variants={fadeInUp}
+              className="font-serif text-[clamp(22px,2.5vw,30px)] font-light text-foreground"
+            >
+              If something here stayed with you,<br />
+              that is usually where it begins.
+            </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="mx-auto mt-4 text-[15px] font-light leading-[1.8] text-foreground-muted"
+            >
+              Not every enquiry becomes a watch. But every watch began as one.
+            </motion.p>
+            <motion.div variants={fadeInUp} className="mt-8 flex flex-col items-center gap-3">
+              <Link
+                href="/contact"
+                className="inline-block w-full border border-accent/30 px-8 py-3 text-center text-[11px] font-normal tracking-[2.5px] uppercase text-accent transition-colors hover:border-accent hover:bg-accent hover:text-background sm:w-auto"
+              >
+                Begin a Commission
+              </Link>
+              <p className="text-[12px] font-light tracking-[0.5px] text-foreground-muted/50">
+                I respond to every message personally.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
     </>
   );
 }
