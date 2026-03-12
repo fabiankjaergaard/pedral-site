@@ -157,7 +157,7 @@ function StudyEntry({ piece }: { piece: import("@/lib/models").StudioPiece }) {
               src={piece.image}
               alt={piece.title}
               fill
-              className="object-cover"
+              className="object-contain"
             />
             {piece.darken && (
               <div className="absolute inset-0 bg-black/40" />
