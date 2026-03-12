@@ -124,7 +124,7 @@ export const collections: Collection[] = [
       {
         name: "Frosted Flex",
         stripePriceId: "price_1T4TvBCfxE1lSBKRfCkEqWVd",
-        stock: 18,
+        stock: 7,
         description: "A frosted, architectural surface with a quiet confidence. Less is more. Until the light hits.",
         image: "/images/maestro-frosted.jpg",
       },
