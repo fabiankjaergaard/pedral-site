@@ -32,6 +32,13 @@ export const studioPieces: StudioPiece[] = [
     image: "/images/Piece Unique/Study- Okapi Lumos.jpg",
   },
   {
+    id: "triomphe-ceramic",
+    title: "Dial Study — Triomphe Ceramic",
+    caption: "The Triomphe case in white ceramic — a departure from steel. Orange guilloché dial in Carreau Tissé, silver chapter ring with Roman numerals, paired with a bespoke sky-blue FKM rubber strap. A study in how far the Triomphe platform can stretch without losing itself.",
+    image: "/images/Piece Unique/Study- Triomphe Ceramic Case.jpg",
+    darken: true,
+  },
+  {
     id: "rymd-gmt",
     title: "Complication Study — Rymd GMT",
     caption: "The first GMT complication explored under the Pedral name. A world map dial beneath a 24-hour inner bezel — two time zones, one glance. Introducing the new tonneau case in full brushed steel.",
