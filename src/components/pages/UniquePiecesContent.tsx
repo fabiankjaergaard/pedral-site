@@ -52,7 +52,7 @@ export default function UniquePiecesContent() {
             >
               If something here resonates, the studio can create one for you.
             </motion.p>
-            <motion.div variants={fadeInUp} className="mt-10 flex flex-col items-center gap-4">
+            <motion.div variants={fadeInUp} className="mt-6 flex flex-col items-center gap-4">
               <Link
                 href="/contact"
                 className="inline-block w-full border border-accent/30 px-8 py-3 text-center text-[11px] font-normal tracking-[2.5px] uppercase text-accent transition-colors hover:border-accent hover:bg-accent hover:text-background sm:w-auto"
@@ -78,7 +78,7 @@ export default function UniquePiecesContent() {
           >
             <motion.p
               variants={fadeInUp}
-              className="mb-16 text-[11px] font-normal tracking-[4px] uppercase text-accent"
+              className="mb-6 text-[11px] font-normal tracking-[4px] uppercase text-accent"
             >
               Pièces Uniques
             </motion.p>
