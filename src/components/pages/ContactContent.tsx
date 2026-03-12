@@ -112,19 +112,6 @@ export default function ContactContent() {
                     ))}
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-[11px] font-medium tracking-[2px] uppercase text-accent">
-                    Shop
-                  </h3>
-                  <a
-                    href="https://shop.pedral.eu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 block font-serif text-xl font-light text-foreground transition-colors hover:text-accent"
-                  >
-                    shop.pedral.eu &rarr;
-                  </a>
-                </div>
               </div>
             </motion.div>
           </div>

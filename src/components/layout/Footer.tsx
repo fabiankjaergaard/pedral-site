@@ -46,14 +46,6 @@ export default function Footer() {
           >
             Story
           </Link>
-          <a
-            href="https://shop.pedral.eu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[12px] font-normal tracking-[1.5px] uppercase text-foreground-muted transition-colors hover:text-accent"
-          >
-            Shop
-          </a>
           <Link
             href="/journal"
             className="text-[12px] font-normal tracking-[1.5px] uppercase text-foreground-muted transition-colors hover:text-accent"
