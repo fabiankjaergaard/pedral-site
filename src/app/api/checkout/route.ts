@@ -2,6 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { rateLimit, getIp } from "@/lib/rateLimit";
 
+const VALID_PRICE_IDS = new Set([
+  "price_1T4Tw7CfxE1lSBKRY9zmQqHV",
+  "price_1T4TvBCfxE1lSBKRfCkEqWVd",
+  "price_1T9xa2CfxE1lSBKR4hPpmnPR",
+  "price_1T9xbUCfxE1lSBKR5IDT0QJ1",
+  "price_1T4TsqCfxE1lSBKRFBCRLukn",
+  "price_1T4TpQCfxE1lSBKR6aJh8nbb",
+]);
+
 export async function POST(req: NextRequest) {
   const ip = getIp(req);
   const { allowed } = rateLimit(`checkout:${ip}`, 10, 60_000);
@@ -16,6 +25,10 @@ export async function POST(req: NextRequest) {
 
   if (!priceId || !productName) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  }
+
+  if (!VALID_PRICE_IDS.has(priceId)) {
+    return NextResponse.json({ error: "Invalid price" }, { status: 400 });
   }
 
   const origin = req.headers.get("origin") ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://pedral.eu";
