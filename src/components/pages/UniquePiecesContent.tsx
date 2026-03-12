@@ -10,7 +10,7 @@ export default function UniquePiecesContent() {
   return (
     <>
       {/* ── 1. Hero intro ── */}
-      <section className="relative bg-background pb-0 pt-32 md:pt-40">
+      <section className="relative bg-background pb-0 pt-28 md:pt-36">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(17,29,32,0.6)_0%,transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-[720px] px-6 text-center md:px-12">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
@@ -28,7 +28,7 @@ export default function UniquePiecesContent() {
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="mx-auto mt-7 text-[16px] font-light leading-[1.8] text-foreground-muted"
+              className="mx-auto mt-5 text-[16px] font-light leading-[1.8] text-foreground-muted"
             >
               Some collectors are not looking for what already exists.
             </motion.p>
@@ -52,7 +52,7 @@ export default function UniquePiecesContent() {
             >
               If something here resonates, the studio can create one for you.
             </motion.p>
-            <motion.div variants={fadeInUp} className="mt-6 flex flex-col items-center gap-4">
+            <motion.div variants={fadeInUp} className="mt-5 flex flex-col items-center gap-3">
               <Link
                 href="/contact"
                 className="inline-block w-full border border-accent/30 px-8 py-3 text-center text-[11px] font-normal tracking-[2.5px] uppercase text-accent transition-colors hover:border-accent hover:bg-accent hover:text-background sm:w-auto"
@@ -68,7 +68,7 @@ export default function UniquePiecesContent() {
       </section>
 
       {/* ── 2. Gallery ── */}
-      <section className="border-t border-accent/[0.08] bg-background-alt pt-4 pb-10 md:pt-6 md:pb-14">
+      <section className="border-t border-accent/[0.08] bg-background-alt pt-8 pb-10 md:pt-12 md:pb-14">
         <div className="mx-auto max-w-[720px] px-6 md:px-12">
           <motion.div
             initial="hidden"
@@ -76,13 +76,6 @@ export default function UniquePiecesContent() {
             viewport={{ once: true }}
             variants={staggerContainer}
           >
-            <motion.p
-              variants={fadeInUp}
-              className="mb-6 text-[11px] font-normal tracking-[4px] uppercase text-accent"
-            >
-              Pièces Uniques
-            </motion.p>
-          </motion.div>
 
           {studioPieces.length === 0 ? (
             <motion.div
