@@ -180,12 +180,17 @@ function StudyEntry({ piece }: { piece: import("@/lib/models").StudioPiece }) {
         style={{ aspectRatio: "3/2" }}
       >
         {piece.image ? (
-          <Image
-            src={piece.image}
-            alt={piece.title}
-            fill
-            className="object-cover"
-          />
+          <>
+            <Image
+              src={piece.image}
+              alt={piece.title}
+              fill
+              className="object-cover"
+            />
+            {piece.darken && (
+              <div className="absolute inset-0 bg-black/40" />
+            )}
+          </>
         ) : (
           <div className="flex h-full w-full items-center justify-center">
             <span className="font-serif text-[28px] font-light text-accent/[0.10]">

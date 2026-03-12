@@ -3,6 +3,7 @@ export interface StudioPiece {
   title: string;    // e.g. "Dial Study — Orange Agate"
   caption: string;  // e.g. "Material exploration developed during the Triomphe design phase."
   image?: string;
+  darken?: boolean;
 }
 
 export const studioPieces: StudioPiece[] = [
@@ -35,5 +36,6 @@ export const studioPieces: StudioPiece[] = [
     title: "Prototype Study — Okapi Genesis",
     caption: "The design that bridged the first Okapi and what followed. A deep forest green sunburst dial with small seconds at six — the original cushion case carrying the language of a new generation. The transition, not the arrival.",
     image: "/images/Piece Unique/Study- Okapi Genesis verde.jpeg",
+    darken: true,
   },
 ];
