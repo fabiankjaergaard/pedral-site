@@ -129,7 +129,7 @@ export default function UniquePiecesContent() {
               variants={fadeInUp}
               className="font-serif text-[clamp(28px,3.5vw,42px)] font-light text-foreground"
             >
-              Some collectors are not looking for what already exists.
+              Some collectors want more than what exists.
             </motion.h2>
             <motion.div
               variants={fadeInUp}
