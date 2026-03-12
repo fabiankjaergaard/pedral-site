@@ -99,57 +99,6 @@ export default function UniquePiecesContent() {
         </div>
       </section>
 
-      {/* ── 3. Commission a Piece — contact invitation ── */}
-      <section className="border-t border-accent/[0.08] bg-background-alt py-20 md:py-28">
-        <div className="mx-auto max-w-[720px] px-6 md:px-12">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-          >
-            <motion.p
-              variants={fadeInUp}
-              className="mb-4 text-[11px] font-normal tracking-[4px] uppercase text-accent"
-            >
-              Commission a Piece
-            </motion.p>
-            <motion.h2
-              variants={fadeInUp}
-              className="font-serif text-[clamp(22px,2.8vw,36px)] font-light text-foreground"
-            >
-              Some collectors want more than what exists.
-            </motion.h2>
-            <motion.div
-              variants={fadeInUp}
-              className="mt-7 space-y-5 text-[16px] font-light leading-[1.8] text-foreground-muted"
-            >
-              <p>
-                If you are searching for something particular — a material, a
-                dial, or an idea you have not yet seen — you are welcome to
-                write directly.
-              </p>
-              <p>
-                Many of the most interesting watches begin exactly that way.
-              </p>
-              <p>
-                A short note is enough. I read every message personally.
-              </p>
-            </motion.div>
-            <motion.div variants={fadeInUp} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link
-                href="/contact"
-                className="inline-block border border-accent/30 px-8 py-3 text-[11px] font-normal tracking-[2.5px] uppercase text-accent transition-colors hover:border-accent hover:bg-accent hover:text-background"
-              >
-                Start a Conversation
-              </Link>
-              <p className="text-[12px] font-light tracking-[0.5px] text-foreground-muted/60">
-                Private enquiries only.
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
     </>
   );
 }
