@@ -63,7 +63,7 @@ export default function UniquePiecesContent() {
       </section>
 
       {/* ── 2. Gallery ── */}
-      <section className="border-t border-accent/[0.08] bg-background-alt pt-8 pb-10 md:pt-12 md:pb-14">
+      <section className="border-t border-accent/[0.08] bg-background-alt pt-10 pb-14 md:pt-14 md:pb-20">
         <div className="mx-auto max-w-[720px] px-6 md:px-12">
           {studioPieces.length === 0 ? (
             <motion.div
@@ -149,7 +149,7 @@ function StudyEntry({ piece }: { piece: import("@/lib/models").StudioPiece }) {
       <motion.div
         variants={fadeInUp}
         className="relative w-full overflow-hidden bg-[var(--surface)]"
-        style={{ aspectRatio: "3/2" }}
+        style={{ aspectRatio: "16/9" }}
       >
         {piece.image ? (
           <>
@@ -173,11 +173,11 @@ function StudyEntry({ piece }: { piece: import("@/lib/models").StudioPiece }) {
       </motion.div>
 
       {/* Caption */}
-      <motion.div variants={fadeInUp} className="mt-6 border-l border-accent/20 pl-5">
-        <p className="font-serif text-[18px] font-light text-foreground">
+      <motion.div variants={fadeInUp} className="mt-5 border-l border-accent/20 pl-5">
+        <p className="font-serif text-[20px] font-light text-foreground">
           {piece.title}
         </p>
-        <p className="mt-1.5 text-[14px] font-light leading-relaxed text-foreground-muted">
+        <p className="mt-2 text-[15px] font-light leading-[1.75] text-foreground-muted">
           {piece.caption}
         </p>
       </motion.div>
