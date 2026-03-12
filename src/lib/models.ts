@@ -41,7 +41,7 @@ export const studioPieces: StudioPiece[] = [
   {
     id: "florida-gator",
     title: "Dial Study — University Blue",
-    caption: "Built for a client's daughter on the occasion of her graduation. Royal blue sunburst dial, orange small seconds — the exact colours of her university, worn on her wrist. A commission where the brief was loyalty.",
+    caption: "Built for a client who wanted to carry his daughter's university colours on his wrist. Royal blue sunburst dial, orange small seconds — her colours, his watch. A commission where the brief was pride.",
     image: "/images/Piece Unique/Study- Okapi- Florida gator inspired dial.jpg",
     darken: true,
   },
