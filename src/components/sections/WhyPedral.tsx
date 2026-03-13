@@ -62,20 +62,6 @@ export default function WhyPedral() {
           ))}
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="mt-16 border-t border-accent/[0.08] pt-10 md:mt-20"
-        >
-          <p className="font-serif text-[clamp(22px,2.5vw,30px)] font-light text-foreground">
-            Pedral
-          </p>
-          <p className="mt-1 text-[15px] font-light italic text-foreground-muted">
-            Not For Everyone.
-          </p>
-        </motion.div>
       </div>
     </section>
   );
