@@ -6,18 +6,18 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const reasons = [
   {
     num: "01",
-    title: "One Designer",
-    desc: "Every watch is designed in Stockholm by one person. When you contact Pedral, you speak with Kevin directly. Not a team.",
+    title: "Designed by One",
+    desc: "Every Pedral watch is designed in Stockholm by Kevin Pedral.\n\nWhen you contact Pedral, you speak directly with the person behind the watch.",
   },
   {
     num: "02",
-    title: "Swiss Specs, Independent Price",
-    desc: "Swiss movement. Sapphire crystal. HV1200 coating. At any established house, this specification starts at €3,000+. Without the retail chain, the showroom, or the advertising budget, the difference remains in the watch.",
+    title: "Built with Purpose",
+    desc: "Swiss automatic movement. Sapphire crystal. Surface-hardened steel (HV1200).\n\nModern watchmaking fundamentals, executed with restraint.",
   },
   {
     num: "03",
-    title: "20 Pieces. No Restocks.",
-    desc: "Twenty pieces per variant. When an edition closes, it closes. There is no second run and no special re-edition.",
+    title: "Limited by Design",
+    desc: "Each variant is produced in twenty pieces only.\n\nWhen an edition closes, it is never produced again.",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function WhyPedral() {
             Why Pedral
           </p>
           <h2 className="font-serif text-[clamp(32px,3.5vw,40px)] font-light text-foreground">
-            How This Works
+            How It Works
           </h2>
         </div>
 
@@ -47,17 +47,34 @@ export default function WhyPedral() {
               variants={fadeInUp}
               className="border-t border-accent/[0.12] pt-7 md:pt-9"
             >
-              <span className="font-serif text-[44px] font-light text-accent/20">
+              <span className="font-serif text-[44px] font-light text-accent">
                 {r.num}
               </span>
               <h3 className="mt-4 font-serif text-[22px] font-normal text-foreground">
                 {r.title}
               </h3>
-              <p className="mt-3.5 text-[15px] font-light leading-[1.85] text-foreground-muted">
-                {r.desc}
-              </p>
+              {r.desc.split("\n\n").map((para, i) => (
+                <p key={i} className="mt-3.5 text-[15px] font-light leading-[1.85] text-foreground-muted">
+                  {para}
+                </p>
+              ))}
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="mt-16 border-t border-accent/[0.08] pt-10 md:mt-20"
+        >
+          <p className="font-serif text-[clamp(22px,2.5vw,30px)] font-light text-foreground">
+            Pedral
+          </p>
+          <p className="mt-1 text-[15px] font-light italic text-foreground-muted">
+            Not For Everyone.
+          </p>
         </motion.div>
       </div>
     </section>
