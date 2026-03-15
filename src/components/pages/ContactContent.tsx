@@ -45,7 +45,7 @@ export default function ContactContent() {
                 </p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                   <a
-                    href="mailto:hello@pedral.watch"
+                    href="mailto:info@pedral.watch"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-lg bg-accent px-9 py-4 text-[12px] font-medium tracking-[2px] uppercase text-background transition-all hover:bg-accent-hover sm:text-[11px] sm:tracking-[3px]"

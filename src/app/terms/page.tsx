@@ -14,7 +14,7 @@ export default function TermsPage() {
       <p>
         Pedral Design Studio AB, Organisation number 559484-4275, Sveavägen 117A,
         113 49 Stockholm, Sweden.
-        Email: <a href="mailto:hello@pedral.watch">hello@pedral.watch</a>. VAT: SE559484427501.
+        Email: <a href="mailto:info@pedral.watch">info@pedral.watch</a>. VAT: SE559484427501.
       </p>
 
       <h2>2. Scope</h2>
@@ -59,7 +59,7 @@ export default function TermsPage() {
         </li>
         <li>
           You may cancel your pre-order at any time before dispatch for a full refund — email{" "}
-          <a href="mailto:hello@pedral.watch">hello@pedral.watch</a> with your order number
+          <a href="mailto:info@pedral.watch">info@pedral.watch</a> with your order number
         </li>
       </ul>
       <p>
@@ -91,7 +91,7 @@ export default function TermsPage() {
       <ul>
         <li>
           <strong>Before dispatch:</strong> You may cancel at any time for a full refund. Email{" "}
-          <a href="mailto:hello@pedral.watch">hello@pedral.watch</a> with your order number.
+          <a href="mailto:info@pedral.watch">info@pedral.watch</a> with your order number.
         </li>
         <li>
           <strong>After delivery:</strong> The standard 14-day withdrawal period applies from
