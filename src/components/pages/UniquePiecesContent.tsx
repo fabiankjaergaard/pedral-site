@@ -139,7 +139,7 @@ export default function UniquePiecesContent() {
                 {
                   n: "04",
                   title: "The Watch",
-                  body: "It arrives as a finished object — not a configured product, but a watch that did not exist before you asked for it. The balance is settled on delivery.",
+                  body: "It arrives as a finished object — not a configured product, but a watch that did not exist before you asked for it. The balance is settled before delivery.",
                 },
               ].map((step) => (
                 <motion.div key={step.n} variants={fadeInUp}>
