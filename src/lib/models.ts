@@ -15,15 +15,15 @@ export const studioPieces: StudioPiece[] = [
     darken: true,
   },
   {
-    id: "okapi-two-tone",
-    title: "Dial Study — Okapi Two-Tone",
-    caption: "A split-tone dial in amber and burnt orange — champagne sunburst upper field, deep amber lower, small seconds at six. The Okapi cushion case in brushed steel on a hand-stitched brown leather strap. An exploration of tonal contrast within a single colour family.",
-    image: "/images/Piece Unique/Study- Okapi Two tone.jpg",
+    id: "skulptur-hebrew-green",
+    title: "Numeral Study — Skulptur, Hebrew Dial",
+    caption: "Skulptur is an avant-garde form defined by its unconventional lug design — symmetry held against asymmetry, softness against sharpness. This commission pairs the guilloché sunburst dial with Hebrew numerals, a teal centre, and an amber small seconds at six. The case and dial were made for each other.",
+    image: "/images/Piece Unique/Study- Skulptur Hebrew Green.jpg",
     darken: true,
   },
   {
     id: "betsy-ross",
-    title: "Dial Study — Betsy Ross",
+    title: "Conceptual Study — Betsy Ross",
     caption: "Thirteen stars on a deep-blue guilloché centre. One for each original colony. Developed in 2026 — the year the United States marks 250 years of independence — as a quiet acknowledgement of a founding moment, not a souvenir of it.",
     image: "/images/Piece Unique/study-Betsy Ross.jpeg",
     darken: true,
@@ -51,7 +51,7 @@ export const studioPieces: StudioPiece[] = [
   },
   {
     id: "triomphe-ceramic",
-    title: "Dial Study — Triomphe Ceramic",
+    title: "Material Study — Triomphe Ceramic",
     caption: "The Triomphe case in white ceramic — a departure from steel. Orange guilloché dial in Carreau Tissé, silver chapter ring with Roman numerals, paired with a bespoke sky-blue FKM rubber strap. A study in how far the Triomphe platform can stretch without losing itself.",
     image: "/images/Piece Unique/Study- Triomphe Ceramic Case.jpg",
     darken: true,
@@ -72,7 +72,7 @@ export const studioPieces: StudioPiece[] = [
   },
   {
     id: "florida-gator",
-    title: "Dial Study — University Blue",
+    title: "Dial Study — Alumui Blue",
     caption: "Built for a client who wanted to carry his daughter's university colours on his wrist. Royal blue sunburst dial, orange small seconds — her colours, his watch. A commission where the brief was pride.",
     image: "/images/Piece Unique/Study- Okapi- Florida gator inspired dial.jpg",
     darken: true,
