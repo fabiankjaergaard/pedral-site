@@ -30,6 +30,11 @@ export function rateLimit(
 }
 
 export function getIp(req: Request): string {
+  // Only trust the last IP in x-forwarded-for (set by the trusted proxy), not client-supplied values
   const forwarded = req.headers.get("x-forwarded-for");
-  return forwarded ? forwarded.split(",")[0].trim() : "unknown";
+  if (forwarded) {
+    const ips = forwarded.split(",").map((s) => s.trim()).filter(Boolean);
+    return ips[ips.length - 1] ?? "unknown";
+  }
+  return "unknown";
 }

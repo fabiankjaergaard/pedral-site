@@ -50,3 +50,4 @@ next-env.d.ts
 config.json
 views.json
 events.jsonl
+.env.local

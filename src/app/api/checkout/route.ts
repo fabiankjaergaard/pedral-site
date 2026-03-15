@@ -31,7 +31,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid price" }, { status: 400 });
   }
 
-  const origin = req.headers.get("origin") ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://pedral.eu";
+  const ALLOWED_ORIGINS = new Set(["https://pedral.eu", "https://www.pedral.eu", "https://pedral.watch", "https://www.pedral.watch"]);
+  const requestOrigin = req.headers.get("origin") ?? "";
+  const origin = ALLOWED_ORIGINS.has(requestOrigin) ? requestOrigin : "https://pedral.eu";
 
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
