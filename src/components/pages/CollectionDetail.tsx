@@ -32,7 +32,10 @@ export default function CollectionDetail({ collection }: { collection: Collectio
   const [loading, setLoading] = useState(false);
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [preOrderError, setPreOrderError] = useState<string | null>(null);
-  const [selectedNumeral, setSelectedNumeral] = useState<string | null>(null);
+  const firstVariant = hasVariants ? c.variants![0] : null;
+  const [selectedNumeral, setSelectedNumeral] = useState<string | null>(
+    firstVariant?.numeralOptions?.[0] ?? null
+  );
 
   async function handleReserve() {
     if (c.isPreOrder) {
@@ -173,7 +176,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="mt-6 sm:mt-6 fixed bottom-6 left-0 right-0 px-6 z-50 sm:relative sm:bottom-auto sm:left-auto sm:right-auto sm:px-0 sm:z-auto"
+            className="mt-6"
           >
             {c.isEnquiryOnly ? (
               <div className="flex flex-col gap-3">

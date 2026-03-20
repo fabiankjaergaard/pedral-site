@@ -254,7 +254,7 @@ export const collections: Collection[] = [
     newsletterTitle: "Notified first when the next dial edition opens.",
     newsletterSub: "Allocation-based. Priority to the list.",
     image: "/images/triomphe-saphir-roman.jpg",
-    heroImage: "/images/triomphe-hero.jpg",
+    heroImage: "/images/triomphe-hero-2.jpg",
     detailImage: "/images/triomphe-detail.png",
     galleryImages: [
       "/images/triomphe-wrist-hebrew.jpg",
