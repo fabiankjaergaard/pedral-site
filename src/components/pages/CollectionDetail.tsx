@@ -21,6 +21,7 @@ function ImagePlaceholder({ label, className = "" }: { label: string; className?
   );
 }
 
+
 export default function CollectionDetail({ collection }: { collection: Collection }) {
   const c = collection;
   const isSoldOut = c.stock === 0 && !c.isEnquiryOnly;
@@ -479,28 +480,38 @@ export default function CollectionDetail({ collection }: { collection: Collectio
       </section>
 
       {/* Gallery Strip */}
-      <section className="grid grid-cols-1 gap-[2px] md:grid-cols-3">
-        {(c.galleryImages && c.galleryImages.length > 0
-          ? c.galleryImages
-          : [null, null, null]
-        ).map((src, i) => (
-          <div key={i} className="relative h-[250px] w-full md:h-[380px]">
-            {src ? (
-              <Image
-                src={src}
-                alt={`${c.name} angle ${i + 1}`}
-                fill
-                className="object-cover transition-transform duration-500 hover:scale-[1.02]"
-              />
-            ) : (
-              <ImagePlaceholder
-                label={`${c.name}\nAngle ${i + 1}`}
-                className="h-full w-full"
-              />
-            )}
-          </div>
-        ))}
-      </section>
+      {(() => {
+        const images = c.galleryImages && c.galleryImages.length > 0 ? c.galleryImages : [null, null, null];
+        const cols = images.length;
+        return (
+          <>
+            {/* Mobile: horizontal scroll */}
+            <section className="flex gap-[2px] overflow-x-auto snap-x snap-mandatory scrollbar-none md:hidden">
+              {images.map((src, i) => (
+                <div key={i} className="relative h-[280px] w-[80vw] shrink-0 snap-start">
+                  {src ? (
+                    <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className="object-cover" />
+                  ) : (
+                    <ImagePlaceholder label={`${c.name}\nAngle ${i + 1}`} className="h-full w-full" />
+                  )}
+                </div>
+              ))}
+            </section>
+            {/* Desktop: 5-panel grid */}
+            <section className="hidden gap-[2px] md:grid" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
+              {images.map((src, i) => (
+                <div key={i} className="relative h-[380px] w-full">
+                  {src ? (
+                    <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className="object-cover transition-transform duration-500 hover:scale-[1.02]" />
+                  ) : (
+                    <ImagePlaceholder label={`${c.name}\nAngle ${i + 1}`} className="h-full w-full" />
+                  )}
+                </div>
+              ))}
+            </section>
+          </>
+        );
+      })()}
 
       {/* Specifications */}
       <section className="bg-background-alt py-20 md:py-28">

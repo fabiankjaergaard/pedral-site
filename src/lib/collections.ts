@@ -255,10 +255,12 @@ export const collections: Collection[] = [
     newsletterSub: "Allocation-based. Priority to the list.",
     image: "/images/triomphe-saphir-roman.jpg",
     heroImage: "/images/triomphe-hero.jpg",
-    detailImage: "/images/triomphe-detail.jpg",
+    detailImage: "/images/triomphe-detail.png",
     galleryImages: [
+      "/images/triomphe-wrist-hebrew.jpg",
       "/images/triomphe-angle-1.jpg",
       "/images/triomphe-angle-2.jpg",
+      "/images/triomphe-wrist-arabic.jpg",
       "/images/triomphe-angle-3.jpg",
     ],
     comingSoonEditions: [],
