@@ -94,14 +94,14 @@ export default function CollectionDetail({ collection }: { collection: Collectio
   return (
     <>
       {/* Product Hero — Full-bleed with overlay */}
-      <section className="relative flex min-h-screen items-center overflow-hidden">
+      <section className="relative flex min-h-[60vh] items-center overflow-hidden sm:min-h-screen">
         <div className="absolute inset-0">
           {(c.heroImage || c.image) ? (
             <Image
               src={c.heroImage ?? c.image}
               alt={c.name}
               fill
-              className="object-cover"
+              className="object-contain sm:object-cover"
               priority
             />
           ) : (
