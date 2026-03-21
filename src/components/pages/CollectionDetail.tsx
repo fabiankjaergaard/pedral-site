@@ -491,11 +491,11 @@ export default function CollectionDetail({ collection }: { collection: Collectio
             {/* Mobile: horizontal scroll */}
             <section className="flex gap-[2px] overflow-x-auto snap-x snap-mandatory scrollbar-none md:hidden">
               {images.map((src, i) => {
-                const isWide = src === "/images/triomphe-angle-1.jpg";
+                const isWide = false;
                 return (
                   <div key={i} className="relative h-[280px] w-[80vw] shrink-0 snap-start overflow-hidden bg-[#060a0b]">
                     {src ? (
-                      <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className={isWide ? "object-contain" : "object-cover"} style={{ filter: "contrast(1.08) saturate(0.82) brightness(0.88) sepia(0.12)" }} />
+                      <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className={isWide ? "object-contain" : "object-cover"} style={{ filter: "contrast(1.06) saturate(0.92) brightness(0.97) sepia(0.05)" }} />
                     ) : (
                       <ImagePlaceholder label={`${c.name}\nAngle ${i + 1}`} className="h-full w-full" />
                     )}
@@ -508,11 +508,11 @@ export default function CollectionDetail({ collection }: { collection: Collectio
             {/* Desktop: 5-panel grid */}
             <section className="hidden gap-[2px] md:grid" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
               {images.map((src, i) => {
-                const isWide = src === "/images/triomphe-angle-1.jpg";
+                const isWide = false;
                 return (
                   <div key={i} className="relative h-[380px] w-full overflow-hidden group bg-[#060a0b]">
                     {src ? (
-                      <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className={`${isWide ? "object-contain" : "object-cover"} transition-transform duration-700 group-hover:scale-[1.04]`} style={{ filter: "contrast(1.08) saturate(0.82) brightness(0.88) sepia(0.12)" }} />
+                      <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className={`${isWide ? "object-contain" : "object-cover"} transition-transform duration-700 group-hover:scale-[1.04]`} style={{ filter: "contrast(1.06) saturate(0.92) brightness(0.97) sepia(0.05)" }} />
                     ) : (
                       <ImagePlaceholder label={`${c.name}\nAngle ${i + 1}`} className="h-full w-full" />
                     )}
