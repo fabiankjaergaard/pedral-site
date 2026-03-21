@@ -258,10 +258,10 @@ export const collections: Collection[] = [
     detailImage: "/images/triomphe-detail.png",
     galleryImages: [
       "/images/triomphe-wrist-hebrew.jpg",
-      "/images/triomphe-ember-wrist.png",
       "/images/triomphe-angle-2.jpg",
-      "/images/triomphe-wrist-arabic.jpg",
+      "/images/triomphe-ember-wrist.png",
       "/images/triomphe-angle-3.jpg",
+      "/images/triomphe-wrist-arabic.jpg",
     ],
     comingSoonEditions: [],
   },
