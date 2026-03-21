@@ -490,31 +490,37 @@ export default function CollectionDetail({ collection }: { collection: Collectio
           <>
             {/* Mobile: horizontal scroll */}
             <section className="flex gap-[2px] overflow-x-auto snap-x snap-mandatory scrollbar-none md:hidden">
-              {images.map((src, i) => (
-                <div key={i} className="relative h-[280px] w-[80vw] shrink-0 snap-start overflow-hidden">
-                  {src ? (
-                    <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className="object-cover" style={{ filter: "contrast(1.08) saturate(0.82) brightness(0.88) sepia(0.12)" }} />
-                  ) : (
-                    <ImagePlaceholder label={`${c.name}\nAngle ${i + 1}`} className="h-full w-full" />
-                  )}
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(2,4,6,0.45)_100%)]" />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,4,6,0.18)_0%,transparent_35%,transparent_65%,rgba(2,4,6,0.32)_100%)]" />
-                </div>
-              ))}
+              {images.map((src, i) => {
+                const isWide = src === "/images/triomphe-angle-1.jpg";
+                return (
+                  <div key={i} className="relative h-[280px] w-[80vw] shrink-0 snap-start overflow-hidden bg-[#060a0b]">
+                    {src ? (
+                      <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className={isWide ? "object-contain" : "object-cover"} style={{ filter: "contrast(1.08) saturate(0.82) brightness(0.88) sepia(0.12)" }} />
+                    ) : (
+                      <ImagePlaceholder label={`${c.name}\nAngle ${i + 1}`} className="h-full w-full" />
+                    )}
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(2,4,6,0.45)_100%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,4,6,0.18)_0%,transparent_35%,transparent_65%,rgba(2,4,6,0.32)_100%)]" />
+                  </div>
+                );
+              })}
             </section>
             {/* Desktop: 5-panel grid */}
             <section className="hidden gap-[2px] md:grid" style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}>
-              {images.map((src, i) => (
-                <div key={i} className="relative h-[380px] w-full overflow-hidden group">
-                  {src ? (
-                    <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" style={{ filter: "contrast(1.08) saturate(0.82) brightness(0.88) sepia(0.12)" }} />
-                  ) : (
-                    <ImagePlaceholder label={`${c.name}\nAngle ${i + 1}`} className="h-full w-full" />
-                  )}
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(2,4,6,0.45)_100%)]" />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,4,6,0.18)_0%,transparent_35%,transparent_65%,rgba(2,4,6,0.32)_100%)]" />
-                </div>
-              ))}
+              {images.map((src, i) => {
+                const isWide = src === "/images/triomphe-angle-1.jpg";
+                return (
+                  <div key={i} className="relative h-[380px] w-full overflow-hidden group bg-[#060a0b]">
+                    {src ? (
+                      <Image src={src} alt={`${c.name} angle ${i + 1}`} fill className={`${isWide ? "object-contain" : "object-cover"} transition-transform duration-700 group-hover:scale-[1.04]`} style={{ filter: "contrast(1.08) saturate(0.82) brightness(0.88) sepia(0.12)" }} />
+                    ) : (
+                      <ImagePlaceholder label={`${c.name}\nAngle ${i + 1}`} className="h-full w-full" />
+                    )}
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(2,4,6,0.45)_100%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,4,6,0.18)_0%,transparent_35%,transparent_65%,rgba(2,4,6,0.32)_100%)]" />
+                  </div>
+                );
+              })}
             </section>
           </>
         );
