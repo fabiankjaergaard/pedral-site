@@ -17,7 +17,7 @@ export const articles: Article[] = [
     title: "Three Scripts, One Watch: Why the Triomphee Speaks in Roman, Hebrew and Eastern Arabic",
     excerpt:
       "A watch dial is the most personal canvas in design. The Triomphee is available in Roman, Hebrew and Eastern Arabic numerals — not as a customisation option, but as a statement about identity, heritage and who you give a watch to.",
-    readTime: "7 min read",
+    readTime: "3 min read",
     body: [
       "A watch dial is the most intimate piece of design most people will ever own. You see it dozens of times a day. Whatever is on it becomes part of how you move through the world. The guilloché, the layered finishing — that's the craft. But the numerals are the voice. And a voice should speak in the language of the person wearing it.",
       "When I introduced the original Triomphee with Émeraude Vert guilloché, I chose Roman numerals. It felt right — classical, grounded, connected to every grand complication made in Geneva, every dress watch passed across a table with two hands. But after the December release, collectors from different parts of the world asked a natural question: what if the numerals spoke their language? I listened.",
