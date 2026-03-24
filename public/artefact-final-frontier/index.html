@@ -66,8 +66,8 @@
 
   .dial-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:0 3rem 4rem;max-width:1200px;margin:0 auto}
   .dial-card{background:var(--bg-card);border:1px solid var(--border-l);overflow:hidden}
-  .dial-card-img{background:#0d0d0c;aspect-ratio:4/5;overflow:hidden}
-  .dial-card-img img{width:100%;height:100%;object-fit:contain}
+  .dial-card-img{background:#0d0d0c;aspect-ratio:1/1;overflow:hidden;padding:0}
+  .dial-card-img img{width:100%;height:100%;object-fit:cover;transform:scale(0.8);transform-origin:center}
   .dial-card-body{padding:2rem 2rem 2.5rem}
   .dial-card-name{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.8rem;margin-bottom:.4rem}
   .dial-card-tag{font-size:.75rem;color:var(--text-3);letter-spacing:.06em;margin-bottom:1.4rem}
@@ -84,7 +84,7 @@
   .img-strip{display:grid;grid-template-columns:1fr 1fr;gap:0}
   .img-strip-placeholder{aspect-ratio:16/10;background:#0e0e0d;display:flex;align-items:center;justify-content:center}
   .img-strip-placeholder span{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-4)}
-  .img-strip img{width:100%;aspect-ratio:16/10;object-fit:cover}
+  .img-strip img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#0a0a09}
 
   /* THE WATCH */
   .watch-section{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px}
@@ -218,7 +218,7 @@
 <div class="dial-pair">
   <div class="dial-card reveal">
     <div class="dial-card-img">
-      <img src="/artefact-final-frontier/images/terrain-front.png" alt="Terrain dial">
+      <img src="/artefact-final-frontier/images/terrain-studio.png" alt="Terrain dial">
     </div>
     <div class="dial-card-body">
       <h3 class="dial-card-name c-t">Terrain</h3>
@@ -228,7 +228,7 @@
   </div>
   <div class="dial-card reveal">
     <div class="dial-card-img">
-      <img src="/artefact-final-frontier/images/sector-front.png" alt="Sector dial">
+      <img src="/artefact-final-frontier/images/sector-studio.png" alt="Sector dial">
     </div>
     <div class="dial-card-body">
       <h3 class="dial-card-name c-s">Sector</h3>
@@ -280,7 +280,6 @@
 <!-- GALLERY -->
 <div class="gallery-frame reveal">
   <div class="gallery">
-    <div class="gallery-cell"><img src="/artefact-final-frontier/images/hero-pair-2.png" alt="Final Frontier pair"></div>
     <div class="gallery-cell"><img src="/artefact-final-frontier/images/terrain-studio.png" alt="Terrain"></div>
     <div class="gallery-cell"><img src="/artefact-final-frontier/images/sector-studio.png" alt="Sector"></div>
   </div>
