@@ -122,6 +122,13 @@
   /* SECTION LABEL */
   .slabel{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.4em;text-transform:uppercase;color:var(--text-3);margin-bottom:2.5rem}
 
+  /* CLOSING STATEMENT */
+  .closing-statement{background:var(--bg-alt);border-top:1px solid var(--border-l);border-bottom:1px solid var(--border-l);padding:5rem 3rem}
+  .closing-inner{max-width:680px;margin:0 auto;text-align:center}
+  .closing-inner h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.2;margin-bottom:1.4rem}
+  .closing-inner p{color:var(--text-2);font-size:.95rem;line-height:1.9;max-width:540px;margin:0 auto}
+  .closing-inner .slabel{margin-bottom:1.8rem}
+
   /* DIAL EDITIONS */
   .dials-intro{text-align:center;padding:6rem 3rem 3rem}
   .dials-intro h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2rem,3.5vw,3rem);line-height:1.15;margin-bottom:1rem}
@@ -247,6 +254,9 @@
     .trust-inline span{font-size:.72rem;color:var(--text-2)}
     .inventory-line{font-size:.62rem;letter-spacing:.2em;margin-top:.9rem;flex-wrap:wrap;text-align:center}
 
+    /* CLOSING STATEMENT */
+    .closing-statement{padding:3.5rem 1.5rem}
+
     /* DIAL CARDS */
     .dial-pair{grid-template-columns:1fr;padding:0 1.5rem 3rem;gap:1rem}
     .dial-card-body{padding:1.5rem 1.5rem 2rem}
@@ -334,11 +344,20 @@
   <div class="inventory-line"><span class="inv-dot"></span>First allocation claimed by friends of the brand — 13 sets remain.</div>
 </div>
 
+<!-- CLOSING STATEMENT -->
+<section class="closing-statement reveal">
+  <div class="closing-inner">
+    <div class="slabel">The End of Artefact</div>
+    <h2>After two years, Artefact is being discontinued.</h2>
+    <p>This is not a pause. It is a permanent closure — as Pedral moves toward what comes next. No future releases. No restocks. No revisions. Final Frontier is the last expression of this architecture.</p>
+  </div>
+</section>
+
 <!-- DIAL EDITIONS -->
 <section class="dials-intro reveal" id="set">
   <div class="slabel">The Set</div>
   <h2>Two dials. One set. No reissue.</h2>
-  <p>Artefact is being discontinued. Final Frontier is its last expression — sold exclusively as a pair. Two calibrated counterparts. Different in tone. Identical in intent.</p>
+  <p>Sold exclusively as a pair. Two calibrated counterparts. Different in tone. Identical in intent.</p>
 </section>
 
 <div class="dial-pair">
@@ -448,8 +467,7 @@
 <section class="final-cta pad reveal" id="reserve">
   <div class="slabel">Final Production</div>
   <h2>Artefact is being discontinued.<br>13 sets remain.</h2>
-  <p>After two years and multiple editions, Artefact has reached its conclusion. No future releases. No restocks. No revisions. A private allocation has already been offered to existing collectors.</p>
-  <p>This is not a pause. It is a permanent closure — as Pedral moves toward what comes next.</p>
+  <p>A private allocation has already gone to friends of the brand. What remains is what you see.</p>
   <div class="final-price-big">€1,000</div>
   <div class="final-price-sub">Set of 2 · Terrain + Sector · Full payment locks your numbered set</div>
   <a href="https://buy.stripe.com/9B614m45ggkQcrJ8YcfMA02" class="btn btn-solid">Reserve Your Set · €1,000</a>
