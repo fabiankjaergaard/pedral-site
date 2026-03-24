@@ -3,8 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artefact Final Frontier — Pedral</title>
-<meta name="robots" content="noindex">
+<title>Artefact Final Frontier — Limited Edition Watch Set | Pedral</title>
+<meta name="description" content="The last expression of Artefact. Sold exclusively as a matched pair — Terrain and Sector. 8 sets available. €1,000. Final production run.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.pedral.eu/artefact-final-frontier">
+<meta property="og:type" content="product">
+<meta property="og:title" content="Artefact Final Frontier — Pedral">
+<meta property="og:description" content="The last expression of Artefact. A matched pair — Terrain and Sector. 8 sets available. €1,000. This architecture will not be produced again.">
+<meta property="og:image" content="https://www.pedral.eu/artefact-final-frontier/images/hero-pair-3.png">
+<meta property="og:url" content="https://www.pedral.eu/artefact-final-frontier">
+<meta property="og:site_name" content="Pedral">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Artefact Final Frontier — Pedral">
+<meta name="twitter:description" content="The last expression of Artefact. 8 sets. €1,000. Will not be produced again.">
+<meta name="twitter:image" content="https://www.pedral.eu/artefact-final-frontier/images/hero-pair-3.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Artefact Final Frontier",
+  "description": "The last expression of the Artefact line. Sold exclusively as a matched pair — Terrain and Sector dial variants. Final production run of 8 public sets.",
+  "brand": { "@type": "Brand", "name": "Pedral" },
+  "image": "https://www.pedral.eu/artefact-final-frontier/images/hero-pair-3.png",
+  "url": "https://www.pedral.eu/artefact-final-frontier",
+  "offers": {
+    "@type": "Offer",
+    "price": "1000",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/LimitedAvailability",
+    "seller": { "@type": "Organization", "name": "Pedral" }
+  }
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -40,18 +70,23 @@
   .hero-h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.8rem,6vw,5rem);line-height:.95;letter-spacing:-.02em;margin-bottom:1rem}
   .hero-h1 em{font-style:italic;color:var(--text-2)}
   .hero-badge{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--text-3);margin-bottom:1.2rem}
-  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.8rem,6vw,5rem);line-height:.95;letter-spacing:-.02em;margin-bottom:1rem}
-  .hero h1 em{font-style:italic;color:var(--text-2)}
-  .hero-sub{font-size:.95rem;color:var(--text-2);max-width:440px;line-height:1.8;margin-bottom:2rem}
-  .hero-meta{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+  .hero-sub{font-size:.95rem;color:var(--text-2);max-width:440px;line-height:1.8;margin-bottom:2rem;margin-left:auto;margin-right:auto}
+  .hero-meta{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5rem}
   .hero-price{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2rem;color:var(--text)}
   .hero-edition{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)}
-  .btn{display:inline-block;font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;padding:.9rem 2.4rem;transition:all .35s ease;cursor:pointer}
+  .btn{display:inline-block;font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;padding:.9rem 2.4rem;transition:all .35s ease;cursor:pointer;border:none}
   .btn-solid{background:var(--text);color:var(--bg)}
   .btn-solid:hover{background:#fff}
   .btn-outline{border:1px solid var(--border);color:var(--text);background:transparent}
   .btn-outline:hover{border-color:var(--text-2)}
-  .hero-cta{margin-top:1.5rem}
+
+  /* TRUST INLINE */
+  .trust-inline{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1.2rem}
+  .trust-inline span{font-size:.68rem;color:var(--text-3)}
+  .trust-inline span::before{content:"✓ ";color:var(--text-3)}
+
+  /* INVENTORY */
+  .inventory-line{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-t);margin-top:.8rem}
 
   /* SECTION SPACING */
   .pad{padding:6rem 3rem}
@@ -66,8 +101,8 @@
 
   .dial-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:0 3rem 4rem;max-width:1200px;margin:0 auto}
   .dial-card{background:var(--bg-card);border:1px solid var(--border-l);overflow:hidden}
-  .dial-card-img{background:#0d0d0c;aspect-ratio:1/1;overflow:hidden;padding:0}
-  .dial-card-img img{width:100%;height:100%;object-fit:cover;transform:scale(0.8);transform-origin:center}
+  .dial-card-img{background:#0d0d0c;aspect-ratio:4/3;overflow:hidden;padding:0}
+  .dial-card-img img{width:100%;height:100%;object-fit:cover;transform-origin:center}
   .dial-card-body{padding:2rem 2rem 2.5rem}
   .dial-card-name{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.8rem;margin-bottom:.4rem}
   .dial-card-tag{font-size:.75rem;color:var(--text-3);letter-spacing:.06em;margin-bottom:1.4rem}
@@ -82,16 +117,18 @@
 
   /* IMAGE STRIP */
   .img-strip{display:grid;grid-template-columns:1fr 1fr;gap:0}
-  .img-strip-placeholder{aspect-ratio:16/10;background:#0e0e0d;display:flex;align-items:center;justify-content:center}
-  .img-strip-placeholder span{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-4)}
-  .img-strip img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#0a0a09}
+  .img-strip img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#0a0a09;transition:transform .6s ease;display:block}
+  .img-strip>*{overflow:hidden}
+  .img-strip img:hover{transform:scale(1.04)}
+
+  /* FIELD STRIP */
+  .field-strip{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .field-strip img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
 
   /* THE WATCH */
   .watch-section{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px}
   .watch-text h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.15;margin-bottom:1.8rem}
   .watch-text p{color:var(--text-2);font-size:.92rem;line-height:1.9;margin-bottom:1.1rem}
-  .watch-img-placeholder{aspect-ratio:3/4;background:#0e0e0d;display:flex;align-items:center;justify-content:center}
-  .watch-img-placeholder span{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-4)}
 
   /* KEVIN'S NOTE */
   .note{background:var(--bg-alt);border-top:1px solid var(--border-l);border-bottom:1px solid var(--border-l)}
@@ -166,9 +203,11 @@
     .dials-intro{padding:4rem 1.5rem 2rem}
     .dial-pair{grid-template-columns:1fr;padding:0 1.5rem 3rem}
     .img-strip{grid-template-columns:1fr}
+    .field-strip{grid-template-columns:1fr}
     .watch-section{grid-template-columns:1fr;gap:2rem}
     .hero-meta{gap:1rem}
     .trust{flex-direction:column;align-items:center;gap:.8rem}
+    .trust-inline{flex-direction:column;align-items:center;gap:.6rem}
     .f-foot-grid{flex-direction:column;gap:2rem;align-items:center;text-align:center}
     .f-col{align-items:center!important}
   }
@@ -182,7 +221,7 @@
     <a href="#set" class="nav-a">The Set</a>
     <a href="#specs" class="nav-a">Specifications</a>
   </div>
-  <a href="#" class="nav-logo">Artefact · Final Frontier</a>
+  <a href="https://www.pedral.eu" class="nav-logo">Artefact · Final Frontier</a>
   <div class="nav-right">
     <a href="https://www.instagram.com/pedralwatches" class="nav-a">Instagram</a>
     <a href="#reserve" class="nav-a btn btn-outline" style="padding:.45rem 1.4rem">Reserve</a>
@@ -191,34 +230,38 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="/artefact-final-frontier/images/hero-pair-3.png" alt="Artefact Final Frontier" class="hero-img">
+  <img src="/artefact-final-frontier/images/hero-pair-3.png" alt="Artefact Final Frontier — Terrain and Sector watch pair" class="hero-img">
 </section>
 
 <!-- HERO TEXT -->
 <div class="hero-text-block pad">
-  <div class="hero-badge">Artefact · Final Edition</div>
+  <div class="hero-badge">Artefact · Final Edition · Last 8 Sets</div>
   <h1 class="hero-h1">Final<br><em>Frontier</em></h1>
-  <p class="hero-sub">The last expression of Artefact. Sold exclusively as a pair — two calibrated counterparts, one final chapter.</p>
+  <p class="hero-sub">The last expression of Artefact. Sold exclusively as a pair — two calibrated counterparts, one final chapter. This architecture will not be produced again.</p>
   <div class="hero-meta">
     <span class="hero-price">€1,000</span>
-    <span class="hero-edition">Set of 2 · Terrain + Sector · 25 sets available</span>
+    <span class="hero-edition">Set of 2 · Terrain + Sector · 8 sets remaining</span>
   </div>
-  <div class="hero-cta">
-    <a href="#reserve" class="btn btn-solid">Reserve · €1,000</a>
+  <a href="#reserve" class="btn btn-solid">Reserve Your Set · €1,000</a>
+  <div class="trust-inline">
+    <span>14-day return after delivery</span>
+    <span>24-month warranty</span>
+    <span>Insured shipping</span>
   </div>
+  <div class="inventory-line">8 of 25 sets remaining — private collector allocation already distributed</div>
 </div>
 
 <!-- DIAL EDITIONS -->
 <section class="dials-intro reveal" id="set">
   <div class="slabel">The Set</div>
-  <h2>Both watches. One set.</h2>
+  <h2>Two dials. One set. No reissue.</h2>
   <p>Artefact is being discontinued. Final Frontier is its last expression — sold exclusively as a pair. Two calibrated counterparts. Different in tone. Identical in intent.</p>
 </section>
 
 <div class="dial-pair">
   <div class="dial-card reveal">
     <div class="dial-card-img">
-      <img src="/artefact-final-frontier/images/terrain-studio.png" alt="Terrain dial">
+      <img src="/artefact-final-frontier/images/terrain-field-new.png" alt="Artefact Terrain — warm mineral dial with fine granular texture" loading="lazy">
     </div>
     <div class="dial-card-body">
       <h3 class="dial-card-name c-t">Terrain</h3>
@@ -228,7 +271,7 @@
   </div>
   <div class="dial-card reveal">
     <div class="dial-card-img">
-      <img src="/artefact-final-frontier/images/sector-studio.png" alt="Sector dial">
+      <img src="/artefact-final-frontier/images/sector-new.png" alt="Artefact Sector — deep desaturated green dial with architectural structure" loading="lazy">
     </div>
     <div class="dial-card-body">
       <h3 class="dial-card-name c-s">Sector</h3>
@@ -244,14 +287,14 @@
     <div class="set-dot"></div>
     <span>Sector</span>
     <div class="set-dot"></div>
-    <span>25 sets available</span>
+    <span>8 sets remaining</span>
   </div>
 </div>
 
 <!-- ANGLE SHOTS STRIP -->
 <div class="img-strip reveal">
-  <img src="/artefact-final-frontier/images/terrain-angled.png" alt="Artefact Terrain">
-  <img src="/artefact-final-frontier/images/sector-angled.png" alt="Artefact Sector">
+  <img src="/artefact-final-frontier/images/terrain-angled.png" alt="Artefact Terrain — angled view" loading="lazy">
+  <img src="/artefact-final-frontier/images/sector-angled.png" alt="Artefact Sector — angled view" loading="lazy">
 </div>
 
 <!-- THE WATCH -->
@@ -264,7 +307,7 @@
       <p>The integrated bracelet, tapering from 22.5mm to 18mm, was designed as a continuation of the case — not an accessory to it. Hardened to 1200 HV, the entire construction is engineered to endure.</p>
       <p>This architecture will not be produced again. Final Frontier is the last time it will exist in this form.</p>
     </div>
-    <img src="/artefact-final-frontier/images/hero-pair.png" alt="Artefact Final Frontier" style="width:100%;object-fit:cover">
+    <img src="/artefact-final-frontier/images/hero-pair-new.png" alt="Artefact Final Frontier pair — Terrain and Sector side by side" style="width:100%;object-fit:cover" loading="lazy">
   </div>
 </section>
 
@@ -277,18 +320,12 @@
   </div>
 </section>
 
-<!-- GALLERY -->
-<div class="gallery-frame reveal">
-  <div class="gallery">
-    <div class="gallery-cell"><img src="/artefact-final-frontier/images/terrain-studio.png" alt="Terrain"></div>
-    <div class="gallery-cell"><img src="/artefact-final-frontier/images/sector-studio.png" alt="Sector"></div>
-  </div>
-</div>
-
-<!-- DETAIL STRIP -->
+<!-- DETAIL CLOSE-UPS -->
 <div class="img-strip reveal">
-  <img src="/artefact-final-frontier/images/terrain-close.png" alt="Artefact Terrain close-up">
-  <img src="/artefact-final-frontier/images/sector-close.png" alt="Artefact Sector close-up">
+  <img src="/artefact-final-frontier/images/terrain-render.jpeg" alt="Artefact Terrain — desert render" loading="lazy">
+  <img src="/artefact-final-frontier/images/sector-render.jpeg" alt="Artefact Sector — architectural render" loading="lazy">
+  <img src="/artefact-final-frontier/images/terrain-render-2.jpeg" alt="Artefact Terrain — stone" loading="lazy">
+  <img src="/artefact-final-frontier/images/sector-render-2.jpeg" alt="Artefact Sector — close-up" loading="lazy">
 </div>
 
 <!-- SPECS -->
@@ -305,7 +342,7 @@
     <div class="spec-row"><span class="spec-k">Lume</span><span class="spec-v">Swiss Super-LumiNova® BGW9 · Hands and indices</span></div>
     <div class="spec-row"><span class="spec-k">24-Hour Track</span><span class="spec-v">Subtle inner chapter ring on both dials</span></div>
     <div class="spec-row"><span class="spec-k">Water Resistance</span><span class="spec-v">100 meters / 330 feet</span></div>
-    <div class="spec-row"><span class="spec-k">Edition</span><span class="spec-v">25 public sets · A private allocation has been offered to existing collectors</span></div>
+    <div class="spec-row"><span class="spec-k">Edition</span><span class="spec-v">8 public sets · Private collector allocation already distributed</span></div>
   </div>
 </section>
 
@@ -327,18 +364,19 @@
 <!-- FINAL CTA -->
 <section class="final-cta pad reveal" id="reserve">
   <div class="slabel">Final Production</div>
-  <h2>Artefact is being discontinued.</h2>
-  <p>After two years and multiple editions, Artefact has reached its conclusion. No future releases. No restocks. No revisions. A private allocation has already been offered to existing collectors. 25 sets remain available.</p>
+  <h2>Artefact is being discontinued.<br>8 sets remain.</h2>
+  <p>After two years and multiple editions, Artefact has reached its conclusion. No future releases. No restocks. No revisions. A private allocation has already been offered to existing collectors.</p>
   <p>This is not a pause. It is a permanent closure — as Pedral moves toward what comes next.</p>
   <div class="final-price-big">€1,000</div>
-  <div class="final-price-sub">Set of 2 · Terrain + Sector · 25 sets available</div>
-  <a href="#" class="btn btn-solid">Reserve · €1,000</a>
+  <div class="final-price-sub">Set of 2 · Terrain + Sector · Full payment locks your numbered set</div>
+  <a href="https://www.pedral.eu/contact" class="btn btn-solid">Reserve Your Set · €1,000</a>
   <div class="trust">
     <span>14-day return after delivery</span>
     <span>24-month warranty</span>
     <span>Insured shipping</span>
+    <span>Numbered edition certificate</span>
   </div>
-  <div class="final-bottom-note">Pre-order · Full payment secures your allocation</div>
+  <div class="final-bottom-note">Not for everyone. Made for those who understand it.</div>
 </section>
 
 <!-- FOOTER -->
