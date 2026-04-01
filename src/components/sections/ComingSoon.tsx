@@ -15,7 +15,7 @@ const upcoming = [
   {
     label: "Triomphe",
     title: "Next dial edition.",
-    desc: "A new expression of the Triomphe architecture. Details to follow. Allocation-based, as always.",
+    desc: "A new expression of the Triomphe architecture. Same 8.8mm case, new dial. Details to follow — friends of the brand hear first. Allocation-based, as always.",
     eta: "Coming 2026",
     href: null,
   },
