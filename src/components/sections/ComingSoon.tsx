@@ -8,7 +8,7 @@ const upcoming = [
   {
     label: "Artefact · Final Frontier",
     title: "The last Artefact. Resolved and complete.",
-    desc: "Artefact is being discontinued. Final Frontier closes it — two dials, one set. Versatile enough to go anywhere, resolved enough to belong everywhere. When set 13 ships, this page goes dark.",
+    desc: "Artefact is being discontinued. Final Frontier closes it — two dials, one set. Versatile enough to go anywhere, resolved enough to belong everywhere. Friends of the brand get priority access before any public release.",
     eta: "13 sets remaining · €1,000 · No reissue",
     href: "/artefact-final-frontier",
   },
