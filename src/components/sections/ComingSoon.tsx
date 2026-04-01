@@ -6,16 +6,18 @@ import Link from "next/link";
 
 const upcoming = [
   {
-    label: "New Concept",
-    title: "The Field Watch.",
-    desc: "A utility piece built around the Pedral design language. Same uncompromising approach. Different purpose.",
-    eta: "In development",
+    label: "Artefact · Final Frontier",
+    title: "The Luxury Field Watch.",
+    desc: "39.5mm. HV1200 steel. Miyota 9039 automatic. Two dial expressions — Terrain and Sector. A matched pair that resolves the Artefact line. 13 sets remaining. No reissue.",
+    eta: "Final production run · €1,000 the set",
+    href: "/artefact-final-frontier",
   },
   {
     label: "Triomphe",
     title: "Next dial edition.",
     desc: "A new expression of the Triomphe architecture. Details to follow. Allocation-based, as always.",
     eta: "Coming 2026",
+    href: null,
   },
 ];
 
@@ -46,28 +48,44 @@ export default function ComingSoon() {
             variants={staggerContainer}
             className="mt-12 grid gap-6 sm:grid-cols-2"
           >
-            {upcoming.map((item) => (
-              <motion.div
-                key={item.title}
-                variants={fadeInUp}
-                className="flex flex-col justify-between rounded-lg border border-accent/[0.08] bg-background p-8 md:p-10"
-              >
-                <div>
-                  <p className="mb-3 text-[10px] font-normal tracking-[3px] uppercase text-accent/60">
-                    {item.label}
+            {upcoming.map((item) => {
+              const inner = (
+                <>
+                  <div>
+                    <p className="mb-3 text-[10px] font-normal tracking-[3px] uppercase text-accent/60">
+                      {item.label}
+                    </p>
+                    <h3 className="font-serif text-[26px] font-light text-foreground">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 text-[15px] font-light leading-[1.85] text-foreground-muted">
+                      {item.desc}
+                    </p>
+                  </div>
+                  <p className="mt-8 text-[11px] font-normal tracking-[2px] uppercase text-accent">
+                    {item.eta}
+                    {item.href && <span className="ml-2">&rarr;</span>}
                   </p>
-                  <h3 className="font-serif text-[26px] font-light text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="mt-4 text-[15px] font-light leading-[1.85] text-foreground-muted">
-                    {item.desc}
-                  </p>
-                </div>
-                <p className="mt-8 text-[11px] font-normal tracking-[2px] uppercase text-accent">
-                  {item.eta}
-                </p>
-              </motion.div>
-            ))}
+                </>
+              );
+
+              return (
+                <motion.div key={item.title} variants={fadeInUp}>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className="flex flex-col justify-between rounded-lg border border-accent/[0.08] bg-background p-8 md:p-10 transition-all duration-300 hover:border-accent/30 hover:-translate-y-[2px]"
+                    >
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div className="flex flex-col justify-between rounded-lg border border-accent/[0.08] bg-background p-8 md:p-10">
+                      {inner}
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </motion.div>
 
           <motion.div variants={fadeInUp} className="mt-12 border-t border-accent/[0.08] pt-10">
