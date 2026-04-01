@@ -74,12 +74,12 @@ export default function ComingSoon() {
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className="flex flex-col justify-between rounded-lg border border-accent/[0.08] bg-background p-8 md:p-10 transition-all duration-300 hover:border-accent/30 hover:-translate-y-[2px]"
+                      className="flex flex-col justify-between rounded-lg border border-accent/[0.08] bg-background p-6 md:p-10 transition-all duration-300 hover:border-accent/30 hover:-translate-y-[2px]"
                     >
                       {inner}
                     </Link>
                   ) : (
-                    <div className="flex flex-col justify-between rounded-lg border border-accent/[0.08] bg-background p-8 md:p-10">
+                    <div className="flex flex-col justify-between rounded-lg border border-accent/[0.08] bg-background p-6 md:p-10">
                       {inner}
                     </div>
                   )}

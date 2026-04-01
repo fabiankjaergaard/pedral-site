@@ -229,7 +229,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
               "Direct communication with Kevin — not a support team",
               "Ships tracked & insured from Stockholm",
             ].map((item) => (
-              <p key={item} className="text-[11px] font-light leading-[1.8] text-foreground-muted/50">
+              <p key={item} className="text-[12px] font-light leading-[1.9] text-foreground-muted/50 md:text-[11px]">
                 {item}
               </p>
             ))}
@@ -451,7 +451,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
               </h2>
               <div className="mt-6 h-px w-[60px] bg-accent" />
 
-              <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
                 {[
                   { label: "Case", value: c.wristFit.caseDiameter },
                   ...(c.wristFit.thickness ? [{ label: "Thickness", value: c.wristFit.thickness }] : []),
@@ -460,8 +460,8 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                   ...(c.wristFit.wristRange ? [{ label: "Wrist Range", value: c.wristFit.wristRange }] : []),
                 ].map(({ label, value }) => (
                   <div key={label} className="border-t border-accent/[0.12] pt-4">
-                    <p className="text-[10px] font-normal tracking-[2.5px] uppercase text-accent/70">{label}</p>
-                    <p className="mt-1.5 font-serif text-[20px] font-light text-foreground">{value}</p>
+                    <p className="text-[11px] font-normal tracking-[2px] uppercase text-accent/70">{label}</p>
+                    <p className="mt-1.5 font-serif text-[18px] font-light text-foreground md:text-[20px]">{value}</p>
                   </div>
                 ))}
               </div>
@@ -746,9 +746,9 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                 a: "Most owners say the watch is better in person than in photos. High-resolution images and full specifications are available for every edition. The 14-day return policy exists precisely for this reason.",
               },
             ].map(({ q, a }) => (
-              <motion.div key={q} variants={fadeInUp} className="py-5">
-                <p className="font-serif text-[17px] font-light text-foreground">{q}</p>
-                <p className="mt-2 text-[14px] font-light leading-[1.85] text-foreground-muted">{a}</p>
+              <motion.div key={q} variants={fadeInUp} className="py-4 md:py-5">
+                <p className="font-serif text-[15px] font-light text-foreground md:text-[17px]">{q}</p>
+                <p className="mt-2 text-[13px] font-light leading-[1.85] text-foreground-muted md:text-[14px]">{a}</p>
               </motion.div>
             ))}
           </motion.div>

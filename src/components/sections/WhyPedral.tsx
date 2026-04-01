@@ -39,7 +39,7 @@ export default function WhyPedral() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid gap-10 md:gap-14 md:grid-cols-3"
+          className="grid gap-6 md:gap-14 md:grid-cols-3"
         >
           {reasons.map((r) => (
             <motion.div
@@ -47,10 +47,10 @@ export default function WhyPedral() {
               variants={fadeInUp}
               className="border-t border-accent/[0.12] pt-7 md:pt-9"
             >
-              <span className="font-serif text-[44px] font-light text-accent">
+              <span className="font-serif text-[36px] font-light text-accent md:text-[44px]">
                 {r.num}
               </span>
-              <h3 className="mt-4 font-serif text-[22px] font-normal text-foreground">
+              <h3 className="mt-4 font-serif text-[20px] font-normal text-foreground md:text-[22px]">
                 {r.title}
               </h3>
               {r.desc.split("\n\n").map((para, i) => (
