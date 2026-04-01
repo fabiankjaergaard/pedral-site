@@ -1,10 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { rateLimit, getIp } from "@/lib/rateLimit";
+import { collections } from "@/lib/collections";
+
+const ALLOWED_ORIGINS = new Set([
+  "https://pedral.eu",
+  "https://www.pedral.eu",
+  "https://pedral.watch",
+  "https://www.pedral.watch",
+]);
 
 export async function POST(req: NextRequest) {
   const ip = getIp(req);
-  const { allowed } = rateLimit(`preorder:${ip}`, 10, 60_000);
+  const { allowed } = await rateLimit(`preorder:${ip}`, 10, 60_000);
   if (!allowed) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
@@ -18,15 +26,31 @@ export async function POST(req: NextRequest) {
       apiVersion: "2026-01-28.clover",
     });
 
-    const { collectionSlug, collectionName, depositAmount } = await req.json();
+    const { collectionSlug } = await req.json();
 
-    if (!collectionSlug || !collectionName || !depositAmount) {
+    if (!collectionSlug) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    const ALLOWED_ORIGINS = new Set(["https://pedral.eu", "https://www.pedral.eu", "https://pedral.watch", "https://www.pedral.watch"]);
+    // Resolve price and name server-side — never trust the client for pricing
+    const collection = collections.find((c) => c.slug === collectionSlug);
+    if (!collection) {
+      return NextResponse.json({ error: "Collection not found" }, { status: 404 });
+    }
+    const depositAmount = collection.depositAmount ?? Math.round(collection.price * 0.3);
+    const collectionName = collection.name;
+    const isNonRefundable = collection.nonRefundable === true;
+
     const requestOrigin = req.headers.get("origin") ?? "";
     const origin = ALLOWED_ORIGINS.has(requestOrigin) ? requestOrigin : "https://pedral.eu";
+
+    const productDescription = isNonRefundable
+      ? "Non-refundable deposit. This is a made-to-order piece produced to your specifications (EU Art. 16(c)). Secures your place in the production queue. Remaining balance invoiced before shipping."
+      : "Deposit secures your place in the production queue. You may cancel before dispatch for a full refund per our withdrawal policy. Remaining balance invoiced before shipping.";
+
+    const submitMessage = isNonRefundable
+      ? `This €${depositAmount} deposit is non-refundable. Your ${collectionName} is produced to your specifications — by placing this order you acknowledge the right of withdrawal does not apply (EU Art. 16(c)). Remaining balance invoiced before shipping.`
+      : `This €${depositAmount} deposit secures your place in the ${collectionName} production queue. You may cancel before dispatch for a full refund per our withdrawal policy. Remaining balance invoiced before shipping.`;
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
@@ -39,8 +63,7 @@ export async function POST(req: NextRequest) {
             unit_amount: depositAmount * 100,
             product_data: {
               name: `${collectionName} — Reservation Deposit`,
-              description:
-                "Non-refundable deposit. Secures your place in the production queue. Remaining balance invoiced before shipping.",
+              description: productDescription,
             },
           },
         },
@@ -49,6 +72,7 @@ export async function POST(req: NextRequest) {
       metadata: {
         type: "preorder",
         collection: collectionSlug,
+        nonRefundable: isNonRefundable ? "true" : "false",
       },
       shipping_address_collection: {
         allowed_countries: [
@@ -60,9 +84,7 @@ export async function POST(req: NextRequest) {
       billing_address_collection: "required",
       phone_number_collection: { enabled: true },
       custom_text: {
-        submit: {
-          message: `This €${depositAmount} deposit is non-refundable and secures your place in the ${collectionName} production queue. The remaining balance will be invoiced before shipping.`,
-        },
+        submit: { message: submitMessage },
       },
     });
 

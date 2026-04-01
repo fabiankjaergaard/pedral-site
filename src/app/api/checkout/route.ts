@@ -14,7 +14,7 @@ const VALID_PRICE_IDS = new Set([
 
 export async function POST(req: NextRequest) {
   const ip = getIp(req);
-  const { allowed } = rateLimit(`checkout:${ip}`, 10, 60_000);
+  const { allowed } = await rateLimit(`checkout:${ip}`, 10, 60_000);
   if (!allowed) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }

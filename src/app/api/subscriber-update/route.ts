@@ -1,14 +1,27 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
+import { rateLimit, getIp } from "@/lib/rateLimit";
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 function mailchimpHash(email: string) {
   return crypto.createHash("md5").update(email.toLowerCase()).digest("hex");
 }
 
 export async function POST(req: NextRequest) {
+  const ip = getIp(req);
+  const { allowed } = await rateLimit(`subscriber-update:${ip}`, 5, 60_000);
+  if (!allowed) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const { email, action } = await req.json();
 
-  if (!email || !action) {
+  if (!email || !EMAIL_REGEX.test(email)) {
+    return NextResponse.json({ error: "Valid email required" }, { status: 400 });
+  }
+
+  if (!action) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 

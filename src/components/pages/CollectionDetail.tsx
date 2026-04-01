@@ -216,6 +216,24 @@ export default function CollectionDetail({ collection }: { collection: Collectio
               </>
             )}
           </motion.div>
+
+          {/* Reassurance strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mt-8 border-t border-accent/[0.08] pt-6 flex flex-col gap-2"
+          >
+            {[
+              "Sapphire crystal · Swiss automatic movement · HV1200 steel",
+              "Direct communication with Kevin — not a support team",
+              "Ships tracked & insured from Stockholm",
+            ].map((item) => (
+              <p key={item} className="text-[11px] font-light leading-[1.8] text-foreground-muted/50">
+                {item}
+              </p>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -415,6 +433,50 @@ export default function CollectionDetail({ collection }: { collection: Collectio
         </div>
       </section>
 
+      {/* How it Wears */}
+      {c.wristFit && (
+        <section className="bg-background py-16 md:py-20">
+          <div className="mx-auto max-w-[900px] px-6 md:px-12">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <p className="mb-3 text-[12px] font-normal tracking-[1.5px] sm:text-[11px] sm:tracking-[4px] uppercase text-accent">
+                Fit & Dimensions
+              </p>
+              <h2 className="font-serif text-[clamp(24px,3vw,36px)] font-light text-foreground">
+                How it wears.
+              </h2>
+              <div className="mt-6 h-px w-[60px] bg-accent" />
+
+              <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                {[
+                  { label: "Case", value: c.wristFit.caseDiameter },
+                  ...(c.wristFit.thickness ? [{ label: "Thickness", value: c.wristFit.thickness }] : []),
+                  ...(c.wristFit.lugToLug ? [{ label: "Lug-to-Lug", value: c.wristFit.lugToLug }] : []),
+                  ...(c.wristFit.lugWidth ? [{ label: "Strap / Bracelet", value: c.wristFit.lugWidth }] : []),
+                  ...(c.wristFit.wristRange ? [{ label: "Wrist Range", value: c.wristFit.wristRange }] : []),
+                ].map(({ label, value }) => (
+                  <div key={label} className="border-t border-accent/[0.12] pt-4">
+                    <p className="text-[10px] font-normal tracking-[2.5px] uppercase text-accent/70">{label}</p>
+                    <p className="mt-1.5 font-serif text-[20px] font-light text-foreground">{value}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-8 text-[15px] font-light leading-[1.9] text-foreground-muted">
+                {c.wristFit.note}
+              </p>
+              <p className="mt-4 text-[13px] font-light text-foreground-muted/50">
+                Unsure about fit? Write to Kevin directly — he&apos;ll give you an honest answer.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
       {/* Detail Strip — Image + Text */}
       <section className="grid md:grid-cols-2">
         <motion.div
@@ -599,6 +661,9 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                 </div>
               ))}
             </div>
+            <p className="mt-6 border-t border-accent/[0.08] pt-5 text-[12px] font-light leading-[1.8] text-foreground-muted/50">
+              Tracked &amp; insured delivery included. Price is final — no hidden fees, no import charges within the EU.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -638,6 +703,57 @@ export default function CollectionDetail({ collection }: { collection: Collectio
           </div>
         </section>
       )}
+
+      {/* Before You Commit */}
+      <section className="bg-background py-16 md:py-20">
+        <div className="mx-auto max-w-[900px] px-6 md:px-12">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
+            <p className="mb-3 text-[12px] font-normal tracking-[1.5px] sm:text-[11px] sm:tracking-[4px] uppercase text-accent">
+              Before You Commit
+            </p>
+            <h2 className="font-serif text-[clamp(24px,3vw,36px)] font-light text-foreground">
+              The questions most people have.
+            </h2>
+            <div className="mt-6 h-px w-[60px] bg-accent" />
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="mt-8 divide-y divide-accent/[0.08]"
+          >
+            {[
+              {
+                q: "I've never heard of Pedral before.",
+                a: "Kevin has been designing watches in Stockholm since 2015. Over 400 pieces delivered to collectors in 30+ countries. Reviewed by independent watch media and recommended by collectors who own dozens of other watches.",
+              },
+              {
+                q: "What if it doesn't work on my wrist?",
+                a: "Every piece ships with a 14-day return window after delivery. Case dimensions are listed in full in the specifications above. If you have doubts about sizing, write to Kevin directly — he responds personally.",
+              },
+              {
+                q: "What about production delays?",
+                a: "Timeline updates are sent directly from Kevin throughout production — not automated emails. If something changes, you hear it from the person responsible.",
+              },
+              {
+                q: "I can't see it in person before buying.",
+                a: "Most owners say the watch is better in person than in photos. High-resolution images and full specifications are available for every edition. The 14-day return policy exists precisely for this reason.",
+              },
+            ].map(({ q, a }) => (
+              <motion.div key={q} variants={fadeInUp} className="py-5">
+                <p className="font-serif text-[17px] font-light text-foreground">{q}</p>
+                <p className="mt-2 text-[14px] font-light leading-[1.85] text-foreground-muted">{a}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* Price CTA */}
       <section className="bg-[linear-gradient(180deg,var(--background)_0%,var(--background-alt)_100%)] py-16 text-center md:py-20">

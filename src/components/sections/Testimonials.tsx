@@ -6,19 +6,37 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 const testimonials = [
   {
     quote:
-      "I've got watches people recognise immediately. This one they don't. That's what starts the conversation. Someone will go 'what is that?' and then you're talking for twenty minutes.",
+      "Somehow, the watch feels alive. It's incredibly elegant and feels like a part of me. Kevin simply cannot help but do what is in his heart and mind.",
+    author: "R.C.",
+    detail: "Writer · Switzerland · Okapi owner",
+  },
+  {
+    quote:
+      "Your designs stand out. They have an understated elegance and exude quality far above the price point. The combination was unbelievable.",
+    author: "M.S.",
+    detail: "Collector · Triomphe owner",
+  },
+  {
+    quote:
+      "Not following trends but being a trend setter. For me, I have to connect with the owner of the brand. Then it's the watch.",
+    author: "D.H.",
+    detail: "Watch enthusiast · Maestro owner",
+  },
+  {
+    quote:
+      "I've got watches people recognise immediately. This one they don't. That's what starts the conversation.",
     author: "Swen A.",
     detail: "Architect · Hamburg · Collector since 2022",
   },
   {
     quote:
-      "Before I ordered, I had a few questions about the strap width. I emailed Kevin and he called me back the same afternoon. We ended up talking for half an hour. About the watch, about design, about everything. Try getting that from Tissot or Longines.",
+      "I emailed Kevin and he called me back the same afternoon. We ended up talking for half an hour. Try getting that from Tissot or Longines.",
     author: "David M.",
     detail: "Creative Director · Brussels · Triomphe owner",
   },
   {
     quote:
-      "I own blue dials from the usual names. The Émeraude Vert is different. The photos really don't do it justice. On the wrist, in actual light, it has this depth that surprised me.",
+      "I own blue dials from the usual names. The Émeraude Vert is different. On the wrist, in actual light, it has this depth that surprised me.",
     author: "Anthony A.",
     detail: "Artist · France",
   },

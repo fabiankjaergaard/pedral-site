@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { collections, Collection } from "@/lib/collections";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import ComingSoon from "@/components/sections/ComingSoon";
 
 type Filter = "all" | "signature" | "limited";
 
@@ -129,6 +130,7 @@ export default function CollectionsContent() {
           </AnimatePresence>
         </div>
       </section>
+      <ComingSoon />
     </>
   );
 }

@@ -5,7 +5,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export async function POST(req: NextRequest) {
   const ip = getIp(req);
-  const { allowed } = rateLimit(`newsletter:${ip}`, 5, 60_000);
+  const { allowed } = await rateLimit(`newsletter:${ip}`, 5, 60_000);
   if (!allowed) {
     return NextResponse.json({ error: "Too many requests" }, { status: 429 });
   }
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         email_address: email,
-        status: "subscribed",
+        status: "pending", // double opt-in — GDPR Article 7
       }),
     }
   );

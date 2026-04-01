@@ -1,16 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import crypto from "crypto";
+import { rateLimit, getIp } from "@/lib/rateLimit";
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 function mailchimpHash(email: string) {
   return crypto.createHash("md5").update(email.toLowerCase()).digest("hex");
 }
 
 export async function POST(req: NextRequest) {
+  const ip = getIp(req);
+  const { allowed } = await rateLimit(`account-lookup:${ip}`, 5, 60_000);
+  if (!allowed) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const { email } = await req.json();
 
-  if (!email) {
-    return NextResponse.json({ error: "Email required" }, { status: 400 });
+  if (!email || !EMAIL_REGEX.test(email)) {
+    return NextResponse.json({ error: "Valid email required" }, { status: 400 });
   }
 
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {

@@ -40,6 +40,14 @@ export interface Collection {
     bio: string;
   }[];
   testimonialsLabel?: string;
+  wristFit?: {
+    caseDiameter: string;
+    thickness?: string;
+    lugToLug?: string;
+    lugWidth?: string;
+    wristRange?: string;
+    note: string;
+  };
   newsletterTitle: string;
   newsletterSub: string;
   image: string;
@@ -49,6 +57,7 @@ export interface Collection {
   variants?: CollectionVariant[];
   isPreOrder?: boolean;
   depositAmount?: number;
+  nonRefundable?: boolean; // true only for custom/made-to-order pieces (EU Art. 16(c) exemption)
   isEnquiryOnly?: boolean;
   comingSoonEditions?: { name: string; description: string; image?: string }[];
 }
@@ -75,13 +84,16 @@ export const collections: Collection[] = [
     urgencyTag: "Limited pieces remaining",
     specsTitle: "Swiss precision. Stockholm soul.",
     specs: {
-      Movement: "Sellita SW200-1b, Swiss automatic, 38-hour power reserve",
-      Case: "37mm monobloc tonneau, stainless steel, HV1200 coating",
-      Dial: "Two-tier guilloché: rhombus centre, angular rooftops, sunburst outer ring",
-      Crystal: "Flat sapphire with internal Super-AR coating",
-      Bracelet: "Integrated hexagonal links, follows the wrist's natural curve",
+      Movement: "Sellita SW200-1b · Swiss automatic · 38-hour power reserve",
+      Case: "37mm tonneau · 9.8mm slim · 47.5mm lug-to-lug · 316L stainless steel · HV1200 scratch-resistant coating",
+      Dial: "Angled driver's dial — two-tier guilloché: rhombus centre, angular rooftops, sunburst outer ring · Classic non-angled dial with Roman numerals available",
+      Crystal: "Sapphire front & back · 5× internal AR coating · scratch-resistant",
+      Bracelet: "Integrated hexagonal links · 22.5mm at lugs, tapers to 18mm · HV1200 coating · quick-release",
+      Strap: "Customised Epsom leather strap included · 20mm",
       Lume: "Swiss Super-LumiNova® BGW9 on hands and indices",
       "Water Resist.": "100 meters / 330 feet",
+      Warranty: "12 months international coverage for workmanship defects",
+      VAT: "Included for EU orders · Duties and taxes outside EU not included",
     },
     boxContents: [
       "Maestro timepiece",
@@ -144,6 +156,14 @@ export const collections: Collection[] = [
         image: "/images/maestro-laguna-view.jpg",
       },
     ],
+    wristFit: {
+      caseDiameter: "37mm",
+      thickness: "9.8mm",
+      lugToLug: "47.5mm",
+      lugWidth: "20mm",
+      wristRange: "15–20cm",
+      note: "The tonneau case carries differently from a round watch. Owners who typically wear 38–40mm describe it as wearing larger than expected. At 47.5mm lug-to-lug and 9.8mm thin, it sits flat and balanced on the wrist. The integrated bracelet follows the natural curve of the arm — it doesn't gap or shift.",
+    },
     newsletterTitle: "Priority access for the next Maestro edition.",
     newsletterSub: "Collectors on the list hear first.",
     image: "/images/maestro.jpg",
@@ -251,6 +271,14 @@ export const collections: Collection[] = [
         image: "/images/triomphe-emeraude.jpg",
       },
     ],
+    wristFit: {
+      caseDiameter: "38mm",
+      thickness: "8.8mm",
+      lugToLug: "38mm",
+      lugWidth: "20mm",
+      wristRange: "15–20cm",
+      note: "At 8.8mm, the Triomphe sits flush and close to the wrist. Works across most wrist sizes — particularly comfortable on slimmer wrists where standard dress watches often feel overwhelming. The short 38mm lug-to-lug means it never overhangs.",
+    },
     newsletterTitle: "Notified first when the next dial edition opens.",
     newsletterSub: "Allocation-based. Priority to the list.",
     image: "/images/triomphe-saphir-roman.jpg",
@@ -285,6 +313,7 @@ export const collections: Collection[] = [
     badge: "Allocation Only",
     urgencyTag: "By enquiry · Not all requests confirmed",
     isEnquiryOnly: true,
+    nonRefundable: true, // personalised caseback engraving + movement — qualifies under EU Art. 16(c)
     specsTitle: "Built to outlast everything.",
     specs: {
       Movement: "La Joux-Perret LJP7380 · Swiss hand-wound · La Chaux-de-Fonds manufacture · The same movement family trusted by independent watchmakers across the industry — chosen here because it runs honest and lasts longer than trends",
@@ -329,6 +358,12 @@ export const collections: Collection[] = [
       },
     ],
     testimonialsLabel: "Those Who Wore the Original",
+    wristFit: {
+      caseDiameter: "37mm",
+      lugWidth: "18mm",
+      wristRange: "15–19cm",
+      note: "The cushion case contours the wrist more naturally than a round case — the curved case back follows the arm rather than sitting flat against it. Owners consistently describe it as wearing smaller and lighter than the 37mm diameter suggests.",
+    },
     newsletterTitle: "Be considered for an allocation.",
     newsletterSub: "Those on the list are reviewed first. No announcements. No noise.",
     image: "/images/okapi.jpg",

@@ -7,17 +7,17 @@ const reasons = [
   {
     num: "01",
     title: "Designed by One",
-    desc: "Every Pedral watch is designed in Stockholm by Kevin Pedral.\n\nWhen you contact Pedral, you speak directly with the person behind the watch.",
+    desc: "Every Pedral watch is designed in Stockholm by Kevin Pedral — not a committee, not a trend report.\n\nWhen you contact Pedral, you speak directly with the person behind the watch.",
   },
   {
     num: "02",
-    title: "Built with Purpose",
-    desc: "Swiss automatic movement. Sapphire crystal. Surface-hardened steel (HV1200).\n\nModern watchmaking fundamentals, executed with restraint.",
+    title: "No Shortcuts",
+    desc: "Swiss automatic movement. Sapphire crystal. Surface-hardened steel (HV1200).\n\nFull quality focus. No compromise on materials, no compromise on execution.",
   },
   {
     num: "03",
-    title: "Limited by Design",
-    desc: "Each variant is produced in twenty pieces only.\n\nWhen an edition closes, it is never produced again.",
+    title: "The Watch Finds Its Buyer",
+    desc: "Each variant is produced in twenty pieces only. When an edition closes, it is never produced again.\n\nThese are not watches you stumble into. They find the people they belong to.",
   },
 ];
 
