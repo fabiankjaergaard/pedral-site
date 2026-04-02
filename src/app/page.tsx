@@ -15,10 +15,10 @@ export default function Home() {
       <TrustBar />
       <StoryPreview />
       <CollectionShowcase />
+      <TrustIcons />
       <ComingSoon />
       <WhyPedral />
       <Testimonials />
-      <TrustIcons />
       <Newsletter />
     </>
   );
