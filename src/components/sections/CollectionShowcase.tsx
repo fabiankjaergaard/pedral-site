@@ -5,6 +5,7 @@ import Image from "next/image";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import Link from "next/link";
 import { collections } from "@/lib/collections";
+import TrustIcons from "@/components/sections/TrustIcons";
 
 function BadgeLabel({ stock, isPreOrder, isEnquiryOnly }: { stock: number; isPreOrder?: boolean; isEnquiryOnly?: boolean }) {
   if (isEnquiryOnly) {
@@ -157,6 +158,9 @@ export default function CollectionShowcase() {
             Browse the archive →
           </Link>
         </div>
+      </div>
+      <div className="mt-12">
+        <TrustIcons />
       </div>
     </section>
   );

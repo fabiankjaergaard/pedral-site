@@ -6,7 +6,6 @@ import ComingSoon from "@/components/sections/ComingSoon";
 import WhyPedral from "@/components/sections/WhyPedral";
 import Testimonials from "@/components/sections/Testimonials";
 import Newsletter from "@/components/sections/Newsletter";
-import TrustIcons from "@/components/sections/TrustIcons";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <TrustBar />
       <StoryPreview />
       <CollectionShowcase />
-      <TrustIcons />
       <ComingSoon />
       <WhyPedral />
       <Testimonials />
