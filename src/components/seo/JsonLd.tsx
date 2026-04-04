@@ -3,8 +3,8 @@ export function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Pedral Watches",
-    url: "https://pedral.watch",
-    logo: "https://pedral.watch/og-image.jpg",
+    url: "https://www.pedral.eu",
+    logo: "https://www.pedral.eu/images/hero-lifestyle.jpg",
     description:
       "Stockholm-based watch microbrand blending retro-futurism with Scandinavian design. Limited editions, unlimited conviction.",
     foundingDate: "2015",
@@ -51,8 +51,8 @@ export function ProductJsonLd({ name, description, image, slug, year }: ProductJ
     "@type": "Product",
     name: `Pedral ${name}`,
     description,
-    image: `https://pedral.watch${image}`,
-    url: `https://pedral.watch/collections/${slug}`,
+    image: `https://www.pedral.eu${image}`,
+    url: `https://www.pedral.eu/collections/${slug}`,
     brand: {
       "@type": "Brand",
       name: "Pedral",
@@ -91,7 +91,7 @@ export function ArticleJsonLd({ title, description, slug, date }: ArticleJsonLdP
     "@type": "Article",
     headline: title,
     description,
-    url: `https://pedral.watch/journal/${slug}`,
+    url: `https://www.pedral.eu/journal/${slug}`,
     datePublished: date,
     author: {
       "@type": "Person",
@@ -100,12 +100,12 @@ export function ArticleJsonLd({ title, description, slug, date }: ArticleJsonLdP
     publisher: {
       "@type": "Organization",
       name: "Pedral Watches",
-      url: "https://pedral.watch",
+      url: "https://www.pedral.eu",
     },
     isPartOf: {
       "@type": "Blog",
       name: "The Rounded Square",
-      url: "https://pedral.watch/journal",
+      url: "https://www.pedral.eu/journal",
     },
   };
 
@@ -125,7 +125,7 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: `https://pedral.watch${item.url}`,
+      item: `https://www.pedral.eu${item.url}`,
     })),
   };
 

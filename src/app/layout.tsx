@@ -19,7 +19,7 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const siteUrl = "https://pedral.watch";
+const siteUrl = "https://www.pedral.eu";
 const siteDescription =
   "Stockholm-based watch microbrand blending retro-futurism with Scandinavian design. Limited editions, unlimited conviction.";
 
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/hero-lifestyle.jpg",
         width: 1200,
         height: 630,
         alt: "Pedral Watches — Not For Everyone",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pedral — Not For Everyone",
     description: siteDescription,
-    images: ["/og-image.jpg"],
+    images: ["/images/hero-lifestyle.jpg"],
   },
   robots: {
     index: true,
@@ -87,7 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sv">
+    <html lang="en">
       <body className={`${cormorant.variable} ${outfit.variable} antialiased`}>
         <OrganizationJsonLd />
         <ClientLayout>{children}</ClientLayout>
