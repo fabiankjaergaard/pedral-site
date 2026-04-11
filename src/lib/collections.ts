@@ -370,7 +370,7 @@ export const collections: Collection[] = [
       lugToLug: "47mm",
       lugWidth: "18mm",
       wristRange: "15–19cm",
-      note: "The cushion case contours the wrist more naturally than a round case — the curved case back follows the arm rather than sitting flat against it. Owners consistently describe it as wearing smaller and lighter than the 37mm diameter suggests.",
+      note: "Cushion cases typically wear larger than their stated diameter. This one doesn't. The curved case back follows the wrist rather than sitting flat against it, and the weight is distributed across a wider surface. Owners consistently describe it as wearing smaller and lighter than the 37mm suggests — which, given the shape, is not what most expect.",
     },
     newsletterTitle: "Be considered for an allocation.",
     newsletterSub: "Those on the list are reviewed first. No announcements. No noise.",
