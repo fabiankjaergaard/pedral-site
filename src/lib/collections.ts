@@ -385,7 +385,7 @@ export const collections: Collection[] = [
       {
         name: "ETA 7001",
         stripePriceId: "price_1TKw2kCfxE1lSBKRLqfS1Lvb",
-        stock: 20,
+        stock: 7,
         price: 2800,
         description: "Swiss hand-wound. Slim, direct, reliable. The honest choice — everything in its right place.",
         image: "/images/okapi-classique.png",
@@ -393,7 +393,7 @@ export const collections: Collection[] = [
       {
         name: "LJP7380",
         stripePriceId: "price_1TKw7wCfxE1lSBKRcFLiQiu6",
-        stock: 20,
+        stock: 4,
         price: 3900,
         description: "La Joux-Perret LJP7380. High-grade decorated. La Chaux-de-Fonds manufacture. The movement independent watchmakers choose when they refuse to compromise.",
         image: "/images/okapi-classique.png",
