@@ -277,7 +277,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                       isSelected ? "border-accent" : "border-accent/10 hover:border-accent/40"
                     }`}
                   >
-                    <div className="relative h-[220px] w-full overflow-hidden bg-[var(--surface)] sm:h-[260px]">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-[var(--surface)]">
                       {(() => {
                         const imgSrc = (isSelected && selectedNumeral && v.numeralImages?.[selectedNumeral]) ? v.numeralImages[selectedNumeral] : v.image;
                         return imgSrc ? (
