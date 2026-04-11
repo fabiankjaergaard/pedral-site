@@ -205,7 +205,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                     ? `Reserve your allocation · €${c.depositAmount ?? 500} deposit`
                     : isSoldOut
                     ? "Join Waitlist"
-                    : `Reserve · €${c.price.toLocaleString()}`}
+                    : `Reserve Allocation · €${(selectedVariant?.price ?? c.price).toLocaleString()}`}
                 </button>
                 {c.isPreOrder && (
                   <p className="mt-3 text-[11px] font-light leading-[1.7] text-foreground-muted/60">
