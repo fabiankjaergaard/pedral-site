@@ -10,6 +10,8 @@ const VALID_PRICE_IDS = new Set([
   "price_1T4TsqCfxE1lSBKRFBCRLukn",
   "price_1T4TpQCfxE1lSBKR6aJh8nbb",
   "price_1TEVYOCfxE1lSBKRdzi2pJsj",
+  "price_1TKw2kCfxE1lSBKRLqfS1Lvb", // Okapi — ETA 7001
+  "price_1TKw7wCfxE1lSBKRcFLiQiu6", // Okapi — LJP7380
 ]);
 
 export async function POST(req: NextRequest) {
@@ -22,7 +24,7 @@ export async function POST(req: NextRequest) {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
     apiVersion: "2026-01-28.clover",
   });
-  const { priceId, productName, variantName } = await req.json();
+  const { priceId, productName, variantName, isPreOrder } = await req.json();
 
   if (!priceId || !productName) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -57,7 +59,9 @@ export async function POST(req: NextRequest) {
     billing_address_collection: "required",
     custom_text: {
       submit: {
-        message: "Your order is allocation-based. Kevin will confirm your piece within 24 hours.",
+        message: isPreOrder
+          ? "Pre-order · Non-refundable · Delivery in 3–6 months. Kevin will confirm your allocation within 24 hours."
+          : "Your order is allocation-based. Kevin will confirm your piece within 24 hours.",
       },
     },
   });

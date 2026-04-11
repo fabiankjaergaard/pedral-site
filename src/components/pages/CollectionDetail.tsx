@@ -79,6 +79,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
           variantName: selectedVariant.numeralOptions
             ? `${selectedVariant.name} · ${selectedNumeral}`
             : selectedVariant.name,
+          isPreOrder: c.nonRefundable ?? false,
         }),
       });
       const data = await res.json();
@@ -140,7 +141,7 @@ export default function CollectionDetail({ collection }: { collection: Collectio
           >
             {c.hook}
           </motion.p>
-          {!c.isEnquiryOnly && (
+          {!c.isEnquiryOnly && !c.hidePriceOnCard && (
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -250,10 +251,10 @@ export default function CollectionDetail({ collection }: { collection: Collectio
               className="mb-8"
             >
               <p className="mb-2 text-[12px] font-normal tracking-[1.5px] sm:text-[11px] sm:tracking-[4px] uppercase text-accent">
-                Dial Editions
+                {c.variantLabel ?? "Dial Editions"}
               </p>
               <h2 className="font-serif text-[clamp(24px,3vw,36px)] font-light text-foreground">
-                Choose your expression.
+                {c.variantLabel === "Movement" ? "Choose your calibre." : "Choose your expression."}
               </h2>
             </motion.div>
 
@@ -349,8 +350,13 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                   </p>
                 )}
                 <p className="mt-1 font-serif text-[22px] font-light text-foreground">
-                  &euro;{c.price.toLocaleString()}
+                  &euro;{(selectedVariant?.price ?? c.price).toLocaleString()}
                 </p>
+                {c.nonRefundable && (
+                  <p className="mt-2 text-[11px] font-light leading-[1.7] text-foreground-muted/60">
+                    Pre-order · 3–6 months delivery · Non-refundable · Full payment upfront
+                  </p>
+                )}
               </div>
               <div className="flex flex-col gap-2">
                 <button
@@ -358,11 +364,8 @@ export default function CollectionDetail({ collection }: { collection: Collectio
                   disabled={loading || (!c.isPreOrder && !selectedVariant) || (!!selectedVariant?.numeralOptions && !selectedNumeral)}
                   className="w-full rounded-lg bg-accent px-10 py-4 text-[11px] font-medium tracking-[3px] uppercase text-background transition-colors hover:bg-accent-hover disabled:opacity-60 sm:w-auto"
                 >
-                  {loading ? "Loading…" : c.isPreOrder ? `Reserve · €${c.depositAmount ?? 500} deposit` : isSoldOut ? "Join Waitlist" : `Reserve · €${c.price.toLocaleString()}`}
+                  {loading ? "Loading…" : c.isPreOrder ? `Reserve · €${c.depositAmount ?? 500}` : isSoldOut ? "Join Waitlist" : `Reserve Allocation · €${(selectedVariant?.price ?? c.price).toLocaleString()}`}
                 </button>
-                {c.isPreOrder && (
-                  <p className="text-[11px] font-light text-foreground-muted/60">Balance invoiced before shipping</p>
-                )}
               </div>
             </motion.div>
 

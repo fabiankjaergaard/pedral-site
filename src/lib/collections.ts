@@ -2,6 +2,7 @@ export interface CollectionVariant {
   name: string;
   stripePriceId: string;
   stock: number;
+  price?: number;
   description?: string;
   image?: string;
   numeralOptions?: string[];
@@ -59,6 +60,8 @@ export interface Collection {
   depositAmount?: number;
   nonRefundable?: boolean; // true only for custom/made-to-order pieces (EU Art. 16(c) exemption)
   isEnquiryOnly?: boolean;
+  hidePriceOnCard?: boolean;
+  variantLabel?: string;
   comingSoonEditions?: { name: string; description: string; image?: string }[];
 }
 
@@ -306,25 +309,27 @@ export const collections: Collection[] = [
       "Okapi was not my first prototype. It was the first that felt inevitable. A balance of curve and edge, softness held in precision. The language wasn't planned — it surfaced. Ten years later, I understand it better. The new version doesn't transform it. It clarifies what was always there.",
     year: 2015,
     tier: "signature",
-    price: 2000,
-    stock: 0,
+    price: 2800,
+    stock: 20,
     maxStock: 20,
     edition: "20 pieces · Allocation only",
     badge: "Allocation Only",
-    urgencyTag: "By enquiry · Not all requests confirmed",
-    isEnquiryOnly: true,
-    nonRefundable: true, // personalised caseback engraving + movement — qualifies under EU Art. 16(c)
+    urgencyTag: "20 pieces · First run now open",
+    hidePriceOnCard: true,
+    nonRefundable: true, // made-to-order pre-order — qualifies under EU Art. 16(c)
+    variantLabel: "Movement",
     specsTitle: "Built to outlast everything.",
     specs: {
-      Movement: "La Joux-Perret LJP7380 · Swiss hand-wound · La Chaux-de-Fonds manufacture · The same movement family trusted by independent watchmakers across the industry — chosen here because it runs honest and lasts longer than trends",
-      Case: "37mm cushion-shaped, stainless steel, HV1200 scratch-resistant coating",
-      Dial: "Deep blue frosted finish, coin-edge fluted flange, guilloché small seconds at 6 o'clock",
+      Movement: "ETA 7001 or La Joux-Perret LJP7380 · Swiss hand-wound · La Chaux-de-Fonds manufacture · Choice of calibre at reservation",
+      Case: "37mm cushion-shaped · 316L stainless steel · HV1200 scratch-resistant coating",
+      Dial: "Deep blue frosted finish · Coin-edge fluted flange · Guilloché small seconds at 6 o'clock",
       "Chapter Ring": "Slim steel with fine lacquer-filled markings",
       Hands: "Slender, spear-shaped. Clarity without excess.",
       Crystal: "Sapphire with anti-reflective coating",
       "Water Resist.": "5 ATM / 50 meters",
-      Strap: "18mm quick-release, leather with butterfly clasp or integrated steel bracelet",
-      Caseback: 'Engraved "Designed in Sweden", sapphire exhibition window',
+      Strap: "18mm quick-release leather with butterfly clasp · Integrated steel bracelet option",
+      Caseback: 'Engraved "Designed in Sweden" · Sapphire exhibition window',
+      Edition: "20 pieces · First run · Allocation-based · 3–6 months delivery",
     },
     boxContents: [
       "Okapi Classique – Kivu timepiece",
@@ -373,6 +378,24 @@ export const collections: Collection[] = [
       "/images/okapi-angle-1.jpg",
       "/images/okapi-angle-2.jpg",
       "/images/okapi-angle-3.jpg",
+    ],
+    variants: [
+      {
+        name: "ETA 7001",
+        stripePriceId: "price_1TKw2kCfxE1lSBKRLqfS1Lvb",
+        stock: 20,
+        price: 2800,
+        description: "Swiss hand-wound. Slim, direct, reliable. The honest choice — everything in its right place.",
+        image: "/images/okapi.jpg",
+      },
+      {
+        name: "LJP7380",
+        stripePriceId: "price_1TKw7wCfxE1lSBKRcFLiQiu6",
+        stock: 20,
+        price: 3900,
+        description: "La Joux-Perret LJP7380. High-grade decorated. La Chaux-de-Fonds manufacture. The movement independent watchmakers choose when they refuse to compromise.",
+        image: "/images/okapi.jpg",
+      },
     ],
   },
 ];

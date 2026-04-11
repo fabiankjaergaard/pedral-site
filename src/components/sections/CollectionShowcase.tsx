@@ -99,7 +99,7 @@ export default function CollectionShowcase() {
                   </p>
                   <div className="flex items-end justify-between">
                     <div>
-                      {c.isEnquiryOnly ? (
+                      {c.isEnquiryOnly || c.hidePriceOnCard ? (
                         <>
                           <span className="block text-[11px] font-light tracking-[0.5px] uppercase text-foreground-muted">
                             Pricing

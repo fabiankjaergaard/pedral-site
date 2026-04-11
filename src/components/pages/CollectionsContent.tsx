@@ -170,7 +170,7 @@ function CollectionCard({ collection }: { collection: Collection }) {
           </p>
           <div className="flex items-end justify-between">
             <div>
-              {collection.isEnquiryOnly ? (
+              {collection.isEnquiryOnly || collection.hidePriceOnCard ? (
                 <>
                   <span className="block text-[11px] font-light tracking-[0.5px] uppercase text-foreground-muted">
                     Pricing
